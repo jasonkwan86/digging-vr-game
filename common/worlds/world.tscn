@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://648pkkge7lmo"]
+
+[ext_resource type="Texture2D" uid="uid://byducgjm7qdev" path="res://icon.svg" id="1_vf28o"]
+[ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_rthvr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rthvr"]
+albedo_texture = ExtResource("1_vf28o")
+uv1_triplanar = true
+
+[sub_resource type="VoxelGeneratorFlat" id="VoxelGeneratorFlat_lf2lg"]
+
+[sub_resource type="VoxelMesherTransvoxel" id="VoxelMesherTransvoxel_2jrhb"]
+
+[node name="World" type="Node3D"]
+
+[node name="VoxelTerrain" type="VoxelTerrain" parent="."]
+material_override = SubResource("StandardMaterial3D_rthvr")
+generator = SubResource("VoxelGeneratorFlat_lf2lg")
+mesher = SubResource("VoxelMesherTransvoxel_2jrhb")
+
+[node name="Player" parent="." node_paths=PackedStringArray("voxel_terrain") instance=ExtResource("2_rthvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49148238, 1, -0.47838283)
+voxel_terrain = NodePath("../VoxelTerrain")
