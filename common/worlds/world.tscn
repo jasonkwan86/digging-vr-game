@@ -14,10 +14,11 @@ uv1_triplanar = true
 [node name="World" type="Node3D"]
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
+bounds = AABB(0, -16, 0, 16, 32, 16)
 material_override = SubResource("StandardMaterial3D_rthvr")
 generator = SubResource("VoxelGeneratorFlat_lf2lg")
 mesher = SubResource("VoxelMesherTransvoxel_2jrhb")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7845173, -15.791178, -9.363121)
 
-[node name="Player" parent="." node_paths=PackedStringArray("voxel_terrain") instance=ExtResource("2_rthvr")]
+[node name="Player" parent="." instance=ExtResource("2_rthvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49148238, 1, -0.47838283)
-voxel_terrain = NodePath("../VoxelTerrain")

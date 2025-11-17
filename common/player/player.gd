@@ -8,9 +8,9 @@ extends CharacterBody3D
 @export var looking_at_ray: RayCast3D
 
 @export_group("Voxel Interactions")
-@export var voxel_terrain: VoxelTerrain
-
-@onready var voxel_tool: VoxelTool = voxel_terrain.get_voxel_tool()
+#@export var voxel_terrain: VoxelTerrain
+#@onready var voxel_tool: VoxelTool = voxel_terrain.get_voxel_tool()
+@export var modifiable_mesh: ModifiableMesh
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -44,5 +44,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("dig"):
-		voxel_tool.mode = VoxelTool.MODE_REMOVE
-		voxel_tool.do_sphere(looking_at_ray.get_collision_point(), 0.75)
+		#print("pressed dig")
+		#voxel_tool.mode = VoxelTool.MODE_REMOVE
+		#voxel_tool.do_sphere(looking_at_ray.get_collision_point(), 0.75)
+		modifiable_mesh.remove_from(looking_at_ray.get_collision_point(), 4)

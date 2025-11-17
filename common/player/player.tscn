@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=5 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dsdjy"]
+size = Vector3(1, 0.275, 0.64)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d4thd"]
 
@@ -12,6 +15,10 @@ script = ExtResource("1_dsdjy")
 camera = NodePath("Camera3D")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
 
+[node name="Visor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51209706, -0.29277372)
+mesh = SubResource("BoxMesh_dsdjy")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_d4thd")
 
@@ -21,6 +28,7 @@ mesh = SubResource("CapsuleMesh_dsdjy")
 [node name="VoxelViewer" type="VoxelViewer" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45847714, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
