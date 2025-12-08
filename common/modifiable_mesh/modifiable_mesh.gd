@@ -392,20 +392,19 @@ func get_triangulation(x:int, y:int, z:int):
 	idx |= int(voxel_grid.read(x+1, y+1, z) < ISO_LEVEL)<<7
 	return TRIANGULATIONS[idx]
 
-func remove_from(center: Vector3, radius: float):
-	print(center)
-	print(radius)
-	var min_x = int(max(0, center.x - radius))
-	var max_x = int(min(voxel_grid.resolution - 1, center.x + radius))
-	var min_y = int(max(0, center.y - radius))
-	var max_y = int(min(voxel_grid.resolution - 1, center.y + radius))
-	var min_z = int(max(0, center.z - radius))
-	var max_z = int(min(voxel_grid.resolution - 1, center.z + radius))
+func remove_from(global_center: Vector3, radius: float):
+	var local_center: Vector3 = global_center - global_position
+	var min_x = int(max(0, local_center.x - radius))
+	var max_x = int(min(voxel_grid.resolution - 1, local_center.x + radius))
+	var min_y = int(max(0, local_center.y - radius))
+	var max_y = int(min(voxel_grid.resolution - 1, local_center.y + radius))
+	var min_z = int(max(0, local_center.z - radius))
+	var max_z = int(min(voxel_grid.resolution - 1, local_center.z + radius))
 
 	for x in range(min_x, max_x + 1):
 		for y in range(min_y, max_y + 1):
 			for z in range(min_z, max_z + 1):
-				var distance = Vector3(x, y, z).distance_to(center)
+				var distance = Vector3(x, y, z).distance_to(local_center)
 				if distance <= radius:
 					voxel_grid.write(x, y, z, 1.0)  # mark voxel as removed
 	regenerate()

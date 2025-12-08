@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
 [ext_resource type="PackedScene" uid="uid://d38p8i7dqypuf" path="res://common/modifiable_mesh/modifiable_mesh.tscn" id="2_ypuxa"]
-[ext_resource type="Material" path="res://common/modifiable_mesh/sand_texture/Ground093C_1K-JPG.tres" id="3_lopip"]
+[ext_resource type="Material" uid="uid://cus1txpelpplh" path="res://common/modifiable_mesh/sand_texture/Ground093C_1K-JPG.tres" id="3_lopip"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lnkuo"]
 size = Vector2(20, 20)
@@ -44,6 +44,7 @@ mesh = SubResource("PlaneMesh_lnkuo")
 shape = SubResource("ConcavePolygonShape3D_lnkuo")
 
 [node name="ModifiableMesh" parent="." instance=ExtResource("2_ypuxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -15, 0)
 material_override = ExtResource("3_lopip")
 mesh = SubResource("ArrayMesh_lopip")
 RESOLUTION = 16
