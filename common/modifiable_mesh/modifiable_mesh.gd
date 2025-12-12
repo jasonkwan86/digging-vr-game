@@ -287,6 +287,9 @@ const EDGES = [
 	Vector2i(3, 7),
 ]
 
+const INSIDE_MESH = -1
+const OUTSIDE_MESH = 1
+
 @export	var MATERIAL:Material
 @export var RESOLUTION:int = 50
 @export var ISO_LEVEL := 0.0
@@ -326,12 +329,10 @@ class VoxelGrid:
 func generate():
 	voxel_grid = VoxelGrid.new(RESOLUTION)
 	#generate terrain
-	for x in range(1, voxel_grid.resolution-1):
+	for x in range(0, voxel_grid.resolution):
 		for y in range(1, voxel_grid.resolution-1):
-			for z in range(1, voxel_grid.resolution-1):
-				#var value = NOISE.get_noise_3d(x, y, z)+(y+y%TERRAIN_TERRACE)/float(voxel_grid.resolution)-0.5
-				#voxel_grid.write(x, y, z, value)
-				voxel_grid.write(x, y, z, -1)
+			for z in range(0, voxel_grid.resolution):
+				voxel_grid.write(x, y, z, INSIDE_MESH)
 	regenerate()
 
 func regenerate():
@@ -406,5 +407,5 @@ func remove_from(global_center: Vector3, radius: float):
 			for z in range(min_z, max_z + 1):
 				var distance = Vector3(x, y, z).distance_to(local_center)
 				if distance <= radius:
-					voxel_grid.write(x, y, z, 1.0)  # mark voxel as removed
+					voxel_grid.write(x, y, z, OUTSIDE_MESH)  # mark voxel as removed
 	regenerate()
