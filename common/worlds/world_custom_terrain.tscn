@@ -38,9 +38,8 @@ size = Vector3(32, 32, 1)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.99919945, 0.01690878, -0.036260992, -1.2595006e-08, 0.9063079, 0.4226183, 0.040009618, 0.42227992, -0.9055822, 0, 5.995867, 0)
 
-[node name="Player" parent="." node_paths=PackedStringArray("modifiable_mesh") instance=ExtResource("2_mhjqk")]
+[node name="Player" parent="." instance=ExtResource("2_mhjqk")]
 transform = Transform3D(-0.63579535, 0, -0.77185774, 0, 1, 0, 0.77185774, 0, -0.63579535, -1.4953645, 1, -1.3963597)
-modifiable_mesh = NodePath("../Sandbox/ModifiableMesh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_lnkuo")

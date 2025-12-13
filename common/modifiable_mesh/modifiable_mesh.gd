@@ -291,7 +291,7 @@ const INSIDE_MESH = -1
 const OUTSIDE_MESH = 1
 
 @export	var MATERIAL:Material
-@export var RESOLUTION:int = 50
+@export var RESOLUTION:int = 32
 @export var ISO_LEVEL := 0.0
 @export var NOISE: FastNoiseLite
 @export var FLAT_SHADED := false
@@ -344,7 +344,7 @@ func regenerate():
 				march_cube(x, y, z, vertices)
 				
 	#draw
-	var surface_tool = SurfaceTool.new()
+	var surface_tool: SurfaceTool = SurfaceTool.new()
 	surface_tool.begin(Mesh.PRIMITIVE_TRIANGLES)
 	
 	if FLAT_SHADED:
@@ -356,8 +356,16 @@ func regenerate():
 	surface_tool.generate_normals()
 	surface_tool.index()
 	surface_tool.set_material(MATERIAL)
-	mesh = surface_tool.commit()
+	#mesh = surface_tool.commit()
+	#COLLIDER.shape = mesh.create_trimesh_shape()
+	finish_generating_mesh_on_main_thread.call_deferred(surface_tool.commit())
+
+func finish_generating_mesh_on_main_thread(array_mesh: ArrayMesh):
+	var start_time_usec: int = Time.get_ticks_usec()
+	mesh = array_mesh
 	COLLIDER.shape = mesh.create_trimesh_shape()
+	var end_time_usec: int = Time.get_ticks_usec()
+	print((end_time_usec - start_time_usec) / 1000000.0)
 	
 func march_cube(x:int, y:int, z:int, vertices:PackedVector3Array):
 	var tri = get_triangulation(x, y, z)
@@ -394,7 +402,9 @@ func get_triangulation(x:int, y:int, z:int):
 	return TRIANGULATIONS[idx]
 
 func remove_from(global_center: Vector3, radius: float):
-	var local_center: Vector3 = global_center - global_position
+	WorkerThreadPool.add_task(thread_remove_from.bind(global_center - global_position, radius))
+
+func thread_remove_from(local_center: Vector3, radius: float):
 	var min_x = int(max(0, local_center.x - radius))
 	var max_x = int(min(voxel_grid.resolution - 1, local_center.x + radius))
 	var min_y = int(max(0, local_center.y - radius))

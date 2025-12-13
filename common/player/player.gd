@@ -46,6 +46,4 @@ func _physics_process(delta: float) -> void:
 		if not (looking_at_object is StaticModifiableMesh) or looking_at_object.modifiable_mesh == null:
 			return
 		var modifiable_mesh = (looking_at_object as StaticModifiableMesh).modifiable_mesh
-		print(looking_at_object)
-		print(looking_at_object is StaticModifiableMesh)
 		modifiable_mesh.remove_from(looking_at_ray.get_collision_point(), mesh_removal_radius)
