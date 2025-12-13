@@ -29,12 +29,13 @@ data = PackedVector3Array(0, 0.5, 1, 1, 0.5, 1, 0, 0.5, 0, 1, 0.5, 1, 1, 0.5, 0,
 mesh = SubResource("ArrayMesh_iwfah")
 script = ExtResource("1_d0t3a")
 MATERIAL = SubResource("StandardMaterial3D_d0t3a")
-RESOLUTION = 32
 NOISE = SubResource("FastNoiseLite_d0t3a")
 FLAT_SHADED = true
 COLLIDER = NodePath("StaticModifiableMesh/CollisionShape3D")
 
 [node name="StaticModifiableMesh" type="StaticBody3D" parent="." node_paths=PackedStringArray("modifiable_mesh")]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("2_iwfah")
 modifiable_mesh = NodePath("..")
 

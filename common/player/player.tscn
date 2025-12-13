@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=6 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 
@@ -9,11 +9,14 @@ size = Vector3(1, 0.275, 0.64)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dsdjy"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "looking_at_ray")]
-collision_layer = 2
+[sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "looking_at_ray", "looking_at_shapecast")]
+collision_mask = 3
 script = ExtResource("1_dsdjy")
 camera = NodePath("Camera3D")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
+looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
 
 [node name="Visor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51209706, -0.29277372)
@@ -31,5 +34,10 @@ mesh = SubResource("CapsuleMesh_dsdjy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45847714, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-target_position = Vector3(0, 5, 0)
+target_position = Vector3(0, 0, -5)
+collision_mask = 2
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Camera3D"]
+shape = SubResource("SphereShape3D_dsdjy")
+target_position = Vector3(0, 0, -5)
+collision_mask = 4

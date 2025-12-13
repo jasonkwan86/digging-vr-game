@@ -356,16 +356,14 @@ func regenerate():
 	surface_tool.generate_normals()
 	surface_tool.index()
 	surface_tool.set_material(MATERIAL)
-	#mesh = surface_tool.commit()
-	#COLLIDER.shape = mesh.create_trimesh_shape()
 	finish_generating_mesh_on_main_thread.call_deferred(surface_tool.commit())
 
 func finish_generating_mesh_on_main_thread(array_mesh: ArrayMesh):
-	var start_time_usec: int = Time.get_ticks_usec()
+	#var start_time_usec: int = Time.get_ticks_usec()
 	mesh = array_mesh
 	COLLIDER.shape = mesh.create_trimesh_shape()
-	var end_time_usec: int = Time.get_ticks_usec()
-	print((end_time_usec - start_time_usec) / 1000000.0)
+	#var end_time_usec: int = Time.get_ticks_usec()
+	#print((end_time_usec - start_time_usec) / 1000000.0)
 	
 func march_cube(x:int, y:int, z:int, vertices:PackedVector3Array):
 	var tri = get_triangulation(x, y, z)

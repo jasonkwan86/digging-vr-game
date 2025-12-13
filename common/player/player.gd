@@ -5,13 +5,20 @@ extends CharacterBody3D
 @export_group("Player Controls")
 @export var camera: Camera3D
 @export var mouse_sensitivity = 0.002
-@export var looking_at_ray: RayCast3D
 
 @export_group("Voxel Interactions")
+@export var reach: float = 3
 @export var mesh_removal_radius: int = 1
+@export var looking_at_ray: RayCast3D
+@export var looking_at_shapecast: ShapeCast3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+
+func _ready() -> void:
+	var reach_position: Vector3 = reach * Vector3.FORWARD
+	looking_at_ray.target_position = reach_position
+	looking_at_shapecast.target_position = reach_position
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -42,6 +49,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("dig"):
+		for mineral in looking_at_shapecast.collision_result:
+			if mineral == null || mineral.collider == null || (mineral.collider as RigidBody3D) == null:
+				return
+			(mineral.collider as RigidBody3D).freeze = false
 		var looking_at_object = looking_at_ray.get_collider()
 		if not (looking_at_object is StaticModifiableMesh) or looking_at_object.modifiable_mesh == null:
 			return
