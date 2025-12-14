@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=8 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
+[ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
+[ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/player/mineral_inventory.gd" id="3_f6svf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dsdjy"]
 size = Vector3(1, 0.275, 0.64)
@@ -11,12 +13,14 @@ size = Vector3(1, 0.275, 0.64)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "looking_at_ray", "looking_at_shapecast")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory")]
 collision_mask = 3
 script = ExtResource("1_dsdjy")
 camera = NodePath("Camera3D")
+interact_icon = NodePath("UI/InteractIcon")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
 looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
+mineral_inventory = NodePath("MineralInventory")
 
 [node name="Visor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51209706, -0.29277372)
@@ -35,9 +39,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45847714, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -5)
-collision_mask = 2
+collision_mask = 6
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="Camera3D"]
 shape = SubResource("SphereShape3D_dsdjy")
 target_position = Vector3(0, 0, -5)
 collision_mask = 4
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractIcon" type="TextureRect" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i15vv")
+expand_mode = 1
+
+[node name="MineralInventory" type="Node" parent="."]
+script = ExtResource("3_f6svf")
+metadata/_custom_type_script = "uid://csn0nbyl186f1"

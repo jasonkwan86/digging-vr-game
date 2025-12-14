@@ -5,12 +5,16 @@ extends CharacterBody3D
 @export_group("Player Controls")
 @export var camera: Camera3D
 @export var mouse_sensitivity = 0.002
+@export var interact_icon: Control
 
 @export_group("Voxel Interactions")
 @export var reach: float = 3
 @export var mesh_removal_radius: int = 1
 @export var looking_at_ray: RayCast3D
 @export var looking_at_shapecast: ShapeCast3D
+
+@export_group("Inventory and Upgrades")
+@export var mineral_inventory: MineralInventory
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -58,3 +62,13 @@ func _physics_process(delta: float) -> void:
 			return
 		var modifiable_mesh = (looking_at_object as StaticModifiableMesh).modifiable_mesh
 		modifiable_mesh.remove_from(looking_at_ray.get_collision_point(), mesh_removal_radius)
+	
+	if Input.is_action_just_pressed("pickup_mineral"):
+		var looking_at_object = looking_at_ray.get_collider()
+		if looking_at_object is Mineral:
+			looking_at_object.queue_free()
+			mineral_inventory.mineral_count += 1
+
+func _process(_delta: float) -> void:
+	var looking_at_object = looking_at_ray.get_collider()
+	interact_icon.visible = looking_at_object is Mineral
