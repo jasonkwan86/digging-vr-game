@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xmxuvygvnnc4"
-path.s3tc="res://.godot/imported/Ground093C_1K-JPG_Color.jpg-d7806cceb1522d6423d142c25adf895c.s3tc.ctex"
+uid="uid://cnjds1440gw33"
+path.s3tc="res://.godot/imported/Ground093C_1K-JPG_Roughness.jpg-7cc575e018941259437f312431995cd0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://common/modifiable_mesh/sand_texture/Ground093C_1K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/Ground093C_1K-JPG_Color.jpg-d7806cceb1522d6423d142c25adf895c.s3tc.ctex"]
+source_file="res://common/modifiable_ground/sand_texture/Ground093C_1K-JPG_Roughness.jpg"
+dest_files=["res://.godot/imported/Ground093C_1K-JPG_Roughness.jpg-7cc575e018941259437f312431995cd0.s3tc.ctex"]
 
 [params]
 

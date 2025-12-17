@@ -1,6 +1,6 @@
 @tool
-class_name ModifiableMesh
-extends MeshInstance3D
+class_name ModifiableGround
+extends StaticBody3D
 
 const TRIANGULATIONS = [
 	[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -293,9 +293,8 @@ const OUTSIDE_MESH = 1
 @export	var MATERIAL:Material
 @export var RESOLUTION:int = 32
 @export var ISO_LEVEL := 0.0
-@export var NOISE: FastNoiseLite
-@export var FLAT_SHADED := false
-@export var TERRAIN_TERRACE:int = 1
+@export var FLAT_SHADED := true
+@export var MESH_INSTANCE: MeshInstance3D
 @export var COLLIDER: CollisionShape3D
 
 @export var GENERATE: bool:
@@ -359,11 +358,12 @@ func regenerate():
 	finish_generating_mesh_on_main_thread.call_deferred(surface_tool.commit())
 
 func finish_generating_mesh_on_main_thread(array_mesh: ArrayMesh):
-	#var start_time_usec: int = Time.get_ticks_usec()
-	mesh = array_mesh
-	COLLIDER.shape = mesh.create_trimesh_shape()
-	#var end_time_usec: int = Time.get_ticks_usec()
-	#print((end_time_usec - start_time_usec) / 1000000.0)
+	var start_time_usec: int = Time.get_ticks_usec()
+	MESH_INSTANCE.mesh = array_mesh
+	#MESH_INSTANCE.create_multiple_convex_collisions()
+	COLLIDER.shape = MESH_INSTANCE.mesh.create_trimesh_shape()
+	var end_time_usec: int = Time.get_ticks_usec()
+	print((end_time_usec - start_time_usec) / 1000000.0)
 	
 func march_cube(x:int, y:int, z:int, vertices:PackedVector3Array):
 	var tri = get_triangulation(x, y, z)

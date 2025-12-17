@@ -58,10 +58,8 @@ func _physics_process(delta: float) -> void:
 				return
 			(mineral.collider as RigidBody3D).freeze = false
 		var looking_at_object = looking_at_ray.get_collider()
-		if not (looking_at_object is StaticModifiableMesh) or looking_at_object.modifiable_mesh == null:
-			return
-		var modifiable_mesh = (looking_at_object as StaticModifiableMesh).modifiable_mesh
-		modifiable_mesh.remove_from(looking_at_ray.get_collision_point(), mesh_removal_radius)
+		if looking_at_object is ModifiableGround:
+			looking_at_object.remove_from(looking_at_ray.get_collision_point(), mesh_removal_radius)
 	
 	if Input.is_action_just_pressed("pickup_mineral"):
 		var looking_at_object = looking_at_ray.get_collider()
