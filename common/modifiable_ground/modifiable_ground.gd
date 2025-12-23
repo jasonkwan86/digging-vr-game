@@ -260,7 +260,7 @@ const TRIANGULATIONS = [
 	[0, 3, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
 	[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 ]
-	
+
 const POINTS = [
 	Vector3i(0, 0, 0),
 	Vector3i(0, 0, 1),
@@ -324,6 +324,9 @@ class VoxelGrid:
 	
 	func write(x: int, y: int, z: int, value: float) -> void:
 		self.data[x + self.resolution * (y + self.resolution * z)] = value
+	
+	func add(x: int, y: int, z: int, value: float) -> void:
+		self.data[x + self.resolution * (y + self.resolution * z)] += value
 
 func generate():
 	voxel_grid = VoxelGrid.new(RESOLUTION)
@@ -358,12 +361,12 @@ func regenerate():
 	finish_generating_mesh_on_main_thread.call_deferred(surface_tool.commit())
 
 func finish_generating_mesh_on_main_thread(array_mesh: ArrayMesh):
-	var start_time_usec: int = Time.get_ticks_usec()
+	#var start_time_usec: int = Time.get_ticks_usec()
 	MESH_INSTANCE.mesh = array_mesh
 	#MESH_INSTANCE.create_multiple_convex_collisions()
 	COLLIDER.shape = MESH_INSTANCE.mesh.create_trimesh_shape()
-	var end_time_usec: int = Time.get_ticks_usec()
-	print((end_time_usec - start_time_usec) / 1000000.0)
+	#var end_time_usec: int = Time.get_ticks_usec()
+	#print((end_time_usec - start_time_usec) / 1000000.0)
 	
 func march_cube(x:int, y:int, z:int, vertices:PackedVector3Array):
 	var tri = get_triangulation(x, y, z)
@@ -372,7 +375,7 @@ func march_cube(x:int, y:int, z:int, vertices:PackedVector3Array):
 		var point_indices = EDGES[edge_index]
 		var p0 = POINTS[point_indices.x]
 		var p1 = POINTS[point_indices.y]
-		# Global position of these 2 points
+		# Local position of these 2 points within the node
 		var pos_a = Vector3(x+p0.x, y+p0.y, z+p0.z)
 		var pos_b = Vector3(x+p1.x, y+p1.y, z+p1.z)
 		
@@ -399,10 +402,10 @@ func get_triangulation(x:int, y:int, z:int):
 	idx |= int(voxel_grid.read(x+1, y+1, z) < ISO_LEVEL)<<7
 	return TRIANGULATIONS[idx]
 
-func remove_from(global_center: Vector3, radius: float):
-	WorkerThreadPool.add_task(thread_remove_from.bind(global_center - global_position, radius))
+func remove_from(global_center: Vector3, radius: float, dig_strength: float):
+	WorkerThreadPool.add_task(thread_remove_from.bind(global_center - global_position, radius, dig_strength))
 
-func thread_remove_from(local_center: Vector3, radius: float):
+func thread_remove_from(local_center: Vector3, radius: float, dig_strength: float):
 	var min_x = int(max(0, local_center.x - radius))
 	var max_x = int(min(voxel_grid.resolution - 1, local_center.x + radius))
 	var min_y = int(max(0, local_center.y - radius))
@@ -415,5 +418,5 @@ func thread_remove_from(local_center: Vector3, radius: float):
 			for z in range(min_z, max_z + 1):
 				var distance = Vector3(x, y, z).distance_to(local_center)
 				if distance <= radius:
-					voxel_grid.write(x, y, z, OUTSIDE_MESH)  # mark voxel as removed
+					voxel_grid.add(x, y, z, dig_strength)
 	regenerate()

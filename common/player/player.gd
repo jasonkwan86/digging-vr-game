@@ -9,7 +9,8 @@ extends CharacterBody3D
 
 @export_group("Voxel Interactions")
 @export var reach: float = 3
-@export var mesh_removal_radius: int = 1
+@export var dig_radius: int = 1
+@export var dig_strength: float = 1
 @export var looking_at_ray: RayCast3D
 @export var looking_at_shapecast: ShapeCast3D
 
@@ -59,7 +60,7 @@ func _physics_process(delta: float) -> void:
 			(mineral.collider as RigidBody3D).freeze = false
 		var looking_at_object = looking_at_ray.get_collider()
 		if looking_at_object is ModifiableGround:
-			looking_at_object.remove_from(looking_at_ray.get_collision_point(), mesh_removal_radius)
+			looking_at_object.remove_from(looking_at_ray.get_collision_point(), dig_radius, dig_strength)
 	
 	if Input.is_action_just_pressed("pickup_mineral"):
 		var looking_at_object = looking_at_ray.get_collider()
