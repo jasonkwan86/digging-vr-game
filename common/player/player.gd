@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var interact_icon: Control
 
 @export_group("Voxel Interactions")
-@export var reach: float = 3
+@export var dig_reach: float = 3
 @export var dig_radius: int = 1
 @export var dig_strength: float = 1
 @export var looking_at_ray: RayCast3D
@@ -21,9 +21,9 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 func _ready() -> void:
-	var reach_position: Vector3 = reach * Vector3.FORWARD
-	looking_at_ray.target_position = reach_position
-	looking_at_shapecast.target_position = reach_position
+	var dig_reach_position: Vector3 = dig_reach * Vector3.FORWARD
+	looking_at_ray.target_position = dig_reach_position
+	looking_at_shapecast.target_position = dig_reach_position
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -54,10 +54,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("dig"):
-		for mineral in looking_at_shapecast.collision_result:
-			if mineral == null || mineral.collider == null || (mineral.collider as RigidBody3D) == null:
-				return
-			(mineral.collider as RigidBody3D).freeze = false
+		#for mineral in looking_at_shapecast.collision_result:
+			#if mineral == null || mineral.collider == null || (mineral.collider as RigidBody3D) == null:
+				#return
+			#(mineral.collider as RigidBody3D).freeze = false
 		var looking_at_object = looking_at_ray.get_collider()
 		if looking_at_object is ModifiableGround:
 			looking_at_object.remove_from(looking_at_ray.get_collision_point(), dig_radius, dig_strength)
