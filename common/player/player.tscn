@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=10 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/player/mineral_inventory.gd" id="3_f6svf"]
+[ext_resource type="AudioStream" uid="uid://cpfe14l1ucs34" path="res://common/minerals/grab-item.wav" id="4_ujhar"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dsdjy"]
 size = Vector3(1, 0.275, 0.64)
@@ -13,13 +14,19 @@ size = Vector3(1, 0.275, 0.64)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujhar"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("4_ujhar")
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "item_pickup_sound_player", "mineral_inventory")]
 collision_mask = 3
 script = ExtResource("1_dsdjy")
 camera = NodePath("Camera3D")
 interact_icon = NodePath("UI/InteractIcon")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
 looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
+item_pickup_sound_player = NodePath("SoundPlayers/ItemPickupPlayer")
 mineral_inventory = NodePath("MineralInventory")
 
 [node name="Visor" type="MeshInstance3D" parent="."]
@@ -72,3 +79,9 @@ expand_mode = 1
 [node name="MineralInventory" type="Node" parent="."]
 script = ExtResource("3_f6svf")
 metadata/_custom_type_script = "uid://csn0nbyl186f1"
+
+[node name="SoundPlayers" type="Node" parent="."]
+
+[node name="ItemPickupPlayer" type="AudioStreamPlayer" parent="SoundPlayers"]
+stream = SubResource("AudioStreamRandomizer_ujhar")
+pitch_scale = 15.0

@@ -14,6 +14,8 @@ extends CharacterBody3D
 @export var looking_at_ray: RayCast3D
 @export var looking_at_shapecast: ShapeCast3D
 
+@export var item_pickup_sound_player: AudioStreamPlayer
+
 @export_group("Inventory and Upgrades")
 @export var mineral_inventory: MineralInventory
 
@@ -54,10 +56,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("dig"):
-		#for mineral in looking_at_shapecast.collision_result:
-			#if mineral == null || mineral.collider == null || (mineral.collider as RigidBody3D) == null:
-				#return
-			#(mineral.collider as RigidBody3D).freeze = false
 		var looking_at_object = looking_at_ray.get_collider()
 		if looking_at_object is ModifiableGround:
 			looking_at_object.remove_from(looking_at_ray.get_collision_point(), dig_radius, dig_strength)
@@ -67,6 +65,7 @@ func _physics_process(delta: float) -> void:
 		if looking_at_object is Mineral:
 			looking_at_object.queue_free()
 			mineral_inventory.mineral_count += 1
+			item_pickup_sound_player.play()
 
 func _process(_delta: float) -> void:
 	var looking_at_object = looking_at_ray.get_collider()

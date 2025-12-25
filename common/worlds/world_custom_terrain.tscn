@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene load_steps=9 format=3 uid="uid://biu2ihc7v8hh6"]
 
-[ext_resource type="PackedScene" uid="uid://d38p8i7dqypuf" path="res://common/modifiable_ground/modifiable_ground.tscn" id="2_lopip"]
+[ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
 [ext_resource type="PackedScene" uid="uid://dgi2ku8g5st87" path="res://common/minerals/mineral.tscn" id="4_c5o21"]
+[ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lnkuo"]
 size = Vector2(20, 20)
@@ -38,9 +39,13 @@ shape = SubResource("ConvexPolygonShape3D_lopip")
 [node name="Sandbox" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 
-[node name="ModifiableGround" parent="Sandbox" instance=ExtResource("2_lopip")]
+[node name="SandboxOrigin" type="Node3D" parent="Sandbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -31, -7)
-ISO_LEVEL = 0.5
+
+[node name="ModifiableGroundSand" parent="Sandbox/SandboxOrigin" instance=ExtResource("2_lopip")]
+
+[node name="ModifiableGroundStone" parent="Sandbox/SandboxOrigin" instance=ExtResource("4_fcoao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0)
 
 [node name="SandboxBarrier4" type="MeshInstance3D" parent="Sandbox"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.5, -16, 8.5)
@@ -62,3 +67,9 @@ mesh = SubResource("BoxMesh_lopip")
 
 [node name="Mineral" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 0)
+
+[node name="Mineral2" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 0.6296241)
+
+[node name="Mineral3" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, -1, 0.6296241)

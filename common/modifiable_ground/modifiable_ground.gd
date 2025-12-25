@@ -287,10 +287,11 @@ const EDGES = [
 	Vector2i(3, 7),
 ]
 
-const INSIDE_MESH = -1
-const OUTSIDE_MESH = 1
+const DEFAULT_INSIDE_MESH = -1
 
-@export	var MATERIAL:Material
+@export var dig_sound_player: AudioStreamPlayer
+
+@export_group("Mesh Properties")
 @export var RESOLUTION:int = 32
 @export var ISO_LEVEL := 0.0
 @export var FLAT_SHADED := true
@@ -334,7 +335,7 @@ func generate():
 	for x in range(0, voxel_grid.resolution):
 		for y in range(1, voxel_grid.resolution-1):
 			for z in range(0, voxel_grid.resolution):
-				voxel_grid.write(x, y, z, INSIDE_MESH)
+				voxel_grid.write(x, y, z, DEFAULT_INSIDE_MESH)
 	regenerate()
 
 func regenerate():
@@ -357,7 +358,6 @@ func regenerate():
 	
 	surface_tool.generate_normals()
 	surface_tool.index()
-	surface_tool.set_material(MATERIAL)
 	finish_generating_mesh_on_main_thread.call_deferred(surface_tool.commit())
 
 func finish_generating_mesh_on_main_thread(array_mesh: ArrayMesh):
@@ -403,6 +403,7 @@ func get_triangulation(x:int, y:int, z:int):
 	return TRIANGULATIONS[idx]
 
 func remove_from(global_center: Vector3, radius: float, dig_strength: float):
+	dig_sound_player.play()
 	WorkerThreadPool.add_task(thread_remove_from.bind(global_center - global_position, radius, dig_strength))
 
 func thread_remove_from(local_center: Vector3, radius: float, dig_strength: float):

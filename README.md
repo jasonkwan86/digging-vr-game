@@ -3,3 +3,8 @@
 Resources Used:
 - Sand [texture](https://ambientcg.com/view?id=Ground093C)
 - Interact [icon](https://www.flaticon.com/free-icon/tap_1612818?term=hand&page=1&position=41&origin=search&related_id=1612818)
+- Grab [sound](https://freesound.org/people/1bob/sounds/651515/)
+
+Digging
+- [Stone](https://freesound.org/people/InspectorJ/sounds/420878/)
+- [Sand 1](https://freesound.org/people/Bricklover/sounds/560957/)
