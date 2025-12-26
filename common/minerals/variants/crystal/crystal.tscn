@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0e318kwkxgo6"]
+[gd_scene load_steps=6 format=3 uid="uid://b0e318kwkxgo6"]
 
 [ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/minerals/mineral.gd" id="1_r1bgv"]
+[ext_resource type="Resource" uid="uid://bh2gk38qor7en" path="res://common/minerals/variants/crystal/crystal_properties.tres" id="2_5mgdy"]
 [ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/minerals/mineral_shape.tres" id="2_y7a7k"]
 [ext_resource type="Material" uid="uid://ms1x71u64e0x" path="res://common/minerals/variants/crystal/crystal_material.tres" id="3_2dpjs"]
 [ext_resource type="ArrayMesh" uid="uid://cyhtrnvv5hf0t" path="res://common/minerals/variants/crystal/crystal_mesh.res" id="4_2dpjs"]
@@ -9,6 +10,7 @@
 collision_layer = 4
 collision_mask = 6
 script = ExtResource("1_r1bgv")
+mineral_properties = ExtResource("2_5mgdy")
 fall_detection_area = NodePath("FallDetectionArea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

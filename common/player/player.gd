@@ -18,6 +18,7 @@ extends CharacterBody3D
 
 @export_group("Inventory and Upgrades")
 @export var mineral_inventory: MineralInventory
+@export var money_and_upgrades: MoneyAndUpgrades
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -64,7 +65,8 @@ func _physics_process(delta: float) -> void:
 		var looking_at_object = looking_at_ray.get_collider()
 		if looking_at_object is Mineral:
 			looking_at_object.queue_free()
-			mineral_inventory.mineral_count += 1
+			#mineral_inventory.mineral_count += 1
+			mineral_inventory.add_mineral_to_inventory(looking_at_object)
 			item_pickup_sound_player.play()
 
 func _process(_delta: float) -> void:

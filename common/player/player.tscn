@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=14 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
-[ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/player/mineral_inventory.gd" id="3_f6svf"]
+[ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
 [ext_resource type="AudioStream" uid="uid://cpfe14l1ucs34" path="res://common/player/grab-item.wav" id="4_ujhar"]
+[ext_resource type="Script" uid="uid://bb64kdud5s1kv" path="res://common/minerals/mineral_properties.gd" id="4_uqyw5"]
+[ext_resource type="Resource" uid="uid://dsda4airw872y" path="res://common/minerals/variants/rock/rock_properties.tres" id="5_6vwog"]
+[ext_resource type="Resource" uid="uid://bh2gk38qor7en" path="res://common/minerals/variants/crystal/crystal_properties.tres" id="6_w3sq2"]
+[ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dsdjy"]
 size = Vector3(1, 0.275, 0.64)
@@ -76,12 +80,34 @@ grow_vertical = 2
 texture = ExtResource("2_i15vv")
 expand_mode = 1
 
-[node name="MineralInventory" type="Node" parent="."]
-script = ExtResource("3_f6svf")
-metadata/_custom_type_script = "uid://csn0nbyl186f1"
+[node name="MineralCount" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "0"
 
 [node name="SoundPlayers" type="Node" parent="."]
 
 [node name="ItemPickupPlayer" type="AudioStreamPlayer" parent="SoundPlayers"]
 stream = SubResource("AudioStreamRandomizer_ujhar")
 pitch_scale = 15.0
+
+[node name="MineralInventory" type="Node" parent="." node_paths=PackedStringArray("mineral_ui")]
+script = ExtResource("3_f6svf")
+_mineral_count_in_inventory = Dictionary[ExtResource("4_uqyw5"), int]({
+ExtResource("5_6vwog"): 0,
+ExtResource("6_w3sq2"): 0
+})
+mineral_ui = NodePath("../UI/MineralCount")
+metadata/_custom_type_script = "uid://csn0nbyl186f1"
+
+[node name="MoneyAndUpgrades" type="Node" parent="."]
+script = ExtResource("8_6vwog")
+metadata/_custom_type_script = "uid://b0b2fbddqdt1e"

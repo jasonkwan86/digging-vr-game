@@ -1,6 +1,10 @@
 class_name Mineral
 extends RigidBody3D
 
+@export_group("Mineral")
+@export var mineral_properties: MineralProperties
+
+@export_group("Fall Detection")
 @export var fall_detection_area: Area3D
 
 func _ready() -> void:
