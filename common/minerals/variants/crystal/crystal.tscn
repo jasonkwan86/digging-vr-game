@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0e318kwkxgo6"]
+
+[ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/minerals/mineral.gd" id="1_r1bgv"]
+[ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/minerals/mineral_shape.tres" id="2_y7a7k"]
+[ext_resource type="Material" uid="uid://ms1x71u64e0x" path="res://common/minerals/variants/crystal/crystal_material.tres" id="3_2dpjs"]
+[ext_resource type="ArrayMesh" uid="uid://cyhtrnvv5hf0t" path="res://common/minerals/variants/crystal/crystal_mesh.res" id="4_2dpjs"]
+
+[node name="Crystal" type="RigidBody3D" node_paths=PackedStringArray("fall_detection_area")]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_r1bgv")
+fall_detection_area = NodePath("FallDetectionArea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_y7a7k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.003033042, -1.1920929e-07, 0.0063878894)
+material_override = ExtResource("3_2dpjs")
+mesh = ExtResource("4_2dpjs")
+
+[node name="FallDetectionArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea"]
+shape = ExtResource("2_y7a7k")

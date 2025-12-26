@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5y7gyaqb66j8"]
+
+[ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/minerals/mineral.gd" id="1_h27u1"]
+[ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/minerals/mineral_shape.tres" id="2_xeb2j"]
+[ext_resource type="Material" uid="uid://yptw6h5cmsi1" path="res://common/minerals/variants/rock/rock_material.tres" id="3_gv77b"]
+[ext_resource type="ArrayMesh" uid="uid://dkuh0t8tcb6t3" path="res://common/minerals/variants/rock/rock_mesh.res" id="4_gv1n5"]
+
+[node name="Rock" type="RigidBody3D" node_paths=PackedStringArray("fall_detection_area")]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_h27u1")
+fall_detection_area = NodePath("FallDetectionArea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_xeb2j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.003033042, -1.1920929e-07, 0.0063878894)
+material_override = ExtResource("3_gv77b")
+mesh = ExtResource("4_gv1n5")
+
+[node name="FallDetectionArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea"]
+shape = ExtResource("2_xeb2j")

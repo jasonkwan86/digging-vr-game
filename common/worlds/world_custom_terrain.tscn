@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene load_steps=10 format=3 uid="uid://biu2ihc7v8hh6"]
 
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
-[ext_resource type="PackedScene" uid="uid://dgi2ku8g5st87" path="res://common/minerals/mineral.tscn" id="4_c5o21"]
+[ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/minerals/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
+[ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/minerals/variants/crystal/crystal.tscn" id="5_fcoao"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lnkuo"]
 size = Vector2(20, 20)
@@ -65,11 +66,20 @@ mesh = SubResource("BoxMesh_lopip")
 
 [node name="Minerals" type="Node3D" parent="Sandbox"]
 
-[node name="Mineral" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 0)
+[node name="Rock" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -0.6388223, 0)
 
-[node name="Mineral2" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -1, 0.6296241)
+[node name="Rock3" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 1)
 
-[node name="Mineral3" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, -1, 0.6296241)
+[node name="Rock2" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -1, 0)
+
+[node name="Crystal" parent="Sandbox/Minerals" instance=ExtResource("5_fcoao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.5648644, -0.9018705)
+
+[node name="Crystal2" parent="Sandbox/Minerals" instance=ExtResource("5_fcoao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.88079625, -0.3148049)
+
+[node name="Crystal3" parent="Sandbox/Minerals" instance=ExtResource("5_fcoao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.397354, -0.88079625, -0.3148049)

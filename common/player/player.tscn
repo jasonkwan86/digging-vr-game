@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/player/mineral_inventory.gd" id="3_f6svf"]
-[ext_resource type="AudioStream" uid="uid://cpfe14l1ucs34" path="res://common/minerals/grab-item.wav" id="4_ujhar"]
+[ext_resource type="AudioStream" uid="uid://cpfe14l1ucs34" path="res://common/player/grab-item.wav" id="4_ujhar"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dsdjy"]
 size = Vector3(1, 0.275, 0.64)
