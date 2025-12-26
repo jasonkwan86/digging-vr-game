@@ -292,9 +292,10 @@ const DEFAULT_INSIDE_MESH = -1
 @export var dig_sound_player: AudioStreamPlayer
 
 @export_group("Mesh Properties")
-@export var RESOLUTION:int = 32
-@export var ISO_LEVEL := 0.0
-@export var FLAT_SHADED := true
+@export var HEIGHT:int = 8
+@export var WIDTH:int = 48
+@export var ISO_LEVEL: float = 0.0
+@export var FLAT_SHADED: bool = true
 @export var MESH_INSTANCE: MeshInstance3D
 @export var COLLIDER: CollisionShape3D
 
@@ -312,38 +313,43 @@ func _ready() -> void:
 
 class VoxelGrid:
 	var data: PackedFloat32Array
-	var resolution: int
+	var width: int
+	var height: int
 	
 	@warning_ignore("shadowed_variable")
-	func _init(resolution: int):
-		self.resolution = resolution
-		self.data.resize(resolution*resolution*resolution)
+	func _init(width: int, height: int):
+		self.width = width
+		self.height = height
+		self.data.resize(width * width * height)
 		self.data.fill(1)
 	
+	func _get_index(x: int, y: int, z: int) -> int:
+		return x + y * width + z * width * height
+	
 	func read(x: int, y: int, z: int) -> float:
-		return self.data[x + self.resolution * (y + self.resolution * z)]
+		return self.data[_get_index(x, y, z)]
 	
 	func write(x: int, y: int, z: int, value: float) -> void:
-		self.data[x + self.resolution * (y + self.resolution * z)] = value
+		self.data[_get_index(x, y, z)] = value
 	
 	func add(x: int, y: int, z: int, value: float) -> void:
-		self.data[x + self.resolution * (y + self.resolution * z)] += value
+		self.data[_get_index(x, y, z)] += value
 
 func generate():
-	voxel_grid = VoxelGrid.new(RESOLUTION)
+	voxel_grid = VoxelGrid.new(WIDTH, HEIGHT)
 	#generate terrain
-	for x in range(0, voxel_grid.resolution):
-		for y in range(1, voxel_grid.resolution-1):
-			for z in range(0, voxel_grid.resolution):
+	for x in range(0, voxel_grid.width):
+		for y in range(1, voxel_grid.height-1):
+			for z in range(0, voxel_grid.width):
 				voxel_grid.write(x, y, z, DEFAULT_INSIDE_MESH)
 	regenerate()
 
 func regenerate():
 	#march
 	var vertices = PackedVector3Array()
-	for x in voxel_grid.resolution-1:
-		for y in voxel_grid.resolution-1:
-			for z in voxel_grid.resolution-1:
+	for x in voxel_grid.width-1:
+		for y in voxel_grid.height-1:
+			for z in voxel_grid.width-1:
 				march_cube(x, y, z, vertices)
 				
 	#draw
@@ -408,11 +414,11 @@ func remove_from(global_center: Vector3, radius: float, dig_strength: float):
 
 func thread_remove_from(local_center: Vector3, radius: float, dig_strength: float):
 	var min_x = int(max(0, local_center.x - radius))
-	var max_x = int(min(voxel_grid.resolution - 1, local_center.x + radius))
+	var max_x = int(min(voxel_grid.width - 1, local_center.x + radius))
 	var min_y = int(max(0, local_center.y - radius))
-	var max_y = int(min(voxel_grid.resolution - 1, local_center.y + radius))
+	var max_y = int(min(voxel_grid.height - 1, local_center.y + radius))
 	var min_z = int(max(0, local_center.z - radius))
-	var max_z = int(min(voxel_grid.resolution - 1, local_center.z + radius))
+	var max_z = int(min(voxel_grid.width - 1, local_center.z + radius))
 
 	for x in range(min_x, max_x + 1):
 		for y in range(min_y, max_y + 1):
