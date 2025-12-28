@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=15 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
 [ext_resource type="AudioStream" uid="uid://cpfe14l1ucs34" path="res://common/player/grab-item.wav" id="4_ujhar"]
 [ext_resource type="Script" uid="uid://bb64kdud5s1kv" path="res://common/minerals/mineral_properties.gd" id="4_uqyw5"]
+[ext_resource type="AudioStream" uid="uid://dpayv0ec6wpru" path="res://common/stations/sell_station/cha-ching.mp3" id="4_w3sq2"]
 [ext_resource type="Resource" uid="uid://dsda4airw872y" path="res://common/minerals/variants/rock/rock_properties.tres" id="5_6vwog"]
 [ext_resource type="Resource" uid="uid://bh2gk38qor7en" path="res://common/minerals/variants/crystal/crystal_properties.tres" id="6_w3sq2"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
@@ -23,7 +24,7 @@ random_pitch = 1.5
 streams_count = 1
 stream_0/stream = ExtResource("4_ujhar")
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "item_pickup_sound_player", "mineral_inventory")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "item_pickup_sound_player", "mineral_sell_player", "mineral_inventory", "money_and_upgrades")]
 collision_mask = 3
 script = ExtResource("1_dsdjy")
 camera = NodePath("Camera3D")
@@ -31,7 +32,9 @@ interact_icon = NodePath("UI/InteractIcon")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
 looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
 item_pickup_sound_player = NodePath("SoundPlayers/ItemPickupPlayer")
+mineral_sell_player = NodePath("SoundPlayers/MineralSellPlayer")
 mineral_inventory = NodePath("MineralInventory")
+money_and_upgrades = NodePath("MoneyAndUpgrades")
 
 [node name="Visor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51209706, -0.29277372)
@@ -63,6 +66,73 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MineralCount" type="Control" parent="UI"]
+anchors_preset = 0
+offset_left = 556.0
+offset_top = 304.0
+offset_right = 596.0
+offset_bottom = 344.0
+
+[node name="MineralCountTitle" type="Label" parent="UI/MineralCount"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 393.0
+offset_top = 281.0
+offset_right = 508.0
+offset_bottom = 304.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Mineral Count:"
+
+[node name="MineralCount" type="Label" parent="UI/MineralCount"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 516.0
+offset_top = 281.0
+offset_right = 556.0
+offset_bottom = 304.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "0"
+
+[node name="Money" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="MoneyTitle" type="Label" parent="UI/Money"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 115.0
+grow_vertical = 0
+text = "$"
+
+[node name="MoneyCount" type="Label" parent="UI/Money"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -23.0
+offset_right = 54.0
+grow_vertical = 0
+text = "0"
+
 [node name="InteractIcon" type="TextureRect" parent="UI"]
 visible = false
 layout_mode = 1
@@ -80,24 +150,14 @@ grow_vertical = 2
 texture = ExtResource("2_i15vv")
 expand_mode = 1
 
-[node name="MineralCount" type="Label" parent="UI"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "0"
-
 [node name="SoundPlayers" type="Node" parent="."]
 
 [node name="ItemPickupPlayer" type="AudioStreamPlayer" parent="SoundPlayers"]
 stream = SubResource("AudioStreamRandomizer_ujhar")
 pitch_scale = 15.0
+
+[node name="MineralSellPlayer" type="AudioStreamPlayer" parent="SoundPlayers"]
+stream = ExtResource("4_w3sq2")
 
 [node name="MineralInventory" type="Node" parent="." node_paths=PackedStringArray("mineral_ui")]
 script = ExtResource("3_f6svf")
@@ -105,9 +165,10 @@ _mineral_count_in_inventory = Dictionary[ExtResource("4_uqyw5"), int]({
 ExtResource("5_6vwog"): 0,
 ExtResource("6_w3sq2"): 0
 })
-mineral_ui = NodePath("../UI/MineralCount")
+mineral_ui = NodePath("../UI/MineralCount/MineralCount")
 metadata/_custom_type_script = "uid://csn0nbyl186f1"
 
-[node name="MoneyAndUpgrades" type="Node" parent="."]
+[node name="MoneyAndUpgrades" type="Node" parent="." node_paths=PackedStringArray("money_count_label")]
 script = ExtResource("8_6vwog")
+money_count_label = NodePath("../UI/Money/MoneyCount")
 metadata/_custom_type_script = "uid://b0b2fbddqdt1e"

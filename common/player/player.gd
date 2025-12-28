@@ -15,6 +15,7 @@ extends CharacterBody3D
 @export var looking_at_shapecast: ShapeCast3D
 
 @export var item_pickup_sound_player: AudioStreamPlayer
+@export var mineral_sell_player: AudioStreamPlayer
 
 @export_group("Inventory and Upgrades")
 @export var mineral_inventory: MineralInventory
@@ -65,9 +66,12 @@ func _physics_process(delta: float) -> void:
 		var looking_at_object = looking_at_ray.get_collider()
 		if looking_at_object is Mineral:
 			looking_at_object.queue_free()
-			#mineral_inventory.mineral_count += 1
 			mineral_inventory.add_mineral_to_inventory(looking_at_object)
 			item_pickup_sound_player.play()
+		if looking_at_object is SellStation:
+			money_and_upgrades.add_money(mineral_inventory.sum_mineral_sell_values())
+			mineral_inventory.sell_all_minerals()
+			mineral_sell_player.play()
 
 func _process(_delta: float) -> void:
 	var looking_at_object = looking_at_ray.get_collider()

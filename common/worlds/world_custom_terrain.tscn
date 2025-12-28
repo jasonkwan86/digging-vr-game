@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene load_steps=11 format=3 uid="uid://biu2ihc7v8hh6"]
 
+[ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/minerals/variants/rock/rock.tscn" id="4_c5o21"]
@@ -36,6 +37,9 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
 shape = SubResource("ConvexPolygonShape3D_lopip")
+
+[node name="SellStation" parent="Platform" instance=ExtResource("2_b8nul")]
+transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -6, 1, 0)
 
 [node name="Sandbox" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)

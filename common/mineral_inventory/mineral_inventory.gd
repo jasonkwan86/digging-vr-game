@@ -17,3 +17,12 @@ func add_mineral_to_inventory(mineral: Mineral) -> void:
 	
 func sum_mineral_counts() -> int:
 	return _mineral_count_in_inventory.values().reduce(func(accumulator, current_value): return accumulator + current_value)
+
+func sum_mineral_sell_values() -> int:
+	return _mineral_count_in_inventory.keys() \
+		.map(func(mineral_property: MineralProperties): return mineral_property.sell_value * _mineral_count_in_inventory[mineral_property]) \
+		.reduce(func(accumulator, current_value): return accumulator + current_value)
+
+func sell_all_minerals() -> void:
+	for mineral in _mineral_count_in_inventory:
+		_mineral_count_in_inventory[mineral] = 0

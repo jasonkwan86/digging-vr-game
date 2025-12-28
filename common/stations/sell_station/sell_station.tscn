@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://n6504e8nvkgq"]
+
+[ext_resource type="Script" uid="uid://v8skiq4kcxdw" path="res://common/stations/sell_station/sell_station.gd" id="1_t5m01"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcoao"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fcoao"]
+size = Vector3(2, 2, 2)
+
+[node name="SellStation" type="StaticBody3D"]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0)
+collision_layer = 15
+script = ExtResource("1_t5m01")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_fcoao")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_fcoao")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+pixel_size = 0.02
+text = "Sell Station
+(press e to sell)"

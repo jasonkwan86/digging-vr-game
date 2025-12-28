@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_jv6mr")
-mineral_name = "Rock"
-sell_value = 5
+mineral_name = "Crystal"
+sell_value = 10
 metadata/_custom_type_script = "uid://bb64kdud5s1kv"
