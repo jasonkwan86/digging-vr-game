@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 # TODO: Separate this out into PlayerMovementController and PlayerCameraController scripts and components
@@ -62,19 +63,14 @@ func _physics_process(delta: float) -> void:
 		if looking_at_object is ModifiableGround:
 			looking_at_object.remove_from(looking_at_ray.get_collision_point(), dig_radius, dig_strength)
 	
-	if Input.is_action_just_pressed("pickup_mineral"):
+	if Input.is_action_just_pressed("interact"):
+		# Could be buried item, sell/upgrade station or other
 		var looking_at_object = looking_at_ray.get_collider()
-		if looking_at_object is Mineral:
-			looking_at_object.queue_free()
-			mineral_inventory.add_mineral_to_inventory(looking_at_object)
-			item_pickup_sound_player.play()
-		if looking_at_object is SellStation:
-			money_and_upgrades.add_money(mineral_inventory.sum_mineral_sell_values())
-			mineral_inventory.sell_all_minerals()
-			mineral_sell_player.play()
+		if looking_at_object.has_method("interact"):
+			looking_at_object.interact(self)
 
 func _process(_delta: float) -> void:
 	var looking_at_object = looking_at_ray.get_collider()
-	if looking_at_object is Mineral:
-		(looking_at_object as Mineral).mineral_being_looked_at()
-	interact_icon.visible = looking_at_object is Mineral
+	if looking_at_object is BuriedItem:
+		(looking_at_object as BuriedItem).mineral_being_looked_at()
+	interact_icon.visible = looking_at_object is BuriedItem

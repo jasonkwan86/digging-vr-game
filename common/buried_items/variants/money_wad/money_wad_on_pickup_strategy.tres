@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MoneyWadOnPickupStrategy" load_steps=2 format=3 uid="uid://2cinjs8anc6q"]
+
+[ext_resource type="Script" uid="uid://c14pvldfejy7u" path="res://common/buried_items/variants/money_wad/money_wad_on_pickup_strategy.gd" id="1_gvugx"]
+
+[resource]
+script = ExtResource("1_gvugx")
+metadata/_custom_type_script = "uid://c14pvldfejy7u"

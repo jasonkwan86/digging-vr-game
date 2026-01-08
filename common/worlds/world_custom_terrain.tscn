@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene load_steps=12 format=3 uid="uid://biu2ihc7v8hh6"]
 
 [ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
-[ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/minerals/variants/rock/rock.tscn" id="4_c5o21"]
+[ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
-[ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/minerals/variants/crystal/crystal.tscn" id="5_fcoao"]
+[ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
+[ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lnkuo"]
 size = Vector2(20, 20)
@@ -70,22 +71,25 @@ mesh = SubResource("BoxMesh_lopip")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 33.5, -16, 32.5)
 mesh = SubResource("BoxMesh_lopip")
 
-[node name="Minerals" type="Node3D" parent="Sandbox"]
+[node name="BuriedItems" type="Node3D" parent="Sandbox"]
 
-[node name="Rock" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+[node name="Rock" parent="Sandbox/BuriedItems" instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -0.6388223, 0)
 
-[node name="Rock3" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+[node name="Rock3" parent="Sandbox/BuriedItems" instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 1)
 
-[node name="Rock2" parent="Sandbox/Minerals" instance=ExtResource("4_c5o21")]
+[node name="Rock2" parent="Sandbox/BuriedItems" instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -1, 0)
 
-[node name="Crystal" parent="Sandbox/Minerals" instance=ExtResource("5_fcoao")]
+[node name="Crystal" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.5648644, -0.9018705)
 
-[node name="Crystal2" parent="Sandbox/Minerals" instance=ExtResource("5_fcoao")]
+[node name="Crystal2" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.88079625, -0.3148049)
 
-[node name="Crystal3" parent="Sandbox/Minerals" instance=ExtResource("5_fcoao")]
+[node name="Crystal3" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.397354, -0.88079625, -0.3148049)
+
+[node name="MoneyWad" parent="Sandbox/BuriedItems" instance=ExtResource("7_qedbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9500885, -0.39527965, 0.46335125)

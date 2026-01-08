@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wad
+* source:	https://sketchfab.com/3d-models/wad-2c21f18251184d5091f7f03b429834ba
+* author:	thepariah6 (https://sketchfab.com/thepariah6)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wad" (https://sketchfab.com/3d-models/wad-2c21f18251184d5091f7f03b429834ba) by thepariah6 (https://sketchfab.com/thepariah6) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

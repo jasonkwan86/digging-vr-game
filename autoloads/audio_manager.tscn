@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://fdq81ebhmqdv"]
+
+[ext_resource type="Script" uid="uid://be54j0w7mqet0" path="res://autoloads/audio_manager.gd" id="1_alnp1"]
+[ext_resource type="AudioStream" uid="uid://cpfe14l1ucs34" path="res://common/player/grab-item.wav" id="2_xdfsh"]
+[ext_resource type="AudioStream" uid="uid://dpayv0ec6wpru" path="res://common/stations/sell_station/cha-ching.mp3" id="3_xdfsh"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0f8da"]
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("2_xdfsh")
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("item_pickup_player", "mineral_sell_player")]
+script = ExtResource("1_alnp1")
+item_pickup_player = NodePath("ItemPickupPlayer")
+mineral_sell_player = NodePath("MineralSellPlayer")
+
+[node name="ItemPickupPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_0f8da")
+pitch_scale = 15.0
+
+[node name="MineralSellPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xdfsh")

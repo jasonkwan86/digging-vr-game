@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c80hpgbwshdgs"]
+
+[ext_resource type="ArrayMesh" uid="uid://ctmg53pufmdxt" path="res://common/buried_items/variants/money_wad/money_wad_mesh.res" id="1_jp31t"]
+[ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/buried_items/buried_item.gd" id="1_l37tm"]
+[ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="2_ku3hl"]
+[ext_resource type="Resource" uid="uid://2cinjs8anc6q" path="res://common/buried_items/variants/money_wad/money_wad_on_pickup_strategy.tres" id="2_mgdpr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jp31t"]
+size = Vector3(0.5, 0.25, 0.063)
+
+[node name="MoneyWad" type="RigidBody3D" node_paths=PackedStringArray("mesh", "fall_detection_area")]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_l37tm")
+buried_item_on_pickup_strategy = ExtResource("2_mgdpr")
+mesh = NodePath("RigidBody3D")
+interactable_highlight = ExtResource("2_ku3hl")
+fall_detection_area = NodePath("FallDetectionArea")
+
+[node name="RigidBody3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0, 0, 0)
+mesh = ExtResource("1_jp31t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jp31t")
+
+[node name="FallDetectionArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea"]
+shape = SubResource("BoxShape3D_jp31t")

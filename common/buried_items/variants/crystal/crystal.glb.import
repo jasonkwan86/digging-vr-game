@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bp1o557n7jrb1"
-path="res://.godot/imported/crystal.glb-796f228a298872e5fce88c8461998646.scn"
+path="res://.godot/imported/crystal.glb-58ee2350f8d8d4db651a8d1444b8a9c3.scn"
 
 [deps]
 
-source_file="res://common/minerals/variants/crystal/crystal.glb"
-dest_files=["res://.godot/imported/crystal.glb-796f228a298872e5fce88c8461998646.scn"]
+source_file="res://common/buried_items/variants/crystal/crystal.glb"
+dest_files=["res://.godot/imported/crystal.glb-58ee2350f8d8d4db651a8d1444b8a9c3.scn"]
 
 [params]
 
@@ -45,7 +45,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://common/minerals/variants/crystal/crystal_mesh.res",
+"save_to_file/fallback_path": "res://common/buried_items/variants/crystal/crystal_mesh.res",
 "save_to_file/path": "uid://cyhtrnvv5hf0t"
 }
 }

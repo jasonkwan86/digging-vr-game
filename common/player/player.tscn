@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=13 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
-[ext_resource type="AudioStream" uid="uid://cpfe14l1ucs34" path="res://common/player/grab-item.wav" id="4_ujhar"]
-[ext_resource type="Script" uid="uid://bb64kdud5s1kv" path="res://common/minerals/mineral_properties.gd" id="4_uqyw5"]
 [ext_resource type="AudioStream" uid="uid://dpayv0ec6wpru" path="res://common/stations/sell_station/cha-ching.mp3" id="4_w3sq2"]
-[ext_resource type="Resource" uid="uid://dsda4airw872y" path="res://common/minerals/variants/rock/rock_properties.tres" id="5_6vwog"]
-[ext_resource type="Resource" uid="uid://bh2gk38qor7en" path="res://common/minerals/variants/crystal/crystal_properties.tres" id="6_w3sq2"]
+[ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="5_6vwog"]
+[ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="6_w3sq2"]
+[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/crystal/crystal_on_pickup_strategy.tres" id="7_uslh8"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dsdjy"]
@@ -20,19 +19,13 @@ size = Vector3(1, 0.275, 0.64)
 [sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
 radius = 1.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujhar"]
-random_pitch = 1.5
-streams_count = 1
-stream_0/stream = ExtResource("4_ujhar")
-
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "item_pickup_sound_player", "mineral_sell_player", "mineral_inventory", "money_and_upgrades")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_sell_player", "mineral_inventory", "money_and_upgrades")]
 collision_mask = 3
 script = ExtResource("1_dsdjy")
 camera = NodePath("Camera3D")
 interact_icon = NodePath("UI/InteractIcon")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
 looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
-item_pickup_sound_player = NodePath("SoundPlayers/ItemPickupPlayer")
 mineral_sell_player = NodePath("SoundPlayers/MineralSellPlayer")
 mineral_inventory = NodePath("MineralInventory")
 money_and_upgrades = NodePath("MoneyAndUpgrades")
@@ -153,18 +146,14 @@ expand_mode = 1
 
 [node name="SoundPlayers" type="Node" parent="."]
 
-[node name="ItemPickupPlayer" type="AudioStreamPlayer" parent="SoundPlayers"]
-stream = SubResource("AudioStreamRandomizer_ujhar")
-pitch_scale = 15.0
-
 [node name="MineralSellPlayer" type="AudioStreamPlayer" parent="SoundPlayers"]
 stream = ExtResource("4_w3sq2")
 
 [node name="MineralInventory" type="Node" parent="." node_paths=PackedStringArray("mineral_ui")]
 script = ExtResource("3_f6svf")
-_mineral_count_in_inventory = Dictionary[ExtResource("4_uqyw5"), int]({
-ExtResource("5_6vwog"): 0,
-ExtResource("6_w3sq2"): 0
+_mineral_count_in_inventory = Dictionary[ExtResource("5_6vwog"), int]({
+ExtResource("6_w3sq2"): 0,
+ExtResource("7_uslh8"): 0
 })
 mineral_ui = NodePath("../UI/MineralCount/MineralCount")
 metadata/_custom_type_script = "uid://csn0nbyl186f1"

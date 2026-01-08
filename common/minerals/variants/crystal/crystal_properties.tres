@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="MineralProperties" load_steps=2 format=3 uid="uid://bh2gk38qor7en"]
-
-[ext_resource type="Script" uid="uid://bb64kdud5s1kv" path="res://common/minerals/mineral_properties.gd" id="1_jv6mr"]
-
-[resource]
-script = ExtResource("1_jv6mr")
-mineral_name = "Crystal"
-sell_value = 10
-metadata/_custom_type_script = "uid://bb64kdud5s1kv"

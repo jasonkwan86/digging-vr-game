@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://h8piwhhebxl3"
-path="res://.godot/imported/rock.glb-39d2ca9d183e708ec294573f9042e104.scn"
+uid="uid://b0g2i8g4ujnnd"
+path="res://.godot/imported/scene.gltf-ab52e9c801f639f115fa0e8ed6814472.scn"
 
 [deps]
 
-source_file="res://common/minerals/variants/rock/rock.glb"
-dest_files=["res://.godot/imported/rock.glb-39d2ca9d183e708ec294573f9042e104.scn"]
+source_file="res://common/buried_items/variants/money_wad/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-ab52e9c801f639f115fa0e8ed6814472.scn"]
 
 [params]
 
@@ -38,21 +38,15 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"materials": {
-"@MATERIAL:0": {
-"use_external/enabled": true,
-"use_external/path": "uid://yptw6h5cmsi1"
-}
-},
 "meshes": {
-"rock_Cube": {
+"Sketchfab_Scene_Wad_Wad_0": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://common/minerals/variants/rock/rock_mesh.res",
-"save_to_file/path": "uid://bohca1sq08w0w"
+"save_to_file/fallback_path": "res://common/buried_items/variants/money_wad/money_wad_mesh.res",
+"save_to_file/path": "uid://ctmg53pufmdxt"
 }
 }
 }
