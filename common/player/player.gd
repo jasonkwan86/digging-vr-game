@@ -14,9 +14,7 @@ extends CharacterBody3D
 @export var dig_strength: float = 1
 @export var looking_at_ray: RayCast3D
 @export var looking_at_shapecast: ShapeCast3D
-
-@export var item_pickup_sound_player: AudioStreamPlayer
-@export var mineral_sell_player: AudioStreamPlayer
+@export var mining_particles: PackedScene
 
 @export_group("Inventory and Upgrades")
 @export var mineral_inventory: MineralInventory
@@ -62,11 +60,13 @@ func _physics_process(delta: float) -> void:
 		var looking_at_object = looking_at_ray.get_collider()
 		if looking_at_object is ModifiableGround:
 			looking_at_object.remove_from(looking_at_ray.get_collision_point(), dig_radius, dig_strength)
-	
+			var instantiated_mining_particles: Node3D = mining_particles.instantiate()
+			get_tree().root.add_child(instantiated_mining_particles)
+			instantiated_mining_particles.global_position = looking_at_ray.get_collision_point()
 	if Input.is_action_just_pressed("interact"):
 		# Could be buried item, sell/upgrade station or other
 		var looking_at_object = looking_at_ray.get_collider()
-		if looking_at_object.has_method("interact"):
+		if looking_at_object != null and looking_at_object.has_method("interact"):
 			looking_at_object.interact(self)
 
 func _process(_delta: float) -> void:

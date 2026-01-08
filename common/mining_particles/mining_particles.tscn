@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlragatc5qr2g"]
+
+[ext_resource type="Script" uid="uid://yofvkao8s5vi" path="res://common/mining_particles/mining_particles.gd" id="1_swgyo"]
+
+[sub_resource type="Curve" id="Curve_lkc02"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4166667, 0.52808994), 0.0, 0.0, 0, 0, Vector2(0.93333334, 0.123595595), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_swgyo"]
+curve = SubResource("Curve_lkc02")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lkc02"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.55
+scale_curve = SubResource("CurveTexture_swgyo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkc02"]
+albedo_color = Color(0.5411765, 0.5411765, 0.5058824, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lkc02"]
+material = SubResource("StandardMaterial3D_lkc02")
+radius = 0.25
+height = 0.5
+
+[node name="MiningParticles" type="GPUParticles3D"]
+emitting = false
+amount = 50
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_lkc02")
+draw_pass_1 = SubResource("SphereMesh_lkc02")
+script = ExtResource("1_swgyo")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
