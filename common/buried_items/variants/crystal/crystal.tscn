@@ -10,6 +10,7 @@
 [node name="Crystal" type="RigidBody3D" node_paths=PackedStringArray("mesh", "fall_detection_area")]
 collision_layer = 4
 collision_mask = 6
+can_sleep = false
 script = ExtResource("1_r1bgv")
 buried_item_on_pickup_strategy = ExtResource("2_i18y7")
 mesh = NodePath("MeshInstance3D")

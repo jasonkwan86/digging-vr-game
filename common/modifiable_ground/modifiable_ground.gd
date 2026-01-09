@@ -289,6 +289,7 @@ const EDGES = [
 
 const DEFAULT_INSIDE_MESH = -1
 
+@export var buried_items_placer: BuriedItemsPlacer
 @export var dig_sound_player: AudioStreamPlayer
 
 @export_group("Mesh Properties")
@@ -310,6 +311,8 @@ var voxel_grid: VoxelGrid
 
 func _ready() -> void:
 	generate()
+	if buried_items_placer != null:
+		buried_items_placer.place_buried_items(self)
 
 class VoxelGrid:
 	var data: PackedFloat32Array

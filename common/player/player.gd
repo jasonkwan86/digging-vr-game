@@ -63,6 +63,7 @@ func _physics_process(delta: float) -> void:
 			var instantiated_mining_particles: Node3D = mining_particles.instantiate()
 			get_tree().root.add_child(instantiated_mining_particles)
 			instantiated_mining_particles.global_position = looking_at_ray.get_collision_point()
+		
 	if Input.is_action_just_pressed("interact"):
 		# Could be buried item, sell/upgrade station or other
 		var looking_at_object = looking_at_ray.get_collider()

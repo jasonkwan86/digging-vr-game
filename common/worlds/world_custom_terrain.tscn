@@ -24,7 +24,8 @@ size = Vector3(40, 32, 1)
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.99919945, 0.01690878, -0.036260992, -1.2595006e-08, 0.9063079, 0.4226183, 0.040009618, 0.42227992, -0.9055822, 0, 5.995867, 0)
+transform = Transform3D(-0.9991994, 0.016908817, -0.036261104, -1.2595007e-08, 0.90630794, 0.4226183, 0.040009692, 0.4222799, -0.90558225, 0, 5.995867, 0)
+shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_mhjqk")]
 transform = Transform3D(-0.63579535, 0, -0.77185774, 0, 1, 0, 0.77185774, 0, -0.63579535, -1.4953645, 1, -1.3963597)

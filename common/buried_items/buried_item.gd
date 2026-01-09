@@ -1,7 +1,6 @@
 class_name BuriedItem
 extends RigidBody3D
 
-#@export var mineral_properties: MineralProperties
 @export var buried_item_on_pickup_strategy: BuriedItemOnPickupStrategy
 @export var mesh: MeshInstance3D
 @export var interactable_highlight: StandardMaterial3D

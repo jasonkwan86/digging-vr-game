@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene load_steps=12 format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="PackedScene" uid="uid://dlragatc5qr2g" path="res://common/mining_particles/mining_particles.tscn" id="2_6vwog"]
@@ -8,9 +8,6 @@
 [ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="6_w3sq2"]
 [ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/crystal/crystal_on_pickup_strategy.tres" id="7_uslh8"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_dsdjy"]
-size = Vector3(1, 0.275, 0.64)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d4thd"]
 
@@ -30,14 +27,11 @@ mining_particles = ExtResource("2_6vwog")
 mineral_inventory = NodePath("MineralInventory")
 money_and_upgrades = NodePath("MoneyAndUpgrades")
 
-[node name="Visor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51209706, -0.29277372)
-mesh = SubResource("BoxMesh_dsdjy")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_d4thd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_dsdjy")
 
 [node name="Camera3D" type="Camera3D" parent="."]
