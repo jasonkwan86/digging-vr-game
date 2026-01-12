@@ -6,6 +6,7 @@ Resources Used:
 - Grab [sound](https://freesound.org/people/1bob/sounds/651515/)
 - Selling minerals [sound](https://pixabay.com/sound-effects/cash-register-purchase-87313/)
 - Money wad [mesh and texture](https://sketchfab.com/3d-models/wad-2c21f18251184d5091f7f03b429834ba)
+- Wood log [mesh and texture](https://poly.pizza/m/L4E32Wee6C)
 
 Digging
 - [Stone](https://freesound.org/people/InspectorJ/sounds/420878/)

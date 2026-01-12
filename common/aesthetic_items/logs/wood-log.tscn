@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnhfm72f5dcqw"]
+
+[ext_resource type="PackedScene" uid="uid://cyj3fgbqgyy0n" path="res://common/aesthetic_items/logs/wood-log.glb" id="1_gw0c5"]
+
+[node name="WoodLog" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_gw0c5")]

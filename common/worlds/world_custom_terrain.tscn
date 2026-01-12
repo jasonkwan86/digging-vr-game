@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene load_steps=13 format=3 uid="uid://biu2ihc7v8hh6"]
 
 [ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
+[ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lnkuo"]
@@ -46,6 +47,160 @@ transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -6
 [node name="Sandbox" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 
+[node name="SandboxBarriers" type="Node3D" parent="Sandbox"]
+
+[node name="SandboxBarrier4" type="MeshInstance3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.5, -16, 12.5)
+mesh = SubResource("BoxMesh_lopip")
+skeleton = NodePath("../..")
+
+[node name="SandboxBarrier5" type="MeshInstance3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 53.5, -16, 12.5)
+mesh = SubResource("BoxMesh_lopip")
+skeleton = NodePath("../..")
+
+[node name="SandboxBarrier6" type="MeshInstance3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 33.5, -16, -7.5)
+mesh = SubResource("BoxMesh_lopip")
+skeleton = NodePath("../..")
+
+[node name="SandboxBarrier7" type="MeshInstance3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 33.5, -16, 32.5)
+mesh = SubResource("BoxMesh_lopip")
+skeleton = NodePath("../..")
+
+[node name="-ZWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -7.461055)
+
+[node name="WoodLog" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
+
+[node name="WoodLog2" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
+
+[node name="WoodLog3" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
+
+[node name="WoodLog4" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
+
+[node name="WoodLog5" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
+
+[node name="WoodLog6" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
+
+[node name="WoodLog7" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.206081, 0, 0)
+
+[node name="WoodLog8" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.022633, 0, 0)
+
+[node name="WoodLog9" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.883183, 0, 0)
+
+[node name="WoodLog10" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.771477, 0, 0)
+
+[node name="+ZWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 32.57123)
+
+[node name="WoodLog" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
+
+[node name="WoodLog2" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
+
+[node name="WoodLog3" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
+
+[node name="WoodLog4" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
+
+[node name="WoodLog5" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
+
+[node name="WoodLog6" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
+
+[node name="WoodLog7" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.206081, 0, 0)
+
+[node name="WoodLog8" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.022633, 0, 0)
+
+[node name="WoodLog9" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.883183, 0, 0)
+
+[node name="WoodLog10" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.883183, 0, 0)
+
+[node name="+XWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 53.321724, 1.9073486e-06, 29.791449)
+
+[node name="WoodLog" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
+
+[node name="WoodLog2" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
+
+[node name="WoodLog3" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
+
+[node name="WoodLog4" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
+
+[node name="WoodLog5" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
+
+[node name="WoodLog6" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
+
+[node name="WoodLog7" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.206081, 0, 0)
+
+[node name="WoodLog8" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.022633, 0, 0)
+
+[node name="WoodLog9" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.883183, 0, 0)
+
+[node name="WoodLog10" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.701187, 0, 0)
+
+[node name="-XWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.47929, 1.9073486e-06, 29.651323)
+
+[node name="WoodLog" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
+
+[node name="WoodLog2" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
+
+[node name="WoodLog3" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
+
+[node name="WoodLog4" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
+
+[node name="WoodLog5" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
+
+[node name="WoodLog6" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
+
+[node name="WoodLog7" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.206081, 0, 0)
+
+[node name="WoodLog8" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.022633, 0, 0)
+
+[node name="WoodLog9" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.883183, 0, 0)
+
+[node name="WoodLog10" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.726852, 0, 0)
+
 [node name="SandboxOrigin" type="Node3D" parent="Sandbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -31, -7)
 
@@ -55,22 +210,6 @@ WIDTH = 40
 
 [node name="ModifiableGroundStone" parent="Sandbox/SandboxOrigin" instance=ExtResource("4_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0)
-
-[node name="SandboxBarrier4" type="MeshInstance3D" parent="Sandbox"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.5, -16, 12.5)
-mesh = SubResource("BoxMesh_lopip")
-
-[node name="SandboxBarrier5" type="MeshInstance3D" parent="Sandbox"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 53.5, -16, 12.5)
-mesh = SubResource("BoxMesh_lopip")
-
-[node name="SandboxBarrier6" type="MeshInstance3D" parent="Sandbox"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 33.5, -16, -7.5)
-mesh = SubResource("BoxMesh_lopip")
-
-[node name="SandboxBarrier7" type="MeshInstance3D" parent="Sandbox"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 33.5, -16, 32.5)
-mesh = SubResource("BoxMesh_lopip")
 
 [node name="BuriedItems" type="Node3D" parent="Sandbox"]
 
