@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene load_steps=16 format=3 uid="uid://biu2ihc7v8hh6"]
 
 [ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
@@ -8,6 +8,24 @@
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycwdu"]
+sky_top_color = Color(0.29411766, 0.5803922, 0.54901963, 1)
+sky_horizon_color = Color(0.50980395, 0.67058825, 0.6862745, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_qwd8j"]
+sky_material = SubResource("ProceduralSkyMaterial_ycwdu")
+
+[sub_resource type="Environment" id="Environment_yoapk"]
+background_mode = 2
+sky = SubResource("Sky_qwd8j")
+tonemap_mode = 2
+glow_enabled = true
+glow_levels/2 = 1.0
+glow_levels/4 = 0.5
+glow_levels/5 = 0.2
+glow_blend_mode = 1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lnkuo"]
 size = Vector2(20, 20)
@@ -23,6 +41,9 @@ material = SubResource("StandardMaterial3D_c5o21")
 size = Vector3(40, 32, 1)
 
 [node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yoapk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.9991994, 0.016908817, -0.036261104, -1.2595007e-08, 0.90630794, 0.4226183, 0.040009692, 0.4222799, -0.90558225, 0, 5.995867, 0)
@@ -230,6 +251,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.88079625, -0.31
 
 [node name="Crystal3" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.397354, -0.88079625, -0.3148049)
+
+[node name="Crystal4" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.332928, -0.27291462, 1.8737214)
 
 [node name="MoneyWad" parent="Sandbox/BuriedItems" instance=ExtResource("7_qedbv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9500885, -0.39527965, 0.46335125)
