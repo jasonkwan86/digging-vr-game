@@ -311,7 +311,7 @@ var voxel_grid: VoxelGrid
 
 func _ready() -> void:
 	generate()
-	if buried_items_placer != null:
+	if !Engine.is_editor_hint() and buried_items_placer != null:
 		buried_items_placer.place_buried_items(self)
 
 class VoxelGrid:
