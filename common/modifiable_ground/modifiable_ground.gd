@@ -294,8 +294,8 @@ const DEFAULT_INSIDE_MESH = -1
 @export var underground_reflection_probe: ReflectionProbe
 
 @export_group("Mesh Properties")
-@export var HEIGHT:int = 8
-@export var WIDTH:int = 48
+@export var HEIGHT:int = 16
+@export var WIDTH:int = 24
 @export var ISO_LEVEL: float = 0.0
 @export var FLAT_SHADED: bool = true
 @export var MESH_INSTANCE: MeshInstance3D
@@ -341,7 +341,7 @@ class VoxelGrid:
 
 func generate():
 	underground_reflection_probe.position = Vector3(WIDTH/2.0, HEIGHT, WIDTH/2.0)
-	underground_reflection_probe.size = Vector3(WIDTH, HEIGHT, WIDTH)
+	underground_reflection_probe.size = Vector3(WIDTH + 4, HEIGHT, WIDTH + 4)
 	voxel_grid = VoxelGrid.new(WIDTH, HEIGHT)
 	#generate terrain
 	for x in range(0, voxel_grid.width):
