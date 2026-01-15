@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene load_steps=17 format=3 uid="uid://biu2ihc7v8hh6"]
 
+[ext_resource type="Texture2D" uid="uid://w7uw2q60ljih" path="res://common/aesthetic_items/sky/autumn_field_puresky_4k.exr" id="1_qwd8j"]
 [ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
@@ -9,13 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycwdu"]
-sky_top_color = Color(0.29411766, 0.5803922, 0.54901963, 1)
-sky_horizon_color = Color(0.50980395, 0.67058825, 0.6862745, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ycwdu"]
+panorama = ExtResource("1_qwd8j")
 
 [sub_resource type="Sky" id="Sky_qwd8j"]
-sky_material = SubResource("ProceduralSkyMaterial_ycwdu")
+sky_material = SubResource("PanoramaSkyMaterial_ycwdu")
 
 [sub_resource type="Environment" id="Environment_yoapk"]
 background_mode = 2
@@ -226,7 +225,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.726852, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -31, -7)
 
 [node name="ModifiableGroundSand" parent="Sandbox/SandboxOrigin" instance=ExtResource("2_lopip")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+HEIGHT = 16
 WIDTH = 40
 
 [node name="ModifiableGroundStone" parent="Sandbox/SandboxOrigin" instance=ExtResource("4_fcoao")]

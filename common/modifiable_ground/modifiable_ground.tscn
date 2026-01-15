@@ -41,3 +41,8 @@ shape = SubResource("ConcavePolygonShape3D_g4uwb")
 
 [node name="DigSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_g4uwb")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815132, 0, 9.581879)
+size = Vector3(20, 40, 20)
+ambient_mode = 2

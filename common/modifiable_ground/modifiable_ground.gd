@@ -291,6 +291,7 @@ const DEFAULT_INSIDE_MESH = -1
 
 @export var buried_items_placer: BuriedItemsPlacer
 @export var dig_sound_player: AudioStreamPlayer
+@export var underground_reflection_probe: ReflectionProbe
 
 @export_group("Mesh Properties")
 @export var HEIGHT:int = 8
@@ -339,6 +340,8 @@ class VoxelGrid:
 		self.data[_get_index(x, y, z)] += value
 
 func generate():
+	underground_reflection_probe.position = Vector3(WIDTH/2.0, HEIGHT, WIDTH/2.0)
+	underground_reflection_probe.size = Vector3(WIDTH, HEIGHT, WIDTH)
 	voxel_grid = VoxelGrid.new(WIDTH, HEIGHT)
 	#generate terrain
 	for x in range(0, voxel_grid.width):
