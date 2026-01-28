@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dj8jggnky2vi3"]
+[gd_scene format=3 uid="uid://dj8jggnky2vi3"]
 
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="PackedScene" uid="uid://dlragatc5qr2g" path="res://common/mining_particles/mining_particles.tscn" id="2_6vwog"]
@@ -16,7 +16,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
 radius = 1.0
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
+[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
 collision_mask = 3
 script = ExtResource("1_dsdjy")
 camera = NodePath("Camera3D")
@@ -27,26 +27,26 @@ mining_particles = ExtResource("2_6vwog")
 mineral_inventory = NodePath("MineralInventory")
 money_and_upgrades = NodePath("MoneyAndUpgrades")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=749104009]
 shape = SubResource("CapsuleShape3D_d4thd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1270694017]
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_dsdjy")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1829805524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45847714, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1698349799]
 target_position = Vector3(0, 0, -5)
 collision_mask = 6
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="Camera3D"]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Camera3D" unique_id=1163185636]
 shape = SubResource("SphereShape3D_dsdjy")
 target_position = Vector3(0, 0, -5)
 collision_mask = 4
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." unique_id=224900956]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,14 +54,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MineralCount" type="Control" parent="UI"]
+[node name="MineralCount" type="Control" parent="UI" unique_id=400477705]
 anchors_preset = 0
 offset_left = 556.0
 offset_top = 304.0
 offset_right = 596.0
 offset_bottom = 344.0
 
-[node name="MineralCountTitle" type="Label" parent="UI/MineralCount"]
+[node name="MineralCountTitle" type="Label" parent="UI/MineralCount" unique_id=1955719788]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -76,7 +76,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Mineral Count:"
 
-[node name="MineralCount" type="Label" parent="UI/MineralCount"]
+[node name="MineralCount" type="Label" parent="UI/MineralCount" unique_id=81197056]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -91,7 +91,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "0"
 
-[node name="Money" type="Control" parent="UI"]
+[node name="Money" type="Control" parent="UI" unique_id=1280294273]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -100,7 +100,7 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 
-[node name="MoneyTitle" type="Label" parent="UI/Money"]
+[node name="MoneyTitle" type="Label" parent="UI/Money" unique_id=1641741640]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -110,7 +110,7 @@ offset_right = 115.0
 grow_vertical = 0
 text = "$"
 
-[node name="MoneyCount" type="Label" parent="UI/Money"]
+[node name="MoneyCount" type="Label" parent="UI/Money" unique_id=1353697144]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -121,7 +121,50 @@ offset_right = 54.0
 grow_vertical = 0
 text = "0"
 
-[node name="InteractIcon" type="TextureRect" parent="UI"]
+[node name="Tool" type="Control" parent="UI" unique_id=1201867882]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ToolName" type="Label" parent="UI/Tool" unique_id=732673177]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hands"
+
+[node name="ConsumableCount" type="Control" parent="UI" unique_id=2115965314]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ConsumableCount" type="Label" parent="UI/ConsumableCount" unique_id=822058321]
+layout_mode = 1
+offset_right = 127.0
+offset_bottom = 127.0
+text = "Rope: 0
+Rockets: 0
+Bombs: 0
+Haste Potions: 0
+Greed Potions: 0"
+
+[node name="InteractIcon" type="TextureRect" parent="UI" unique_id=910955173]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -138,16 +181,19 @@ grow_vertical = 2
 texture = ExtResource("2_i15vv")
 expand_mode = 1
 
-[node name="MineralInventory" type="Node" parent="." node_paths=PackedStringArray("mineral_ui")]
+[node name="MineralInventory" type="Node" parent="." unique_id=1201255063 node_paths=PackedStringArray("mineral_title", "mineral_ui")]
 script = ExtResource("3_f6svf")
 _mineral_count_in_inventory = Dictionary[ExtResource("5_6vwog"), int]({
 ExtResource("6_w3sq2"): 0,
 ExtResource("7_uslh8"): 0
 })
+mineral_title = NodePath("../UI/MineralCount/MineralCountTitle")
 mineral_ui = NodePath("../UI/MineralCount/MineralCount")
 metadata/_custom_type_script = "uid://csn0nbyl186f1"
 
-[node name="MoneyAndUpgrades" type="Node" parent="." node_paths=PackedStringArray("money_count_label")]
+[node name="MoneyAndUpgrades" type="Node" parent="." unique_id=817016602 node_paths=PackedStringArray("money_count_label", "tool_label", "consumable_count_label")]
 script = ExtResource("8_6vwog")
 money_count_label = NodePath("../UI/Money/MoneyCount")
+tool_label = NodePath("../UI/Tool/ToolName")
+consumable_count_label = NodePath("../UI/ConsumableCount/ConsumableCount")
 metadata/_custom_type_script = "uid://b0b2fbddqdt1e"

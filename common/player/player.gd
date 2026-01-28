@@ -10,8 +10,11 @@ extends CharacterBody3D
 
 @export_group("Voxel Interactions")
 @export var dig_reach: float = 3
-@export var dig_radius: int = 1
+@export var dig_radius: float = 1
 @export var dig_strength: float = 1
+@export var dig_speed: float = 1
+var dig_cooldown: float = 0
+@export var bag_size = 5
 @export var looking_at_ray: RayCast3D
 @export var looking_at_shapecast: ShapeCast3D
 @export var mining_particles: PackedScene
@@ -20,10 +23,13 @@ extends CharacterBody3D
 @export var mineral_inventory: MineralInventory
 @export var money_and_upgrades: MoneyAndUpgrades
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+var speed = 5.0
+var jump_velocity = 4.5
 
 func _ready() -> void:
+	create_look_ray()
+
+func create_look_ray() -> void:
 	var dig_reach_position: Vector3 = dig_reach * Vector3.FORWARD
 	looking_at_ray.target_position = dig_reach_position
 	looking_at_shapecast.target_position = dig_reach_position
@@ -41,37 +47,59 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("dig"):
-		var looking_at_object = looking_at_ray.get_collider()
-		if looking_at_object is ModifiableGround:
-			looking_at_object.remove_from(looking_at_ray.get_collision_point(), dig_radius, dig_strength)
-			var instantiated_mining_particles: Node3D = mining_particles.instantiate()
-			get_tree().root.add_child(instantiated_mining_particles)
-			instantiated_mining_particles.global_position = looking_at_ray.get_collision_point()
+		if money_and_upgrades.current_tool == 0:
+			dig(0.75)
+		elif money_and_upgrades.current_tool == 1:
+			dig(1)
+	
+	if Input.is_action_pressed("dig") and money_and_upgrades.current_tool == 2 and dig_cooldown <= 0:
+		dig(1)
+		dig_cooldown = 1/dig_speed
+		
+	if dig_cooldown > 0:
+		dig_cooldown -= delta
 		
 	if Input.is_action_just_pressed("interact"):
 		# Could be buried item, sell/upgrade station or other
 		var looking_at_object = looking_at_ray.get_collider()
 		if looking_at_object != null and looking_at_object.has_method("interact"):
 			looking_at_object.interact(self)
+			
+	if Input.is_action_just_pressed("cycle_tool_left"):
+		money_and_upgrades.next_tool(-1)
+	
+	if Input.is_action_just_pressed("cycle_tool_right"):
+		money_and_upgrades.next_tool(1)
 
 func _process(_delta: float) -> void:
 	var looking_at_object = looking_at_ray.get_collider()
 	if looking_at_object is BuriedItem:
 		(looking_at_object as BuriedItem).mineral_being_looked_at()
-	interact_icon.visible = looking_at_object is BuriedItem
+	interact_icon.visible = (looking_at_object is BuriedItem or looking_at_object is SellStation or looking_at_object is ShopItem)
+	
+func dig(size_mod: float) -> void:
+	var looking_at_object = looking_at_ray.get_collider()
+	if looking_at_object is ModifiableGround:
+		looking_at_object.remove_from(looking_at_ray.get_collision_point(), dig_radius*size_mod, dig_strength)
+		var instantiated_mining_particles: Node3D = mining_particles.instantiate()
+		get_tree().root.add_child(instantiated_mining_particles)
+		instantiated_mining_particles.global_position = looking_at_ray.get_collision_point()
+
+func shoot() -> void:
+	pass # create and launch the rocket
