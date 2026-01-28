@@ -27,5 +27,9 @@ func mineral_being_looked_at():
 	is_being_looked_at_this_frame = true
 
 func interact(player: Player):
-	buried_item_on_pickup_strategy.execute(player)
-	queue_free()
+	if player.mineral_inventory.sum_mineral_counts() < player.bag_size:
+		buried_item_on_pickup_strategy.execute(player)
+		queue_free()
+	
+	if player.mineral_inventory.sum_mineral_counts() == player.bag_size:
+		player.mineral_inventory.change_label_colour(Color.RED)
