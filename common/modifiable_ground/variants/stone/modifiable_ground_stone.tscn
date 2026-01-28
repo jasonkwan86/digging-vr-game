@@ -47,7 +47,7 @@ mesh = SubResource("ArrayMesh_jvxqk")
 shape = SubResource("ConcavePolygonShape3D_hxc7y")
 
 [node name="ReflectionProbe" parent="." instance=ExtResource("2_jvxqk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 12)
 size = Vector3(28, 16, 28)
 
 [node name="BuriedItemsPlacer" type="Node" parent="."]

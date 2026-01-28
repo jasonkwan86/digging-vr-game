@@ -340,7 +340,7 @@ class VoxelGrid:
 		self.data[_get_index(x, y, z)] += value
 
 func generate():
-	underground_reflection_probe.position = Vector3(WIDTH/2.0, HEIGHT, WIDTH/2.0)
+	underground_reflection_probe.position = Vector3(WIDTH/2.0, HEIGHT/2.0, WIDTH/2.0)
 	underground_reflection_probe.size = Vector3(WIDTH + 4, HEIGHT, WIDTH + 4)
 	voxel_grid = VoxelGrid.new(WIDTH, HEIGHT)
 	#generate terrain

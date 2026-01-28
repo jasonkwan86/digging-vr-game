@@ -45,7 +45,7 @@ mesh = SubResource("ArrayMesh_80ip2")
 shape = SubResource("ConcavePolygonShape3D_2hr54")
 
 [node name="ReflectionProbe" parent="." instance=ExtResource("3_80ip2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 12)
 size = Vector3(28, 16, 28)
 
 [node name="DigSoundPlayer" type="AudioStreamPlayer" parent="."]
