@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d31fr7y3dqch0"]
+
+[ext_resource type="Script" uid="uid://dmxs78dcsp0x8" path="res://common/stations/merchant/shopitem.gd" id="1_ouh8b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_topci"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i2vmd"]
+
+[node name="ShopItem" type="StaticBody3D"]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0)
+collision_layer = 15
+script = ExtResource("1_ouh8b")
+
+[node name="ShopItemBox" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("BoxShape3D_topci")
+
+[node name="ShopItemMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("BoxMesh_i2vmd")
+
+[node name="ShopItemLabel" type="Label3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.4, 0.040000003)
+text = "ShopItem"
