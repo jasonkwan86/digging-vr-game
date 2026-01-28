@@ -1,11 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
-# TODO: Separate this out into PlayerMovementController and PlayerCameraController scripts and components
-
 @export_group("Player Controls")
-@export var camera: Camera3D
-@export var mouse_sensitivity = 0.002
 @export var interact_icon: Control
 
 @export_group("Voxel Interactions")
@@ -23,9 +19,6 @@ var dig_cooldown: float = 0
 @export var mineral_inventory: MineralInventory
 @export var money_and_upgrades: MoneyAndUpgrades
 
-var speed = 5.0
-var jump_velocity = 4.5
-
 func _ready() -> void:
 	create_look_ray()
 
@@ -34,34 +27,7 @@ func create_look_ray() -> void:
 	looking_at_ray.target_position = dig_reach_position
 	looking_at_shapecast.target_position = dig_reach_position
 
-func _input(event):
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		camera.rotate_x(-event.relative.y * mouse_sensitivity)
-		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(90), deg_to_rad(90))
-
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_velocity
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
-
-	move_and_slide()
-	
 	if Input.is_action_just_pressed("dig"):
 		if money_and_upgrades.current_tool == 0:
 			dig(0.75)

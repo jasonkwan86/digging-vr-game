@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="6_w3sq2"]
 [ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/crystal/crystal_on_pickup_strategy.tres" id="7_uslh8"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
+[ext_resource type="Script" uid="uid://u6uii8jv5bit" path="res://common/player/camera_and_movement_controller/player_camera_and_movement_controller.gd" id="9_w3sq2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d4thd"]
 
@@ -16,10 +17,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
 radius = 1.0
 
-[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("camera", "interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
+[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
 collision_mask = 3
 script = ExtResource("1_dsdjy")
-camera = NodePath("Camera3D")
 interact_icon = NodePath("UI/InteractIcon")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
 looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
@@ -197,3 +197,9 @@ money_count_label = NodePath("../UI/Money/MoneyCount")
 tool_label = NodePath("../UI/Tool/ToolName")
 consumable_count_label = NodePath("../UI/ConsumableCount/ConsumableCount")
 metadata/_custom_type_script = "uid://b0b2fbddqdt1e"
+
+[node name="PlayerCameraAndMovementController" type="Node" parent="." unique_id=1447710607 node_paths=PackedStringArray("player", "camera")]
+script = ExtResource("9_w3sq2")
+player = NodePath("..")
+camera = NodePath("../Camera3D")
+metadata/_custom_type_script = "uid://u6uii8jv5bit"
