@@ -3,6 +3,7 @@ extends Node
 
 @export var _mineral_count_in_inventory: Dictionary[MineralOnPickupStrategy, int]
 
+@export var mineral_title: Label
 @export var mineral_ui: Label
 
 var mineral_count: int:
@@ -25,3 +26,8 @@ func sum_mineral_sell_values() -> int:
 func sell_all_minerals() -> void:
 	for mineral in _mineral_count_in_inventory:
 		_mineral_count_in_inventory[mineral] = 0
+	mineral_ui.text = str(sum_mineral_counts())
+
+func change_label_colour(colour: Color):
+	mineral_title.set("theme_override_colors/font_color", colour)
+	mineral_ui.set("theme_override_colors/font_color", colour)
