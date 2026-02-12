@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://da7k0yn0qbxo7"]
+
+[ext_resource type="Material" uid="uid://wf383fmv0h55" path="res://common/aesthetic_items/wood_planks/Wood049_1K-JPG.tres" id="1_8cnw6"]
+[ext_resource type="Script" uid="uid://brp04y20nu7s1" path="res://common/aesthetic_items/wood_planks/wood_plank.gd" id="1_wgjw2"]
+[ext_resource type="Shape3D" uid="uid://bey6nk6vpu4hg" path="res://common/aesthetic_items/wood_planks/plank_collider_shape.tres" id="2_cccew"]
+[ext_resource type="BoxMesh" uid="uid://bau1j41hpdn0j" path="res://common/aesthetic_items/wood_planks/plank_mesh.tres" id="4_umhaa"]
+
+[node name="WoodPlank" type="StaticBody3D" unique_id=1925335567]
+script = ExtResource("1_wgjw2")
+plank_mesh = ExtResource("4_umhaa")
+plank_collider_shape = ExtResource("2_cccew")
+
+[node name="TopPlank" type="MeshInstance3D" parent="." unique_id=573037613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22211957, 0)
+material_override = ExtResource("1_8cnw6")
+mesh = ExtResource("4_umhaa")
+
+[node name="BottomPlank" type="MeshInstance3D" parent="." unique_id=1372833276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3249712, 0)
+material_override = ExtResource("1_8cnw6")
+mesh = ExtResource("4_umhaa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=864003337]
+shape = ExtResource("2_cccew")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bp3ei6jprolla"]
+
+[ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="1_ykjbm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ykjbm"]
+size = Vector3(8, 5, 1)
+
+[node name="Hedge" type="StaticBody3D" unique_id=796073412]
+
+[node name="Sketchfab_Scene" parent="." unique_id=142555675 instance=ExtResource("1_ykjbm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=352881681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_ykjbm")

@@ -1,15 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://biu2ihc7v8hh6"]
+[gd_scene format=3 uid="uid://biu2ihc7v8hh6"]
 
 [ext_resource type="Texture2D" uid="uid://w7uw2q60ljih" path="res://common/aesthetic_items/sky/autumn_field_puresky_4k.exr" id="1_qwd8j"]
 [ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
+[ext_resource type="PackedScene" uid="uid://f16gjq71jj15" path="res://common/aesthetic_items/fence/fence.fbx" id="3_b540t"]
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
-[ext_resource type="PackedScene" uid="uid://6aa7b6f75bam" path="res://common/aesthetic_items/sandbox_barrier/sandbox_barrier.tscn" id="4_yoapk"]
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
+[ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
+[ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="15_xnylg"]
+[ext_resource type="PackedScene" uid="uid://bcn0f3ogmw8cx" path="res://common/aesthetic_items/bush/scene.gltf" id="16_k1rsi"]
+[ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="18_w7o82"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ycwdu"]
 panorama = ExtResource("1_qwd8j")
@@ -25,171 +29,611 @@ glow_enabled = true
 glow_levels/2 = 1.0
 glow_levels/4 = 0.5
 glow_levels/5 = 0.2
-glow_blend_mode = 1
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lnkuo"]
-size = Vector2(20, 20)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b540t"]
+load_path = "res://.godot/imported/Asphalt031_1K-JPG_Color.jpg-9ea6721219a5239a6d8dbbba00bc51c6.s3tc.ctex"
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lopip"]
-points = PackedVector3Array(10.154754, 0.15866803, 10.154754, -10.154754, -0.15866803, -10.154754, -10.154754, 0.15866803, -10.154754, 10.154754, -0.15866803, -10.154754, -10.154754, -0.15866803, 10.154754, -10.154754, 0.15866803, 10.154754, 10.154754, 0.15866803, -10.154754, 10.154754, -0.15866803, 10.154754)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xnylg"]
+load_path = "res://.godot/imported/Asphalt031_1K-JPG_AmbientOcclusion.jpg-f41162d8f1fe0609b4d55d394a16953f.s3tc.ctex"
 
-[node name="World" type="Node3D"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k1rsi"]
+load_path = "res://.godot/imported/Asphalt031_1K-JPG_Displacement.jpg-421db3471c0d1532c78518ece0f266f7.s3tc.ctex"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8fyy"]
+load_path = "res://.godot/imported/Asphalt031_1K-JPG_NormalGL.jpg-8eff987bf07ebdbb50dfc9eb0acdd9ba.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6jyhs"]
+load_path = "res://.godot/imported/Asphalt031_1K-JPG_Roughness.jpg-cb77373589c430730b53b614384a4fbd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_katq7"]
+albedo_texture = SubResource("CompressedTexture2D_b540t")
+roughness_texture = SubResource("CompressedTexture2D_6jyhs")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_e8fyy")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_xnylg")
+ao_texture_channel = 4
+heightmap_scale = 1.0
+heightmap_texture = SubResource("CompressedTexture2D_k1rsi")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xnylg"]
+size = Vector3(9.145, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b540t"]
+size = Vector3(9.145, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k1rsi"]
+size = Vector3(7.87, 4.425, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgqxm"]
+size = Vector3(7.87, 4.425, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_solpo"]
+size = Vector3(7.87, 4.425, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_katq7"]
+size = Vector3(9.665, 4.425, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t4aas"]
+size = Vector3(9.665, 4.425, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e8fyy"]
+size = Vector3(3.03, 4.425, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rtvx"]
+size = Vector3(3.03, 4.425, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7o82"]
+size = Vector3(3.03, 4.425, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6jyhs"]
+size = Vector3(8, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3bqw"]
+size = Vector3(8, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_veg8t"]
+size = Vector3(6.835, 6.77, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b540t"]
+size = Vector3(1, 5.07, 18.99)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e8fyy"]
+size = Vector3(1, 5.07, 18.99)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1a078"]
+size = Vector3(1, 5.07, 3.845)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jyhs"]
+size = Vector3(1, 5.07, 3.845)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2q5tt"]
+size = Vector3(1, 5.07, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_katq7"]
+size = Vector3(1, 5.07, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w7o82"]
+size = Vector3(7.54, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_veg8t"]
+size = Vector3(7.54, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1a078"]
+size = Vector3(7.54, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnylg"]
+size = Vector3(34, 7.39, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1rsi"]
+size = Vector3(1, 5, 4.715)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2q5tt"]
+size = Vector3(1, 5, 7.98)
+
+[node name="World" type="Node3D" unique_id=1504092021]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=136828878]
 environment = SubResource("Environment_yoapk")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.9991994, 0.016908817, -0.036261104, -1.2595007e-08, 0.90630794, 0.4226183, 0.040009692, 0.4222799, -0.90558225, 0, 5.995867, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1075585349]
+transform = Transform3D(0.8526403, 0.42271027, -0.30711696, 0, 0.5877853, 0.8090171, 0.5224986, -0.68980044, 0.5011694, 0, 5.995867, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("2_mhjqk")]
-transform = Transform3D(-0.63579535, 0, -0.77185774, 0, 1, 0, 0.77185774, 0, -0.63579535, -1.4953645, 1, -1.3963597)
+[node name="Backyard" type="Node3D" parent="." unique_id=288610247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.656197, 0, -19.284483)
 
-[node name="Platform" type="StaticBody3D" parent="."]
-collision_layer = 2
+[node name="SandboxSurrounding" type="StaticBody3D" parent="Backyard" unique_id=250653772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
-mesh = SubResource("PlaneMesh_lnkuo")
-skeleton = NodePath("../..")
+[node name="Fences" type="Node3D" parent="Backyard/SandboxSurrounding" unique_id=1708403426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
-shape = SubResource("ConvexPolygonShape3D_lopip")
+[node name="-z_fences" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=1327443299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.80682087, -4)
 
-[node name="SellStation" parent="Platform" instance=ExtResource("2_b8nul")]
-transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -6, 1, 0)
+[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=679320704 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
 
-[node name="Sandbox" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+[node name="fence11" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=669603409 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.723143, 0.5, 2.901146)
 
-[node name="SandboxBarriers" type="Node3D" parent="Sandbox"]
+[node name="fence12" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=841092473 instance=ExtResource("3_b540t")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.416186, 0.5, 6.06394)
 
-[node name="SandboxBarrier" parent="Sandbox/SandboxBarriers" instance=ExtResource("4_yoapk")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.5, -16, 16.5)
+[node name="fence13" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1143015450 instance=ExtResource("3_b540t")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.416186, 0.5, 9.44612)
 
-[node name="SandboxBarrier2" parent="Sandbox/SandboxBarriers" instance=ExtResource("4_yoapk")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 37.5, -16, 4.5)
+[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=611825873 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.301016, 0.5, 2.901146)
 
-[node name="SandboxBarrier3" parent="Sandbox/SandboxBarriers" instance=ExtResource("4_yoapk")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.5, -16, -7.5)
+[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=2100935734 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1053581, 0.5, 2.901146)
 
-[node name="SandboxBarrier4" parent="Sandbox/SandboxBarriers" instance=ExtResource("4_yoapk")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 13.5, -16, 4.5)
+[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1381918963 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2704563, 0.5, 2.901146)
 
-[node name="-ZWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=303334596 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.614872, 0.5, 2.901146)
+
+[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=499134796 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.920374, 0.5, 2.901146)
+
+[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1363920793 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.177872, 0.5, 2.901146)
+
+[node name="fence9" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1608186017 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.373528, 0.5, 2.901146)
+
+[node name="fence10" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=221783857 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 18.749344, 0.5, 2.901146)
+
+[node name="z_fences" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=823836025]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.2325478, -0.7901468, 33.231644)
+
+[node name="fence" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=475666062 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.864014, 0.5, 2.901146)
+
+[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=741643309 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
+
+[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=328411719 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.301016, 0.5, 2.901146)
+
+[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=939187519 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1053581, 0.5, 2.901146)
+
+[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1377480255 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2704563, 0.5, 2.901146)
+
+[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1868197683 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.614872, 0.5, 2.901146)
+
+[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=955046273 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.920374, 0.5, 2.901146)
+
+[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=232368797 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.177872, 0.5, 2.901146)
+
+[node name="fence9" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1362384718 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.369268, 0.5, 2.901147)
+
+[node name="fence10" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=312661431 instance=ExtResource("3_b540t")]
+transform = Transform3D(1.1924882e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924882e-08, 16.678959, 0.5, 4.8224545)
+
+[node name="+x_fences2" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=168012228]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.232548, -0.8332319, 15.231644)
+
+[node name="fence" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=560218693 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.864014, 0.5, 2.901146)
+
+[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1904317645 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
+
+[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=263995308 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.301016, 0.5, 2.901146)
+
+[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1707205067 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1053581, 0.5, 2.901146)
+
+[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=429979948 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2704563, 0.5, 2.901146)
+
+[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=679165139 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.614872, 0.5, 2.901146)
+
+[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1497066457 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.920374, 0.5, 2.901146)
+
+[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1669262874 instance=ExtResource("3_b540t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.177872, 0.5, 2.901146)
+
+[node name="ConcreteOwner" type="Node3D" parent="Backyard/SandboxSurrounding" unique_id=879005732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.903862, 0, 16.618671)
+
+[node name="Concrete" type="StaticBody3D" parent="Backyard/SandboxSurrounding/ConcreteOwner" unique_id=1916486857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3174305, 0, 0.73747635)
+
+[node name="SellStation" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=58626733 instance=ExtResource("2_b8nul")]
+transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.309, 1.5, 1.337)
+
+[node name="Player" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1578288810 instance=ExtResource("2_mhjqk")]
+transform = Transform3D(-0.63579535, 0, -0.77185774, 0, 1, 0, 0.77185774, 0, -0.63579535, -3.1192803, 1.75, -6.4680243)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player" unique_id=58976641]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=335299020]
+material_override = SubResource("StandardMaterial3D_katq7")
+mesh = SubResource("BoxMesh_xnylg")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1948797726]
+shape = SubResource("BoxShape3D_b540t")
+
+[node name="Sandbox" type="Node3D" parent="Backyard" unique_id=1652470722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.656197, 0, 19.284483)
+
+[node name="SandboxBarriers" type="Node3D" parent="Backyard/Sandbox" unique_id=177156476]
+
+[node name="WoodPlank" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1925335567 instance=ExtResource("9_xnylg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.875, -0.6860929, 0.46396518)
+
+[node name="WoodPlank4" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1583962180 instance=ExtResource("9_xnylg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.125, -0.69095093, 0.49047112)
+
+[node name="WoodPlank2" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1478965466 instance=ExtResource("9_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.560682, -0.65918314, 7.921159)
+
+[node name="WoodPlank3" parent="Backyard/Sandbox/SandboxBarriers" unique_id=825069742 instance=ExtResource("9_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.467562, -0.659, -7)
+
+[node name="-ZWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=21783402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -7.461055)
+visible = false
 
-[node name="WoodLog" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1691237038 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1425799993 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=494812025 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=31539474 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1303425329 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Sandbox/SandboxBarriers/-ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=517081293 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
-[node name="+ZWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+[node name="+ZWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1196017519]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16.571232)
+visible = false
 
-[node name="WoodLog" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1395936852 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1964564758 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=217694986 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1332392450 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=231384343 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Sandbox/SandboxBarriers/+ZWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=2029729584 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
-[node name="+XWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+[node name="+XWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=401088641]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37.321724, 1.9073486e-06, 13.791449)
+visible = false
 
-[node name="WoodLog" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1947593768 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=2090190792 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1538592244 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1175536040 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=2131559746 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Sandbox/SandboxBarriers/+XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=522042316 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
-[node name="-XWoodLogs" type="Node3D" parent="Sandbox/SandboxBarriers"]
+[node name="-XWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=679539986]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.47929, 1.9073486e-06, 13.651323)
+visible = false
 
-[node name="WoodLog" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1274466368 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1970152626 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=579419968 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1965457750 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=755765939 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Sandbox/SandboxBarriers/-XWoodLogs" instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1875714039 instance=ExtResource("5_ycwdu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
-[node name="SandboxOrigin" type="Node3D" parent="Sandbox"]
+[node name="SandboxOrigin" type="Node3D" parent="Backyard/Sandbox" unique_id=1581829387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -31, -7)
 
-[node name="ModifiableGroundSand" parent="Sandbox/SandboxOrigin" instance=ExtResource("2_lopip")]
+[node name="ModifiableGroundSand" parent="Backyard/Sandbox/SandboxOrigin" unique_id=769958387 instance=ExtResource("2_lopip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 
-[node name="ModifiableGroundStone" parent="Sandbox/SandboxOrigin" instance=ExtResource("4_fcoao")]
+[node name="ModifiableGroundStone" parent="Backyard/Sandbox/SandboxOrigin" unique_id=844982594 instance=ExtResource("4_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="BuriedItems" type="Node3D" parent="Sandbox"]
+[node name="BuriedItems" type="Node3D" parent="Backyard/Sandbox" unique_id=92606792]
 
-[node name="Rock" parent="Sandbox/BuriedItems" instance=ExtResource("4_c5o21")]
+[node name="Rock" parent="Backyard/Sandbox/BuriedItems" unique_id=1928710163 instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -0.6388223, 0)
 
-[node name="Rock3" parent="Sandbox/BuriedItems" instance=ExtResource("4_c5o21")]
+[node name="Rock3" parent="Backyard/Sandbox/BuriedItems" unique_id=352425305 instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 1)
 
-[node name="Rock2" parent="Sandbox/BuriedItems" instance=ExtResource("4_c5o21")]
+[node name="Rock2" parent="Backyard/Sandbox/BuriedItems" unique_id=350133347 instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -1, 0)
 
-[node name="Crystal" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
+[node name="Crystal" parent="Backyard/Sandbox/BuriedItems" unique_id=538193301 instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.5648644, -0.9018705)
 
-[node name="Crystal2" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
+[node name="Crystal2" parent="Backyard/Sandbox/BuriedItems" unique_id=1079390233 instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.88079625, -0.3148049)
 
-[node name="Crystal3" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
+[node name="Crystal3" parent="Backyard/Sandbox/BuriedItems" unique_id=183383359 instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.397354, -0.88079625, -0.3148049)
 
-[node name="Crystal4" parent="Sandbox/BuriedItems" instance=ExtResource("5_fcoao")]
+[node name="Crystal4" parent="Backyard/Sandbox/BuriedItems" unique_id=1226802237 instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.332928, -0.27291462, 1.8737214)
 
-[node name="MoneyWad" parent="Sandbox/BuriedItems" instance=ExtResource("7_qedbv")]
+[node name="MoneyWad" parent="Backyard/Sandbox/BuriedItems" unique_id=718761329 instance=ExtResource("7_qedbv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9500885, -0.39527965, 0.46335125)
+
+[node name="Grasses" type="Node3D" parent="Backyard" unique_id=682807131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5817223, -1.5763035, 14.384319)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Backyard/Grasses" unique_id=1615608872]
+use_collision = true
+
+[node name="GrassCSG" type="CSGBox3D" parent="Backyard/Grasses/CSGCombiner3D" unique_id=1300703755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86883736, 0, 1.1342773)
+material_override = ExtResource("18_w7o82")
+size = Vector3(38.73772, 1, 39.288086)
+material = ExtResource("18_w7o82")
+
+[node name="NegativeCSG" type="CSGBox3D" parent="Backyard/Grasses/CSGCombiner3D" unique_id=1686554168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56731224, 0, 5.335332)
+operation = 2
+size = Vector3(15.41, 1.76, 15.16)
+
+[node name="Hedges" type="Node3D" parent="Backyard/Grasses" unique_id=576985757]
+
+[node name="Sketchfab_Scene" parent="Backyard/Grasses/Hedges" unique_id=142555675 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.906706, 0.54599905, 16.642944)
+
+[node name="Sketchfab_Scene2" parent="Backyard/Grasses/Hedges" unique_id=1598253104 instance=ExtResource("15_xnylg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0261135, 0.54599905, 17.887756)
+
+[node name="Sketchfab_Scene3" parent="Backyard/Grasses/Hedges" unique_id=2102062532 instance=ExtResource("15_xnylg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89056, 0.54599905, 17.887756)
+
+[node name="Sketchfab_Scene4" parent="Backyard/Grasses/Hedges" unique_id=1035645516 instance=ExtResource("15_xnylg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12461662, 0.54599905, 17.887756)
+
+[node name="Sketchfab_Scene5" parent="Backyard/Grasses/Hedges" unique_id=1419666426 instance=ExtResource("15_xnylg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26017, 0.54599905, 17.887756)
+
+[node name="Sketchfab_Scene6" parent="Backyard/Grasses/Hedges" unique_id=1699882207 instance=ExtResource("15_xnylg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.068348, 0.54599905, 17.887756)
+
+[node name="Sketchfab_Scene7" parent="Backyard/Grasses/Hedges" unique_id=9446324 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, 15.414383)
+
+[node name="Sketchfab_Scene8" parent="Backyard/Grasses/Hedges" unique_id=430847996 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, 8.278828)
+
+[node name="Sketchfab_Scene9" parent="Backyard/Grasses/Hedges" unique_id=1288752789 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, 1.263648)
+
+[node name="Sketchfab_Scene10" parent="Backyard/Grasses/Hedges" unique_id=392542198 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, -5.8719034)
+
+[node name="Sketchfab_Scene11" parent="Backyard/Grasses/Hedges" unique_id=1256888611 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, -12.680082)
+
+[node name="Sketchfab_Scene12" parent="Backyard/Grasses/Hedges" unique_id=459633457 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.43541, 0.54599905, -17.420862)
+
+[node name="Sketchfab_Scene13" parent="Backyard/Grasses/Hedges" unique_id=78911868 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.299854, 0.54599905, -17.420862)
+
+[node name="Sketchfab_Scene14" parent="Backyard/Grasses/Hedges" unique_id=2019862687 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2846737, 0.54599905, -17.420862)
+
+[node name="Sketchfab_Scene15" parent="Backyard/Grasses/Hedges" unique_id=237072895 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.850878, 0.54599905, -17.420862)
+
+[node name="Sketchfab_Scene16" parent="Backyard/Grasses/Hedges" unique_id=11209834 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.659056, 0.54599905, -17.420862)
+
+[node name="Sketchfab_Scene17" parent="Backyard/Grasses/Hedges" unique_id=1279414041 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18.332056, 0.54599905, -17.420862)
+
+[node name="Sketchfab_Scene18" parent="Backyard/Grasses/Hedges" unique_id=1177473659 instance=ExtResource("15_xnylg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.996342, 0.54599905, -10.803063)
+
+[node name="Bushes" type="Node3D" parent="Backyard" unique_id=631626185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15465927, -0.47, 11.302901)
+
+[node name="Bush" parent="Backyard/Bushes" unique_id=1511715018 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.424402, -0.7152364, -9.90894)
+
+[node name="Bush2" parent="Backyard/Bushes" unique_id=230785225 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6011524, -0.7152364, -9.90894)
+
+[node name="Bush3" parent="Backyard/Bushes" unique_id=1505563123 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.412714, -0.7152364, -9.90894)
+
+[node name="Bush4" parent="Backyard/Bushes" unique_id=1123481994 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3693523, -0.7152364, -9.90894)
+
+[node name="Bush5" parent="Backyard/Bushes" unique_id=984558822 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18785667, -0.7152364, -9.90894)
+
+[node name="Bush6" parent="Backyard/Bushes" unique_id=369099065 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3437138, -0.7152364, -9.90894)
+
+[node name="Bush7" parent="Backyard/Bushes" unique_id=1105761099 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5572624, -0.7152364, -9.90894)
+
+[node name="Bush8" parent="Backyard/Bushes" unique_id=1884397254 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.523487, -0.7152364, -9.90894)
+
+[node name="Shed" type="StaticBody3D" parent="Backyard" unique_id=52082890]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.491814, 0, 4.8236637)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/Shed" unique_id=483164249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82902145, 1.4390545, 1.0482893)
+mesh = SubResource("BoxMesh_k1rsi")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Backyard/Shed" unique_id=1215797549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82902145, 1.4390545, 1.0482893)
+shape = SubResource("BoxShape3D_sgqxm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Backyard/Shed" unique_id=385003679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8290229, 1.4390545, -8.938349)
+mesh = SubResource("BoxMesh_k1rsi")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Backyard/Shed" unique_id=1753075266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8290229, 1.4390545, -8.938349)
+shape = SubResource("BoxShape3D_solpo")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Backyard/Shed" unique_id=1697264077]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5663576, 1.6183829, -3.8886993)
+mesh = SubResource("BoxMesh_katq7")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Backyard/Shed" unique_id=379739325]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5663576, 1.6183829, -3.8886993)
+shape = SubResource("BoxShape3D_t4aas")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Backyard/Shed" unique_id=605394062]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0288877, 1.4390545, -0.5442643)
+mesh = SubResource("BoxMesh_e8fyy")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Backyard/Shed" unique_id=706810449]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0288877, 1.4390545, -0.5442643)
+shape = SubResource("BoxShape3D_5rtvx")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Backyard/Shed" unique_id=2074728960]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0164762, 1.4390545, -7.3489466)
+mesh = SubResource("BoxMesh_e8fyy")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Backyard/Shed" unique_id=784522595]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0164762, 1.4390545, -7.3489466)
+shape = SubResource("BoxShape3D_w7o82")
+
+[node name="Floor" type="MeshInstance3D" parent="Backyard/Shed" unique_id=1401992421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80579853, -1.1230748, -3.9968777)
+mesh = SubResource("BoxMesh_6jyhs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/Shed" unique_id=1936019405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80579853, -1.1230748, -3.9968777)
+shape = SubResource("BoxShape3D_p3bqw")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Backyard/Shed" unique_id=2059296491]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.88719654, 5.992709, -6.498837)
+mesh = SubResource("BoxMesh_veg8t")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Backyard/Shed" unique_id=1364413160]
+transform = Transform3D(-1, -6.181723e-08, -6.181723e-08, 0, 0.7071067, -0.7071067, 8.742278e-08, -0.7071067, -0.7071067, -0.88719654, 5.9400787, -1.4129233)
+mesh = SubResource("BoxMesh_veg8t")
+
+[node name="House" type="StaticBody3D" parent="Backyard" unique_id=1794156845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 23)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House" unique_id=1389133736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -5.7716475)
+mesh = SubResource("BoxMesh_b540t")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Backyard/House" unique_id=1821828579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -5.7716475)
+shape = SubResource("BoxShape3D_e8fyy")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Backyard/House" unique_id=2052423067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 1.4868469)
+mesh = SubResource("BoxMesh_1a078")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Backyard/House" unique_id=1309556582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 1.4868469)
+shape = SubResource("BoxShape3D_6jyhs")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Backyard/House" unique_id=1955497376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -9.858802)
+mesh = SubResource("BoxMesh_2q5tt")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Backyard/House" unique_id=3221241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -9.858802)
+shape = SubResource("BoxShape3D_katq7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Backyard/House" unique_id=802759109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, 3.962264)
+mesh = SubResource("BoxMesh_w7o82")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/House" unique_id=2057332360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, 3.962264)
+shape = SubResource("BoxShape3D_veg8t")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Backyard/House" unique_id=1655946339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, -14.96132)
+mesh = SubResource("BoxMesh_w7o82")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Backyard/House" unique_id=1930708563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, -14.96132)
+shape = SubResource("BoxShape3D_1a078")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Backyard/House" unique_id=1037280599]
+
+[node name="Boundary" type="StaticBody3D" parent="Backyard" unique_id=877908155]
+
+[node name="-zwall" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=1609652210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2179565, 0, -1.1355553)
+shape = SubResource("BoxShape3D_xnylg")
+
+[node name="zwall" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=632157993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2179565, 0, 30.465479)
+shape = SubResource("BoxShape3D_xnylg")
+
+[node name="xwall" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=1746339066]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.782043, 0, 16.19856)
+shape = SubResource("BoxShape3D_xnylg")
+
+[node name="-xwall" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=1953708734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.59444, 0.9565327, 28.430264)
+shape = SubResource("BoxShape3D_k1rsi")
+
+[node name="-xwall2" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=1597274134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.59444, 0.9565327, 2.9441013)
+shape = SubResource("BoxShape3D_2q5tt")

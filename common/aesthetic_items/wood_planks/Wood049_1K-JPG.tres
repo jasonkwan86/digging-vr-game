@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wf383fmv0h55"]
+
+[ext_resource type="Texture2D" uid="uid://brxmyicflnxxs" path="res://common/aesthetic_items/wood_planks/Wood049_1K-JPG_Color.jpg" id="Color"]
+[ext_resource type="Texture2D" uid="uid://dwrhhgsvtpm8m" path="res://common/aesthetic_items/wood_planks/Wood049_1K-JPG_Displacement.jpg" id="Displacement"]
+[ext_resource type="Texture2D" uid="uid://df8i2v8veq8xd" path="res://common/aesthetic_items/wood_planks/Wood049_1K-JPG_NormalGL.jpg" id="NormalGL"]
+[ext_resource type="Texture2D" uid="uid://bwmlm0gwbmjgj" path="res://common/aesthetic_items/wood_planks/Wood049_1K-JPG_Roughness.jpg" id="Roughness"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+roughness_texture = ExtResource("Roughness")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("Displacement")
+uv1_triplanar = true
