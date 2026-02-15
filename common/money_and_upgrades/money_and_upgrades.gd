@@ -9,6 +9,7 @@ var money: int:
 @export var money_count_label: Label
 @export var tool_label: Label
 @export var consumable_count_label: Label
+@export var merchants: Array[MerchantHandler]
 
 var tool_index = ["Hands", "Pickaxe", "Drill", "Rocket Launcher"]
 var unlocked_tools = 0
@@ -28,8 +29,7 @@ func add_money(money_to_add: int) -> void:
 		money += money_to_add
 
 func unlock_merchant(merchant_id: int) -> void:
-	var merchant = get_node("/root/World/Platform/"+merchant_index[merchant_id])
-	merchant.set_visibility(true)
+	merchants[merchant_id-1].set_visibility(true)
 	
 func unlock_tool(player: Player, tool_id: int) -> void:
 	player.money_and_upgrades.unlocked_tools = tool_id

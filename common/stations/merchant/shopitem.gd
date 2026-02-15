@@ -4,10 +4,11 @@ extends Node
 var merchant_id: int = 0
 @export var slot_id: int = 0
 var current_item: Upgrade
+@export var player: Player
 
 func _ready() -> void:
 	merchant_id = get_parent().merchant_id
-	current_item = get_node("/root/World/Player").money_and_upgrades.initial_upgrades[merchant_id][slot_id]
+	current_item = player.money_and_upgrades.initial_upgrades[merchant_id][slot_id]
 	
 	update_label()
 	

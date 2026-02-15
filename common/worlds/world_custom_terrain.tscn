@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
+[ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
@@ -31,19 +32,14 @@ glow_levels/4 = 0.5
 glow_levels/5 = 0.2
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b540t"]
-load_path = "res://.godot/imported/Asphalt031_1K-JPG_Color.jpg-9ea6721219a5239a6d8dbbba00bc51c6.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xnylg"]
-load_path = "res://.godot/imported/Asphalt031_1K-JPG_AmbientOcclusion.jpg-f41162d8f1fe0609b4d55d394a16953f.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k1rsi"]
-load_path = "res://.godot/imported/Asphalt031_1K-JPG_Displacement.jpg-421db3471c0d1532c78518ece0f266f7.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8fyy"]
-load_path = "res://.godot/imported/Asphalt031_1K-JPG_NormalGL.jpg-8eff987bf07ebdbb50dfc9eb0acdd9ba.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6jyhs"]
-load_path = "res://.godot/imported/Asphalt031_1K-JPG_Roughness.jpg-cb77373589c430730b53b614384a4fbd.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_katq7"]
 albedo_texture = SubResource("CompressedTexture2D_b540t")
@@ -262,6 +258,9 @@ transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2
 [node name="Player" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1578288810 instance=ExtResource("2_mhjqk")]
 transform = Transform3D(-0.63579535, 0, -0.77185774, 0, 1, 0, 0.77185774, 0, -0.63579535, -3.1192803, 1.75, -6.4680243)
 
+[node name="MoneyAndUpgrades" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player" index="5" unique_id=817016602 node_paths=PackedStringArray("merchants")]
+merchants = [NodePath("../../Demolitionist"), NodePath("../../Wizard")]
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player" unique_id=58976641]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=335299020]
@@ -271,6 +270,53 @@ skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1948797726]
 shape = SubResource("BoxShape3D_b540t")
+
+[node name="Blacksmith" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=657462227 instance=ExtResource("5_xnylg")]
+transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.7069998, 1.5, 6.649)
+
+[node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="2"]
+text = "Blacksmith"
+
+[node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="4" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="5" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="Demolitionist" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.5, 1.5, -8)
+merchant_id = 1
+
+[node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="2"]
+text = "Demolitionist"
+
+[node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="4" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="5" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="Wizard" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1996559039 instance=ExtResource("5_xnylg")]
+transform = Transform3D(-7.351371e-08, 0, -1, 0, 1, 0, 1, 0, -7.351371e-08, 1.5, 1.5, -3)
+merchant_id = 2
+
+[node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="2"]
+text = "Wizard"
+
+[node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="4" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+
+[node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="5" node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
 
 [node name="Sandbox" type="Node3D" parent="Backyard" unique_id=1652470722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.656197, 0, 19.284483)
@@ -637,3 +683,8 @@ shape = SubResource("BoxShape3D_k1rsi")
 [node name="-xwall2" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=1597274134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.59444, 0.9565327, 2.9441013)
 shape = SubResource("BoxShape3D_2q5tt")
+
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard"]
