@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://c8yw2nlaaynn"]
+
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_tsyt0"]
+[ext_resource type="Resource" uid="uid://bm234c5wx6hvf" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_1_tool/3_reach_1.tres" id="1_ybhhu"]
+
+[resource]
+script = ExtResource("1_tsyt0")
+upgrade_name = "Dig Size I"
+cost = 1
+effect_type = "dig_radius"
+effect_value = 0.25
+next_upgrade = ExtResource("1_ybhhu")
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bqk5kfgly0gkp"]
+
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_p0mw7"]
+
+[resource]
+script = ExtResource("1_p0mw7")
+upgrade_name = "Sell Value II"
+cost = 1
+effect_type = "sell_value"
+effect_value = 0.25
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

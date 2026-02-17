@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://blemupty8jfo3"]
+
+[ext_resource type="Resource" uid="uid://ciirjtxeoeegh" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_1_tool/4_tool_speed_4.tres" id="1_7b6vq"]
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="2_53ckw"]
+
+[resource]
+script = ExtResource("2_53ckw")
+upgrade_name = "Longer Reach III"
+cost = 1
+effect_type = "dig_reach"
+effect_value = 0.5
+next_upgrade = ExtResource("1_7b6vq")
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

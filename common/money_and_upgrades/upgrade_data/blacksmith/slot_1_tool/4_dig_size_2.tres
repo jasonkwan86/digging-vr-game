@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://b0av62v2tc6dx"]
+
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_1n5sq"]
+[ext_resource type="Resource" uid="uid://cydbw512eqsmb" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_1_tool/5_unlock_drill.tres" id="1_uf830"]
+
+[resource]
+script = ExtResource("1_1n5sq")
+upgrade_name = "Dig Size II"
+cost = 1
+effect_type = "dig_radius"
+effect_value = 0.25
+next_upgrade = ExtResource("1_uf830")
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

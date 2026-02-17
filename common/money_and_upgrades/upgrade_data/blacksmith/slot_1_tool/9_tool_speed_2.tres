@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://w6qbt01cqjsd"]
+
+[ext_resource type="Resource" uid="uid://d166n4rh8arjs" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_1_tool/10_demo_license.tres" id="1_co7wr"]
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="2_pll1y"]
+
+[resource]
+script = ExtResource("2_pll1y")
+upgrade_name = "Tool Speed II"
+cost = 1
+effect_type = "dig_speed"
+effect_value = 0.5
+next_upgrade = ExtResource("1_co7wr")
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

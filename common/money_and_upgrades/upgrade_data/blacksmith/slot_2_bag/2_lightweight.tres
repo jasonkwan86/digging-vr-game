@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://c1hrm7rabukf2"]
+
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_5xnae"]
+[ext_resource type="Resource" uid="uid://bfvvi25je0ys3" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_2_bag/3_bag_size_2.tres" id="1_7b67k"]
+
+[resource]
+script = ExtResource("1_5xnae")
+upgrade_name = "Lightweight"
+cost = 1
+effect_type = "jump_velocity"
+effect_value = 1.5
+next_upgrade = ExtResource("1_7b67k")
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://dgcdnst48tagu"]
+
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_e36f4"]
+
+[resource]
+script = ExtResource("1_e36f4")
+upgrade_name = "Greed Potion"
+cost = 1
+effect_type = "add_consumable"
+effect_value = 1.0
+consumable_id = 4
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

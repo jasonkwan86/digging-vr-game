@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://kpcwyxmbjh2x"]
+
+[ext_resource type="Resource" uid="uid://c8yw2nlaaynn" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_1_tool/2_dig_size_1.tres" id="1_8cphv"]
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_8tnwo"]
+
+[resource]
+script = ExtResource("1_8tnwo")
+upgrade_name = "New Tool: Pickaxe"
+cost = 1
+effect_type = "unlock_tool"
+effect_value = 1.0
+next_upgrade = ExtResource("1_8cphv")
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

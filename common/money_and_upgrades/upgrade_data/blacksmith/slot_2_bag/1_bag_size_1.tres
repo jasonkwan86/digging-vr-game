@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://m4vaxyknbkc5"]
+
+[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_iu3ex"]
+[ext_resource type="Resource" uid="uid://c1hrm7rabukf2" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_2_bag/2_lightweight.tres" id="1_mmree"]
+
+[resource]
+script = ExtResource("1_iu3ex")
+upgrade_name = "Bag Size I"
+cost = 1
+effect_type = "bag_size"
+effect_value = 5.0
+next_upgrade = ExtResource("1_mmree")
+consumable_id = -1
+metadata/_custom_type_script = "uid://d3bc7s5uu1seq"

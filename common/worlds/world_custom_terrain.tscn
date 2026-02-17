@@ -10,8 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
 [ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
+[ext_resource type="Resource" uid="uid://kpcwyxmbjh2x" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_1_tool/1_unlock_pickaxe.tres" id="6_p3bqw"]
 [ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
+[ext_resource type="Resource" uid="uid://m4vaxyknbkc5" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_2_bag/1_bag_size_1.tres" id="7_sgqxm"]
+[ext_resource type="Resource" uid="uid://bgtyb5xfeoeyl" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_3_rope/1_rope.tres" id="8_solpo"]
+[ext_resource type="Resource" uid="uid://r1xq7mju3dgp" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_1_tool/1_tool_speed_3.tres" id="9_t4aas"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
+[ext_resource type="Resource" uid="uid://tjrd8ddol5ds" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_2_rockets/1_rocket.tres" id="10_5rtvx"]
+[ext_resource type="Resource" uid="uid://537p6nyj7kd2" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_3_bombs/1_bomb.tres" id="11_v3r5y"]
+[ext_resource type="Resource" uid="uid://cvnsdsfhf8ba0" path="res://common/money_and_upgrades/upgrade_data/wizard/slot_1_spells/temp.tres" id="12_lwlnf"]
+[ext_resource type="Resource" uid="uid://cq3ay1kgetvn1" path="res://common/money_and_upgrades/upgrade_data/wizard/slot_2_haste/1_haste.tres" id="13_451c7"]
+[ext_resource type="Resource" uid="uid://dgcdnst48tagu" path="res://common/money_and_upgrades/upgrade_data/wizard/slot_3_greed/1_greed.tres" id="14_wpnl1"]
 [ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="15_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bcn0f3ogmw8cx" path="res://common/aesthetic_items/bush/scene.gltf" id="16_k1rsi"]
 [ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="18_w7o82"]
@@ -279,15 +288,18 @@ text = "Blacksmith"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("6_p3bqw")
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="4" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("7_sgqxm")
 
 [node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("8_solpo")
 
 [node name="Demolitionist" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.5, 1.5, -8)
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.5, 1.5, -8.5)
 merchant_id = 1
 
 [node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="2"]
@@ -295,15 +307,18 @@ text = "Demolitionist"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("9_t4aas")
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="4" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("10_5rtvx")
 
 [node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("11_v3r5y")
 
 [node name="Wizard" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1996559039 instance=ExtResource("5_xnylg")]
-transform = Transform3D(-7.351371e-08, 0, -1, 0, 1, 0, 1, 0, -7.351371e-08, 1.5, 1.5, -3)
+transform = Transform3D(-7.351371e-08, 0, -1, 0, 1, 0, 1, 0, -7.351371e-08, 2.5, 1.5, -3)
 merchant_id = 2
 
 [node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="2"]
@@ -311,12 +326,15 @@ text = "Wizard"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("12_lwlnf")
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="4" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("13_451c7")
 
 [node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="5" node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+current_item = ExtResource("14_wpnl1")
 
 [node name="Sandbox" type="Node3D" parent="Backyard" unique_id=1652470722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.656197, 0, 19.284483)
