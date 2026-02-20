@@ -1,14 +1,11 @@
-[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://chbnm04ldjh73"]
+[gd_resource type="Resource" script_class="UnlockTool" format=3 uid="uid://chbnm04ldjh73"]
 
-[ext_resource type="Resource" uid="uid://dh1s35qfarxm7" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_1_tool/6_dig_size_5.tres" id="1_ohbvq"]
-[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_v5vg8"]
+[ext_resource type="Script" uid="uid://cy8p02w5gnyqg" path="res://common/money_and_upgrades/upgrade_scripts/unlock_tool.gd" id="1_v5vg8"]
+[ext_resource type="Resource" uid="uid://eco2mynfewlh" path="res://common/money_and_upgrades/tools/rocket_launcher.tres" id="2_ohbvq"]
 
 [resource]
 script = ExtResource("1_v5vg8")
+tool_to_unlock = ExtResource("2_ohbvq")
 upgrade_name = "New Tool: Rocket Launcher"
 cost = 1
-effect_type = "unlock_tool"
-effect_value = 3.0
-next_upgrade = ExtResource("1_ohbvq")
-consumable_id = -1
-metadata/_custom_type_script = "uid://d3bc7s5uu1seq"
+metadata/_custom_type_script = "uid://cy8p02w5gnyqg"

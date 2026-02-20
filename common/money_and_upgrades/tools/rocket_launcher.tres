@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tool" format=3 uid="uid://eco2mynfewlh"]
+
+[ext_resource type="Script" uid="uid://n23ih12sccgd" path="res://common/money_and_upgrades/tool.gd" id="1_vlaa4"]
+
+[resource]
+script = ExtResource("1_vlaa4")
+tool_name = "Rocket Launcher"
+strength = 1.0
+is_projectile = true
+metadata/_custom_type_script = "uid://n23ih12sccgd"

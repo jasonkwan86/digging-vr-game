@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bm234c5wx6hvf"]
 
-[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_17ova"]
+[ext_resource type="Script" uid="uid://3e3cgf1w27dy" path="res://common/money_and_upgrades/upgrade_scripts/dig_reach.gd" id="1_17ova"]
 [ext_resource type="Resource" uid="uid://b0av62v2tc6dx" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_1_tool/4_dig_size_2.tres" id="1_u16n2"]
 
 [resource]

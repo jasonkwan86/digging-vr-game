@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bfvvi25je0ys3"]
 
 [ext_resource type="Resource" uid="uid://b4gpqghto5js0" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_2_bag/4_sell_value_1.tres" id="1_4oii3"]
-[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_6rfrf"]
+[ext_resource type="Script" uid="uid://b63tu77vuarve" path="res://common/money_and_upgrades/upgrade_scripts/bag_size.gd" id="1_6rfrf"]
 
 [resource]
 script = ExtResource("1_6rfrf")

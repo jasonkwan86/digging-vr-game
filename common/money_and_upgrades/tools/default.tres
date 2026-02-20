@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tool" format=3 uid="uid://byiisa4geys8f"]
+
+[ext_resource type="Script" uid="uid://n23ih12sccgd" path="res://common/money_and_upgrades/tool.gd" id="1_xgkju"]
+
+[resource]
+script = ExtResource("1_xgkju")
+tool_name = "Hands"
+strength = 0.7
+is_unlocked = true
+metadata/_custom_type_script = "uid://n23ih12sccgd"

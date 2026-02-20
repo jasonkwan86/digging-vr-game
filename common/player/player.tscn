@@ -17,7 +17,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
 radius = 1.0
 
-[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
+[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades", "potion_label")]
 collision_mask = 3
 script = ExtResource("1_dsdjy")
 interact_icon = NodePath("UI/InteractIcon")
@@ -26,6 +26,7 @@ looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
 mining_particles = ExtResource("2_6vwog")
 mineral_inventory = NodePath("MineralInventory")
 money_and_upgrades = NodePath("MoneyAndUpgrades")
+potion_label = NodePath("UI/PotionDuration/PotionRemaining")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=749104009]
 shape = SubResource("CapsuleShape3D_d4thd")
@@ -163,6 +164,26 @@ Rockets: 0
 Bombs: 0
 Haste Potions: 0
 Greed Potions: 0"
+
+[node name="PotionDuration" type="Control" parent="UI" unique_id=1409490654]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="PotionRemaining" type="Label" parent="UI/PotionDuration" unique_id=1150201790]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_bottom = 49.0
+grow_horizontal = 0
+text = "Haste: 
+Greed: "
 
 [node name="InteractIcon" type="TextureRect" parent="UI" unique_id=910955173]
 visible = false

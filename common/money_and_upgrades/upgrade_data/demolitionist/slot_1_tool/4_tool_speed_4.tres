@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://ciirjtxeoeegh"]
 
 [ext_resource type="Resource" uid="uid://chbnm04ldjh73" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_1_tool/5_unlock_rocket.tres" id="1_qp41u"]
-[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_ugk1q"]
+[ext_resource type="Script" uid="uid://dng01t2jgwyw1" path="res://common/money_and_upgrades/upgrade_scripts/dig_speed.gd" id="1_ugk1q"]
 
 [resource]
 script = ExtResource("1_ugk1q")

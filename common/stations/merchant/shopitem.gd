@@ -3,8 +3,9 @@ extends Node
 
 @export var slot_id: int = 0
 @export var player: Player
-@export var current_item: Upgrade
+@export var items: Array[Upgrade]
 
+var current_item: int = 0
 var merchant_id: int = 0
 
 func _ready() -> void:
@@ -13,13 +14,13 @@ func _ready() -> void:
 
 
 func interact(player: Player) -> void:
-	if player.money_and_upgrades.money >= current_item.cost:
+	if player.money_and_upgrades.money >= items[current_item].cost:
 		AudioManager.play_mineral_sell_sound()
-		player.money_and_upgrades.add_money(-1*current_item.cost)
-		player.do_upgrade(current_item)
-		if current_item.consumable_id < 0:
-			current_item = current_item.next_upgrade
-		if current_item == null:
+		player.money_and_upgrades.add_money(-1*items[current_item].cost)
+		items[current_item].do_upgrade(player)
+		if not items[current_item].is_repeating:
+			current_item += 1
+		if current_item >= items.size():
 			hide_item()
 		else:
 			update_label()
@@ -28,7 +29,7 @@ func interact(player: Player) -> void:
 
 
 func update_label() -> void:
-	$ShopItemLabel.text = current_item.upgrade_name + " ($" + str(current_item.cost) + ")"
+	$ShopItemLabel.text = items[current_item].upgrade_name + " ($" + str(items[current_item].cost) + ")"
 
 
 func hide_item() -> void:

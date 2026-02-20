@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://yol1qlem24k"]
+
+[ext_resource type="Script" uid="uid://xrsa7aw31rp2" path="res://common/money_and_upgrades/rocket.gd" id="1_0np6i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d3t47"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0np6i"]
+
+[node name="Rocket" type="RigidBody3D" unique_id=1154832033]
+collision_layer = 8
+collision_mask = 2
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_0np6i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1076852602]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_d3t47")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=182920729]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_0np6i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

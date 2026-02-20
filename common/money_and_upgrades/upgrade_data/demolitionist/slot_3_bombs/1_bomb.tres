@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://537p6nyj7kd2"]
+[gd_resource type="Resource" script_class="AddConsumable" format=3 uid="uid://537p6nyj7kd2"]
 
-[ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade.gd" id="1_7rwee"]
+[ext_resource type="Script" uid="uid://bmua64he8h1un" path="res://common/money_and_upgrades/upgrade_scripts/add_consumable.gd" id="1_7rwee"]
 
 [resource]
 script = ExtResource("1_7rwee")
+consumable = "Bombs"
+num_to_add = 1
 upgrade_name = "Bomb"
 cost = 1
-effect_type = "add_consumable"
-effect_value = 1.0
-consumable_id = 2
 metadata/_custom_type_script = "uid://d3bc7s5uu1seq"
