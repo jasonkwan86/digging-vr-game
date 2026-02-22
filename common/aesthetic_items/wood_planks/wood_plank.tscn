@@ -6,6 +6,7 @@
 [ext_resource type="BoxMesh" uid="uid://bau1j41hpdn0j" path="res://common/aesthetic_items/wood_planks/plank_mesh.tres" id="4_umhaa"]
 
 [node name="WoodPlank" type="StaticBody3D" unique_id=1925335567]
+collision_layer = 16
 script = ExtResource("1_wgjw2")
 plank_mesh = ExtResource("4_umhaa")
 plank_collider_shape = ExtResource("2_cccew")

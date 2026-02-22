@@ -40,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45847714, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1698349799]
 target_position = Vector3(0, 0, -5)
-collision_mask = 6
+collision_mask = 22
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="Camera3D" unique_id=1163185636]
 shape = SubResource("SphereShape3D_dsdjy")
