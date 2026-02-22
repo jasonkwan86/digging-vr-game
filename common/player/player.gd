@@ -9,7 +9,6 @@ const STARTING_POSITION: Vector3 = Vector3(9,1,2)
 
 @export_group("Player Controls")
 @export var interact_icon: Control
-@export var camera_and_movement_controller: PlayerCameraAndMovementController
 
 @export_group("Voxel Interactions")
 @export var dig_reach: float = 3

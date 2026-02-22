@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
-[ext_resource type="PackedScene" uid="uid://yol1qlem24k" path="res://common/money_and_upgrades/rocket.tscn" id="5_umwxm"]
 [ext_resource type="Script" uid="uid://n23ih12sccgd" path="res://common/money_and_upgrades/tool.gd" id="5_v3r5y"]
 [ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
@@ -23,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://r1xq7mju3dgp" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_1_tool/1_tool_speed_3.tres" id="9_t4aas"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
 [ext_resource type="Resource" uid="uid://tjrd8ddol5ds" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_2_rockets/1_rocket.tres" id="10_5rtvx"]
+[ext_resource type="Material" uid="uid://7adp1ukqj5ul" path="res://common/aesthetic_items/house/Concrete010_1K-JPG.tres" id="10_umwxm"]
 [ext_resource type="Script" uid="uid://d3bc7s5uu1seq" path="res://common/money_and_upgrades/upgrade_scripts/upgrade.gd" id="11_451c7"]
 [ext_resource type="Resource" uid="uid://537p6nyj7kd2" path="res://common/money_and_upgrades/upgrade_data/demolitionist/slot_3_bombs/1_bomb.tres" id="11_v3r5y"]
 [ext_resource type="Resource" uid="uid://cvnsdsfhf8ba0" path="res://common/money_and_upgrades/upgrade_data/wizard/slot_1_spells/temp.tres" id="12_lwlnf"]
@@ -68,29 +68,6 @@ glow_enabled = true
 glow_levels/2 = 1.0
 glow_levels/4 = 0.5
 glow_levels/5 = 0.2
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b540t"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xnylg"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k1rsi"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e8fyy"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6jyhs"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_katq7"]
-albedo_texture = SubResource("CompressedTexture2D_b540t")
-roughness_texture = SubResource("CompressedTexture2D_6jyhs")
-roughness_texture_channel = 4
-normal_enabled = true
-normal_texture = SubResource("CompressedTexture2D_e8fyy")
-ao_enabled = true
-ao_texture = SubResource("CompressedTexture2D_xnylg")
-ao_texture_channel = 4
-heightmap_scale = 1.0
-heightmap_texture = SubResource("CompressedTexture2D_k1rsi")
-uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_xnylg"]
 size = Vector3(9.145, 1, 20)
@@ -293,10 +270,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3174305, 0, 0.73747635)
 [node name="SellStation" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=58626733 instance=ExtResource("2_b8nul")]
 transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.309, 1.5, 1.337)
 
-[node name="Player" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1578288810 node_paths=PackedStringArray("camera_and_movement_controller") instance=ExtResource("2_mhjqk")]
+[node name="Player" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1578288810 instance=ExtResource("2_mhjqk")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9, 1, 2)
-camera_and_movement_controller = NodePath("PlayerCameraAndMovementController")
-rocket_scene = ExtResource("5_umwxm")
 
 [node name="MoneyAndUpgrades" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player" index="5" unique_id=817016602 node_paths=PackedStringArray("merchants")]
 merchants = [NodePath("../../Demolitionist"), NodePath("../../Wizard")]
@@ -305,7 +280,7 @@ tools = Array[ExtResource("5_v3r5y")]([ExtResource("6_lwlnf"), ExtResource("7_45
 [node name="OmniLight3D" type="OmniLight3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player" unique_id=58976641]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=335299020]
-material_override = SubResource("StandardMaterial3D_katq7")
+material_override = ExtResource("10_umwxm")
 mesh = SubResource("BoxMesh_xnylg")
 skeleton = NodePath("../../..")
 
@@ -482,6 +457,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 [node name="ModifiableGroundStone" parent="Backyard/Sandbox/SandboxOrigin" unique_id=844982594 instance=ExtResource("4_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
+[node name="SandboxCSGCombiner" type="CSGCombiner3D" parent="Backyard/Sandbox/SandboxOrigin" unique_id=1901143490]
+use_collision = true
+collision_layer = 16
+
+[node name="SandboxCSG" type="CSGBox3D" parent="Backyard/Sandbox/SandboxOrigin/SandboxCSGCombiner" unique_id=1443705298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+size = Vector3(17, 58.55, 17)
+
+[node name="NegativeSandboxCSG" type="CSGBox3D" parent="Backyard/Sandbox/SandboxOrigin/SandboxCSGCombiner" unique_id=1495469956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+operation = 2
+size = Vector3(16, 58.55, 16)
+
 [node name="BuriedItems" type="Node3D" parent="Backyard/Sandbox" unique_id=92606792]
 
 [node name="Rock" parent="Backyard/Sandbox/BuriedItems" unique_id=1928710163 instance=ExtResource("4_c5o21")]
@@ -513,6 +501,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5817223, -1.5763035, 14.38
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Backyard/Grasses" unique_id=1615608872]
 use_collision = true
+collision_layer = 16
 
 [node name="GrassCSG" type="CSGBox3D" parent="Backyard/Grasses/CSGCombiner3D" unique_id=1300703755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86883736, 0, 1.1342773)

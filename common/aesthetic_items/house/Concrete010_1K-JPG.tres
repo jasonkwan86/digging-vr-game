@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7adp1ukqj5ul"]
+
+[ext_resource type="Texture2D" uid="uid://c0x5gq1qreuq0" path="res://common/aesthetic_items/house/Concrete010_1K-JPG_AmbientOcclusion.jpg" id="AmbientOcclusion"]
+[ext_resource type="Texture2D" uid="uid://cvc87rqm3wr2n" path="res://common/aesthetic_items/house/Concrete010_1K-JPG_Color.jpg" id="Color"]
+[ext_resource type="Texture2D" uid="uid://c83ew7esx5g4t" path="res://common/aesthetic_items/house/Concrete010_1K-JPG_Displacement.jpg" id="Displacement"]
+[ext_resource type="Texture2D" uid="uid://c0c7ent4y0s6p" path="res://common/aesthetic_items/house/Concrete010_1K-JPG_NormalGL.jpg" id="NormalGL"]
+[ext_resource type="Texture2D" uid="uid://bj655x10wshy1" path="res://common/aesthetic_items/house/Concrete010_1K-JPG_Roughness.jpg" id="Roughness"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+roughness_texture = ExtResource("Roughness")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+ao_enabled = true
+ao_texture = ExtResource("AmbientOcclusion")
+ao_texture_channel = 4
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("Displacement")
+uv1_triplanar = true

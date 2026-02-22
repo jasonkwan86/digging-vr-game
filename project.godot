@@ -98,6 +98,7 @@ use_greed={
 3d_physics/layer_2="modifiable_mesh"
 3d_physics/layer_3="minerals"
 3d_physics/layer_4="projectiles"
+3d_physics/layer_5="terrain"
 
 [physics]
 

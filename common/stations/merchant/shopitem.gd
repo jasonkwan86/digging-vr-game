@@ -13,11 +13,11 @@ func _ready() -> void:
 	update_label()
 
 
-func interact(player: Player) -> void:
-	if player.money_and_upgrades.money >= items[current_item].cost:
+func interact(_player: Player) -> void:
+	if _player.money_and_upgrades.money >= items[current_item].cost:
 		AudioManager.play_mineral_sell_sound()
-		player.money_and_upgrades.add_money(-1*items[current_item].cost)
-		items[current_item].do_upgrade(player)
+		_player.money_and_upgrades.add_money(-1*items[current_item].cost)
+		items[current_item].do_upgrade(_player)
 		if not items[current_item].is_repeating:
 			current_item += 1
 		if current_item >= items.size():
