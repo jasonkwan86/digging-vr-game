@@ -3,19 +3,16 @@ extends Node
 
 @export var number_of_items_to_bury: int = 200
 @export var set_of_items_to_bury: ItemsToBury
-@export var bury_seed: int
-
-var rng = RandomNumberGenerator.new()
+@export var vertical_displacement_from_top: float = 1.5
 
 func place_buried_items(modifiable_ground: ModifiableGround) -> void:
-	rng.seed = bury_seed
 	var global_min_x: float = modifiable_ground.global_position.x
 	var global_max_x: float = modifiable_ground.global_position.x + modifiable_ground.WIDTH
 	var global_min_y: float = modifiable_ground.global_position.y
-	var global_max_y: float = modifiable_ground.global_position.y + modifiable_ground.HEIGHT - 1.5
+	var global_max_y: float = modifiable_ground.global_position.y + modifiable_ground.HEIGHT - vertical_displacement_from_top
 	var global_min_z: float = modifiable_ground.global_position.z
 	var global_max_z: float = modifiable_ground.global_position.z + modifiable_ground.WIDTH
-	for i in range(number_of_items_to_bury):
+	for i in number_of_items_to_bury:
 		var instantiated_item: Node3D = set_of_items_to_bury.items_to_bury.pick_random().instantiate()
 		modifiable_ground.add_child(instantiated_item)
 		

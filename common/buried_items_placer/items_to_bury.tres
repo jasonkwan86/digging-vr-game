@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemsToBury" load_steps=5 format=3 uid="uid://0qi00wvmyd2n"]
+[gd_resource type="Resource" script_class="ItemsToBury" format=3 uid="uid://0qi00wvmyd2n"]
 
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="1_36j1w"]
 [ext_resource type="Script" uid="uid://tqq88kw0b3kt" path="res://common/buried_items_placer/items_to_bury.gd" id="1_gmb7o"]

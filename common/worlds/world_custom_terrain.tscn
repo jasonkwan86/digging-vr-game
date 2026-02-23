@@ -14,7 +14,6 @@
 [ext_resource type="Resource" uid="uid://byiisa4geys8f" path="res://common/money_and_upgrades/tools/default.tres" id="6_lwlnf"]
 [ext_resource type="Resource" uid="uid://kpcwyxmbjh2x" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_1_tool/1_unlock_pickaxe.tres" id="6_p3bqw"]
 [ext_resource type="Resource" uid="uid://dix6wfhtoc4el" path="res://common/money_and_upgrades/tools/pickaxe.tres" id="7_451c7"]
-[ext_resource type="PackedScene" uid="uid://c80hpgbwshdgs" path="res://common/buried_items/variants/money_wad/money_wad.tscn" id="7_qedbv"]
 [ext_resource type="Resource" uid="uid://m4vaxyknbkc5" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_2_bag/1_bag_size_1.tres" id="7_sgqxm"]
 [ext_resource type="Resource" uid="uid://bgtyb5xfeoeyl" path="res://common/money_and_upgrades/upgrade_data/blacksmith/slot_3_rope/1_rope.tres" id="8_solpo"]
 [ext_resource type="Resource" uid="uid://bfj6tqbqreoke" path="res://common/money_and_upgrades/tools/drill.tres" id="8_wpnl1"]
@@ -472,29 +471,14 @@ size = Vector3(16, 58.55, 16)
 
 [node name="BuriedItems" type="Node3D" parent="Backyard/Sandbox" unique_id=92606792]
 
-[node name="Rock" parent="Backyard/Sandbox/BuriedItems" unique_id=1928710163 instance=ExtResource("4_c5o21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -0.6388223, 0)
-
 [node name="Rock3" parent="Backyard/Sandbox/BuriedItems" unique_id=352425305 instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 1)
 
 [node name="Rock2" parent="Backyard/Sandbox/BuriedItems" unique_id=350133347 instance=ExtResource("4_c5o21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -1, 0)
 
-[node name="Crystal" parent="Backyard/Sandbox/BuriedItems" unique_id=538193301 instance=ExtResource("5_fcoao")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.5648644, -0.9018705)
-
 [node name="Crystal2" parent="Backyard/Sandbox/BuriedItems" unique_id=1079390233 instance=ExtResource("5_fcoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.88079625, -0.3148049)
-
-[node name="Crystal3" parent="Backyard/Sandbox/BuriedItems" unique_id=183383359 instance=ExtResource("5_fcoao")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.397354, -0.88079625, -0.3148049)
-
-[node name="Crystal4" parent="Backyard/Sandbox/BuriedItems" unique_id=1226802237 instance=ExtResource("5_fcoao")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.332928, -0.27291462, 1.8737214)
-
-[node name="MoneyWad" parent="Backyard/Sandbox/BuriedItems" unique_id=718761329 instance=ExtResource("7_qedbv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9500885, -0.39527965, 0.46335125)
 
 [node name="Grasses" type="Node3D" parent="Backyard" unique_id=682807131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5817223, -1.5763035, 14.384319)
