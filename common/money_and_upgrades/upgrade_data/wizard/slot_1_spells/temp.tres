@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="AddConsumable" format=3 uid="uid://cvnsdsfhf8ba0"]
-
-[ext_resource type="Script" uid="uid://bmua64he8h1un" path="res://common/money_and_upgrades/upgrade_scripts/add_consumable.gd" id="1_hpmgy"]
-
-[resource]
-script = ExtResource("1_hpmgy")
-consumable = "Rope"
-upgrade_name = "temp"
-metadata/_custom_type_script = "uid://bmua64he8h1un"

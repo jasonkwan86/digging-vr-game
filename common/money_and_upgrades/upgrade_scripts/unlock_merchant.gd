@@ -1,10 +1,7 @@
 class_name UnlockMerchant
 extends Upgrade
 
-@export var merchant_id_to_unlock: int
+@export var merchant_to_unlock: MerchantHandler
 
-func _init() -> void:
-	is_repeating = false
-
-func do_upgrade(player: Player) -> void:
-	player.money_and_upgrades.unlock_merchant(merchant_id_to_unlock)
+func buy_upgrade() -> void:
+	merchant_to_unlock.set_visibility(true)

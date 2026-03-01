@@ -3,18 +3,25 @@ extends Node
 
 @export var money_count_label: Label
 @export var tool_label: Label
-@export var consumable_count_label: Label
-@export var merchants: Array[MerchantHandler]
-@export var tools: Array[Tool]
+@export var consumable_count_label: RichTextLabel
 
 var money: int:
 	set(value):
 		money = value
 		money_count_label.text = str(money)
+
+var tools: Array[Node]
 var current_tool = 0
 
-var consumables = {"Rope":0, "Rockets":0, "Bombs":0, "Haste Potions":0, "Greed Potions":0}
+var consumables: Array[Node]
+var current_consumable = 0
+
 var sell_value = 1
+
+func _ready() -> void:
+	tools = $Tools.get_children()
+	consumables = $Consumables.get_children()
+	update_consumable_label()
 
 
 func add_money(money_to_add: int) -> void:
@@ -22,10 +29,6 @@ func add_money(money_to_add: int) -> void:
 		money += (money_to_add*sell_value)
 	else:
 		money += money_to_add
-
-
-func unlock_merchant(merchant_id: int) -> void:
-	merchants[merchant_id-1].set_visibility(true)
 
 
 func next_tool(direction: int) -> void:
@@ -40,8 +43,26 @@ func next_tool(direction: int) -> void:
 	tool_label.text = tools[current_tool].tool_name
 
 
-func add_consumable(consumable: String, count: int) -> void:
+func next_consumable(direction: int) -> void:
+	current_consumable += direction
+	if current_consumable < 0:
+		current_consumable = consumables.size()-1
+	if current_consumable >= consumables.size():
+		current_consumable = 0
+	if not consumables[current_consumable].usable:
+		next_consumable(direction)
+	else:
+		update_consumable_label()
+
+
+func update_consumable_label() -> void:
 	consumable_count_label.text = ""
-	consumables[consumable] += count
-	for key in consumables:
-		consumable_count_label.text += key + ": " + str(consumables[key]) + "\n"
+	for i in range(consumables.size()):
+		var consumable = consumables[i]
+		if not consumable.usable:
+			consumable_count_label.append_text("\n")
+		if i == current_consumable:
+			consumable_count_label.append_text("[color=green]")
+		consumable_count_label.append_text(consumable.consumable_name + ": " + str(consumable.count) + "\n")
+		if i == current_consumable:
+			consumable_count_label.append_text("[/color]")

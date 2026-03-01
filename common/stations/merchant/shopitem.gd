@@ -1,23 +1,19 @@
 class_name ShopItem
 extends Node
 
-@export var slot_id: int = 0
-@export var player: Player
 @export var items: Array[Upgrade]
 
 var current_item: int = 0
-var merchant_id: int = 0
 
 func _ready() -> void:
-	merchant_id = get_parent().merchant_id
 	update_label()
 
 
-func interact(_player: Player) -> void:
-	if _player.money_and_upgrades.money >= items[current_item].cost:
+func interact(player: Player) -> void:
+	if player.money_and_upgrades.money >= items[current_item].cost:
 		AudioManager.play_mineral_sell_sound()
-		_player.money_and_upgrades.add_money(-1*items[current_item].cost)
-		items[current_item].do_upgrade(_player)
+		player.money_and_upgrades.add_money(-1*items[current_item].cost)
+		items[current_item].buy_upgrade()
 		if not items[current_item].is_repeating:
 			current_item += 1
 		if current_item >= items.size():

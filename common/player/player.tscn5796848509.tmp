@@ -36,7 +36,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_dsdjy"]
 radius = 1.0
 
-[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
+[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades", "potion_label")]
 collision_mask = 19
 script = ExtResource("1_dsdjy")
 interact_icon = NodePath("UI/InteractIcon")
@@ -45,6 +45,7 @@ looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
 mining_particles = ExtResource("2_6vwog")
 mineral_inventory = NodePath("MineralInventory")
 money_and_upgrades = NodePath("MoneyAndUpgrades")
+potion_label = NodePath("UI/PotionDuration/PotionRemaining")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=749104009]
 shape = SubResource("CapsuleShape3D_d4thd")
@@ -167,40 +168,41 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Hands"
 
-[node name="Consumables" type="Control" parent="UI" unique_id=2115965314]
+[node name="ConsumableCount" type="Control" parent="UI" unique_id=2115965314]
 layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ConsumableCount" type="RichTextLabel" parent="UI/Consumables" unique_id=1383146979]
+[node name="ConsumableCount" type="RichTextLabel" parent="UI/ConsumableCount" unique_id=1383146979]
 layout_mode = 1
 offset_right = 127.0
-offset_bottom = 145.0
+offset_bottom = 127.0
 text = "Rope: 0
+Rockets: 0
 Bombs: 0
 Haste Potions: 0
-Greed Potions: 0
+Greed Potions: 0"
 
-Rockets: 0"
-autowrap_mode = 0
+[node name="PotionDuration" type="Control" parent="UI" unique_id=1409490654]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
 
-[node name="PotionDuration" type="VBoxContainer" parent="UI" unique_id=1321316677]
+[node name="PotionRemaining" type="Label" parent="UI/PotionDuration" unique_id=1150201790]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -56.0
-offset_bottom = 50.0
+offset_bottom = 49.0
 grow_horizontal = 0
-
-[node name="HasteRemaining" type="Label" parent="UI/PotionDuration" unique_id=1150201790]
-layout_mode = 2
-text = "Haste: "
-
-[node name="GreedRemaining" type="Label" parent="UI/PotionDuration" unique_id=218888003]
-layout_mode = 2
-text = "Greed: "
+text = "Haste: 
+Greed: "
 
 [node name="InteractIcon" type="TextureRect" parent="UI" unique_id=910955173]
 visible = false
@@ -233,8 +235,35 @@ metadata/_custom_type_script = "uid://csn0nbyl186f1"
 script = ExtResource("8_6vwog")
 money_count_label = NodePath("../UI/Money/MoneyCount")
 tool_label = NodePath("../UI/Tool/ToolName")
-consumable_count_label = NodePath("../UI/Consumables/ConsumableCount")
+consumable_count_label = NodePath("../UI/ConsumableCount/ConsumableCount")
 metadata/_custom_type_script = "uid://b0b2fbddqdt1e"
+
+[node name="Tools" type="Node" parent="MoneyAndUpgrades" unique_id=2096431527]
+
+[node name="DefaultTool" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=1761357894]
+script = ExtResource("9_x7hfa")
+tool_name = "Hands"
+strength = 0.75
+is_unlocked = true
+metadata/_custom_type_script = "uid://dqse43cmmqby1"
+
+[node name="Pickaxe" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=2056745547]
+script = ExtResource("10_rdawb")
+tool_name = "Pickaxe"
+metadata/_custom_type_script = "uid://8bm1xioelp5f"
+
+[node name="Drill" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=2015625624]
+script = ExtResource("11_6wlmy")
+tool_name = "Drill"
+metadata/_custom_type_script = "uid://xxbh640van0b"
+
+[node name="RocketLauncher" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=1082734808 node_paths=PackedStringArray("rocket_consumable")]
+script = ExtResource("12_01kfu")
+rocket_projectile = ExtResource("13_1c0ic")
+rocket_consumable = NodePath("../../Consumables/RocketConsumable")
+tool_name = "Rocket Launcher"
+is_unlocked = true
+metadata/_custom_type_script = "uid://dx3scgijl6y7w"
 
 [node name="Upgrades" type="Node" parent="MoneyAndUpgrades" unique_id=622637252]
 
@@ -359,9 +388,8 @@ metadata/_custom_type_script = "uid://ba0r1v6f7lvv1"
 
 [node name="Slot_3_Rope" type="Node" parent="MoneyAndUpgrades/Upgrades/Blacksmith" unique_id=368367296]
 
-[node name="AddRope" type="Node" parent="MoneyAndUpgrades/Upgrades/Blacksmith/Slot_3_Rope" unique_id=228754851 node_paths=PackedStringArray("consumable")]
+[node name="AddRope" type="Node" parent="MoneyAndUpgrades/Upgrades/Blacksmith/Slot_3_Rope" unique_id=228754851]
 script = ExtResource("21_erhvt")
-consumable = NodePath("../../../../Consumables/Rope")
 num_to_add = 1
 upgrade_name = "Rope"
 cost = 1
@@ -435,9 +463,8 @@ metadata/_custom_type_script = "uid://ddomt33gvq5p6"
 
 [node name="Slot_2_Rockets" type="Node" parent="MoneyAndUpgrades/Upgrades/Demolitionist" unique_id=1454679951]
 
-[node name="AddRocket" type="Node" parent="MoneyAndUpgrades/Upgrades/Demolitionist/Slot_2_Rockets" unique_id=307010972 node_paths=PackedStringArray("consumable")]
+[node name="AddRocket" type="Node" parent="MoneyAndUpgrades/Upgrades/Demolitionist/Slot_2_Rockets" unique_id=307010972]
 script = ExtResource("21_erhvt")
-consumable = NodePath("../../../../Consumables/RocketConsumable")
 num_to_add = 5
 upgrade_name = "Rockets [5]"
 cost = 1
@@ -445,9 +472,8 @@ metadata/_custom_type_script = "uid://bmua64he8h1un"
 
 [node name="Slot_3_Bombs" type="Node" parent="MoneyAndUpgrades/Upgrades/Demolitionist" unique_id=1094262422]
 
-[node name="AddBomb" type="Node" parent="MoneyAndUpgrades/Upgrades/Demolitionist/Slot_3_Bombs" unique_id=653927771 node_paths=PackedStringArray("consumable")]
+[node name="AddBomb" type="Node" parent="MoneyAndUpgrades/Upgrades/Demolitionist/Slot_3_Bombs" unique_id=653927771]
 script = ExtResource("21_erhvt")
-consumable = NodePath("../../../../Consumables/Bomb")
 num_to_add = 1
 upgrade_name = "Bomb"
 cost = 1
@@ -457,17 +483,15 @@ metadata/_custom_type_script = "uid://bmua64he8h1un"
 
 [node name="Slot_1_PotionBoost" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard" unique_id=869230275]
 
-[node name="Temp" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost" unique_id=943026133 node_paths=PackedStringArray("consumable")]
+[node name="Temp" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost" unique_id=943026133]
 script = ExtResource("21_erhvt")
-consumable = NodePath("../../../../Consumables/Rope")
 upgrade_name = "Temp"
 metadata/_custom_type_script = "uid://bmua64he8h1un"
 
 [node name="Slot_2_Haste" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard" unique_id=1795324260]
 
-[node name="AddHaste" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard/Slot_2_Haste" unique_id=1008276289 node_paths=PackedStringArray("consumable")]
+[node name="AddHaste" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard/Slot_2_Haste" unique_id=1008276289]
 script = ExtResource("21_erhvt")
-consumable = NodePath("../../../../Consumables/Haste")
 num_to_add = 1
 upgrade_name = "Haste Potion"
 cost = 1
@@ -475,39 +499,12 @@ metadata/_custom_type_script = "uid://bmua64he8h1un"
 
 [node name="Slot_3_Greed" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard" unique_id=682525978]
 
-[node name="AddGreed" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard/Slot_3_Greed" unique_id=904001344 node_paths=PackedStringArray("consumable")]
+[node name="AddGreed" type="Node" parent="MoneyAndUpgrades/Upgrades/Wizard/Slot_3_Greed" unique_id=904001344]
 script = ExtResource("21_erhvt")
-consumable = NodePath("../../../../Consumables/Greed")
 num_to_add = 1
 upgrade_name = "Greed Potion"
 cost = 1
 metadata/_custom_type_script = "uid://bmua64he8h1un"
-
-[node name="Tools" type="Node" parent="MoneyAndUpgrades" unique_id=2096431527]
-
-[node name="DefaultTool" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=1761357894]
-script = ExtResource("9_x7hfa")
-tool_name = "Hands"
-strength = 0.75
-is_unlocked = true
-metadata/_custom_type_script = "uid://dqse43cmmqby1"
-
-[node name="Pickaxe" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=2056745547]
-script = ExtResource("10_rdawb")
-tool_name = "Pickaxe"
-metadata/_custom_type_script = "uid://8bm1xioelp5f"
-
-[node name="Drill" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=2015625624]
-script = ExtResource("11_6wlmy")
-tool_name = "Drill"
-metadata/_custom_type_script = "uid://xxbh640van0b"
-
-[node name="RocketLauncher" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=1082734808 node_paths=PackedStringArray("rocket_consumable")]
-script = ExtResource("12_01kfu")
-rocket_projectile = ExtResource("13_1c0ic")
-rocket_consumable = NodePath("../../Consumables/RocketConsumable")
-tool_name = "Rocket Launcher"
-metadata/_custom_type_script = "uid://dx3scgijl6y7w"
 
 [node name="Consumables" type="Node" parent="MoneyAndUpgrades" unique_id=2134184705]
 
@@ -515,24 +512,21 @@ metadata/_custom_type_script = "uid://dx3scgijl6y7w"
 script = ExtResource("23_7xmuk")
 metadata/_custom_type_script = "uid://0n6wbb8x3vfk"
 
+[node name="RocketConsumable" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=47456184]
+script = ExtResource("24_dvsd1")
+metadata/_custom_type_script = "uid://c0y1bhrtkxyfe"
+
 [node name="Bomb" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=679838175]
 script = ExtResource("25_llj0e")
 metadata/_custom_type_script = "uid://bkd4ag8uf7l38"
 
-[node name="Haste" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=1868597210 node_paths=PackedStringArray("controller", "haste_label")]
+[node name="Haste" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=1868597210]
 script = ExtResource("26_l6hcq")
-controller = NodePath("../../../PlayerCameraAndMovementController")
-haste_label = NodePath("../../../UI/PotionDuration/HasteRemaining")
 metadata/_custom_type_script = "uid://bf5a32thkapj"
 
-[node name="Greed" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=243522997 node_paths=PackedStringArray("greed_label")]
+[node name="Greed" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=243522997]
 script = ExtResource("27_qawn2")
-greed_label = NodePath("../../../UI/PotionDuration/GreedRemaining")
 metadata/_custom_type_script = "uid://ckfdmx073g73u"
-
-[node name="RocketConsumable" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=47456184]
-script = ExtResource("24_dvsd1")
-metadata/_custom_type_script = "uid://c0y1bhrtkxyfe"
 
 [node name="PlayerCameraAndMovementController" type="Node" parent="." unique_id=1447710607 node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("9_w3sq2")

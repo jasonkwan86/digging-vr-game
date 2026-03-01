@@ -7,6 +7,7 @@ func _ready() -> void:
 	if merchant_id > 0:
 		set_visibility(false)
 
+
 func set_visibility(vis: bool) -> void:
 	for child in get_children():
 		if child is CanvasItem or child is Node3D:
