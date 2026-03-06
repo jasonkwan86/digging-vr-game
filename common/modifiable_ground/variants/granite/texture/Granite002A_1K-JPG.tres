@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2lo6c33pqrad"]
+
+[ext_resource type="Texture2D" uid="uid://5ep3ar18skny" path="res://common/modifiable_ground/variants/granite/texture/Granite002A_1K-JPG_Color.jpg" id="Color"]
+[ext_resource type="Texture2D" uid="uid://cvkpekxwvhol3" path="res://common/modifiable_ground/variants/granite/texture/Granite002A_1K-JPG_Displacement.jpg" id="Displacement"]
+[ext_resource type="Texture2D" uid="uid://cbrdi4rvnad41" path="res://common/modifiable_ground/variants/granite/texture/Granite002A_1K-JPG_NormalGL.jpg" id="NormalGL"]
+[ext_resource type="Texture2D" uid="uid://cpeuudhb81b85" path="res://common/modifiable_ground/variants/granite/texture/Granite002A_1K-JPG_Roughness.jpg" id="Roughness"]
+
+[resource]
+albedo_texture = ExtResource("Color")
+roughness_texture = ExtResource("Roughness")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("Displacement")
+uv1_triplanar = true

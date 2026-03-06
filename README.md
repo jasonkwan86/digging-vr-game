@@ -3,6 +3,9 @@
 Resources Used:
 - Sand [texture](https://ambientcg.com/view?id=Ground093C)
 - Stone [texture](https://ambientcg.com/view?id=Rock022)
+- Clay [texture](https://ambientcg.com/view?id=Clay003)
+- Granite [texture](https://ambientcg.com/view?id=Granite002A)
+- Bedrock [texture](https://ambientcg.com/view?id=Rock035)
 - Interact [icon](https://www.flaticon.com/free-icon/tap_1612818?term=hand&page=1&position=41&origin=search&related_id=1612818)
 - Grab [sound](https://freesound.org/people/1bob/sounds/651515/)
 - Selling minerals [sound](https://pixabay.com/sound-effects/cash-register-purchase-87313/)
@@ -17,3 +20,4 @@ Resources Used:
 Digging
 - [Stone](https://freesound.org/people/InspectorJ/sounds/420878/)
 - [Sand 1](https://freesound.org/people/Bricklover/sounds/560957/)
+- [Dig sounds 1-6](https://freesound.org/people/idepe/sounds/196839/)

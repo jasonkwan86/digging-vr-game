@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
 [ext_resource type="PackedScene" uid="uid://f16gjq71jj15" path="res://common/aesthetic_items/fence/fence.fbx" id="3_b540t"]
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
-[ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="4_fcoao"]
+[ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/bedrock/modifiable_ground_bedrock.tscn" id="4_fcoao"]
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
 [ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
 [ext_resource type="Material" uid="uid://7adp1ukqj5ul" path="res://common/aesthetic_items/house/Concrete010_1K-JPG.tres" id="10_umwxm"]
+[ext_resource type="PackedScene" uid="uid://cu3lqqj1jhjbv" path="res://common/modifiable_ground/variants/clay/modifiable_ground_clay.tscn" id="11_k1rsi"]
+[ext_resource type="PackedScene" uid="uid://g3xj6nxlwql4" path="res://common/modifiable_ground/variants/granite/modifiable_ground_granite.tscn" id="12_e8fyy"]
 [ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="15_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bcn0f3ogmw8cx" path="res://common/aesthetic_items/bush/scene.gltf" id="16_k1rsi"]
 [ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="18_w7o82"]
@@ -235,9 +237,6 @@ transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2
 [node name="Player" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1578288810 instance=ExtResource("2_mhjqk")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9, 1, 2)
 
-[node name="MoneyAndUpgrades" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player" index="5" unique_id=817016602 node_paths=PackedStringArray("merchants")]
-merchants = [NodePath("../../Demolitionist"), NodePath("../../Wizard")]
-
 [node name="UnlockDemolitionist" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool" parent_id_path=PackedInt32Array(1578288810, 1119986838) index="9" unique_id=1470608683 node_paths=PackedStringArray("merchant_to_unlock")]
 merchant_to_unlock = NodePath("../../../../../../Demolitionist")
 
@@ -412,8 +411,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -31, -7)
 [node name="ModifiableGroundSand" parent="Backyard/Sandbox/SandboxOrigin" unique_id=769958387 instance=ExtResource("2_lopip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 
-[node name="ModifiableGroundStone" parent="Backyard/Sandbox/SandboxOrigin" unique_id=844982594 instance=ExtResource("4_fcoao")]
+[node name="ModifiableGroundClay" parent="Backyard/Sandbox/SandboxOrigin" unique_id=2096102443 instance=ExtResource("11_k1rsi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="ModifiableGroundStone" parent="Backyard/Sandbox/SandboxOrigin" unique_id=844982594 instance=ExtResource("4_fcoao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="ModifiableGroundGranite" parent="Backyard/Sandbox/SandboxOrigin" unique_id=274249371 instance=ExtResource("12_e8fyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23, 0)
+
+[node name="ModifiableGroundBedrock" parent="Backyard/Sandbox/SandboxOrigin" unique_id=569039121 instance=ExtResource("4_fcoao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36, 0)
 
 [node name="SandboxCSGCombiner" type="CSGCombiner3D" parent="Backyard/Sandbox/SandboxOrigin" unique_id=1901143490]
 use_collision = true

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cxkmi613l8vla"]
 
 [ext_resource type="Script" uid="uid://ko13rlm6d7je" path="res://common/modifiable_ground/modifiable_ground.gd" id="1_2qt66"]
-[ext_resource type="Material" uid="uid://cus1txpelpplh" path="res://common/modifiable_ground/variants/sand/sand_texture/Ground093C_1K-JPG.tres" id="2_kylns"]
+[ext_resource type="Material" uid="uid://cus1txpelpplh" path="res://common/modifiable_ground/variants/sand/texture/Ground093C_1K-JPG.tres" id="2_kylns"]
 [ext_resource type="PackedScene" uid="uid://dndff3p2pqbeo" path="res://common/modifiable_ground/underground_reflection_probe/underground_reflection_probe.tscn" id="3_80ip2"]
 [ext_resource type="AudioStream" uid="uid://wvsuvs14shjo" path="res://common/modifiable_ground/variants/sand/dig-sand.wav" id="3_mmysp"]
 [ext_resource type="Script" uid="uid://bf868w7ifc4b2" path="res://common/buried_items_placer/buried_items_placer.gd" id="4_sjnjg"]
