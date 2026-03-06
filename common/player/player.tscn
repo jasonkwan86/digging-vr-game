@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="PackedScene" uid="uid://dlragatc5qr2g" path="res://common/mining_particles/mining_particles.tscn" id="2_6vwog"]
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
+[ext_resource type="PackedScene" uid="uid://faxal6cfbiyx" path="res://common/player/headlamp/headlamp.tscn" id="3_dvsd1"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
 [ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="5_6vwog"]
 [ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="6_w3sq2"]
@@ -64,6 +65,9 @@ collision_mask = 22
 shape = SubResource("SphereShape3D_dsdjy")
 target_position = Vector3(0, 0, -5)
 collision_mask = 4
+
+[node name="Headlamp" parent="Camera3D" unique_id=1557774912 node_paths=PackedStringArray("camera") instance=ExtResource("3_dvsd1")]
+camera = NodePath("..")
 
 [node name="UI" type="Control" parent="." unique_id=224900956]
 layout_mode = 3
