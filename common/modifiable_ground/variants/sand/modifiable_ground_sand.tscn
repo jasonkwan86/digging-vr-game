@@ -61,7 +61,7 @@ stream = SubResource("AudioStreamRandomizer_g4uwb")
 script = ExtResource("4_sjnjg")
 number_of_items_to_bury = 300
 set_of_items_to_bury = ExtResource("5_80ip2")
-vertical_displacement_from_top = 10.0
+vertical_displacement_from_top = 3.0
 metadata/_custom_type_script = "uid://bf868w7ifc4b2"
 
 [node name="NoiseModifier" type="Node" parent="." unique_id=1797340207 node_paths=PackedStringArray("ground")]

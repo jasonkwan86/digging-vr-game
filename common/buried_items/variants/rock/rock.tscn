@@ -1,33 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5y7gyaqb66j8"]
+[gd_scene format=3 uid="uid://b5y7gyaqb66j8"]
 
-[ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/buried_items/buried_item.gd" id="1_h27u1"]
-[ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/buried_items/mineral_shape.tres" id="2_xeb2j"]
-[ext_resource type="Material" uid="uid://yptw6h5cmsi1" path="res://common/buried_items/variants/rock/rock_material.tres" id="3_gv77b"]
-[ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="3_tea0x"]
-[ext_resource type="ArrayMesh" uid="uid://bohca1sq08w0w" path="res://common/buried_items/variants/rock/rock_mesh.res" id="4_gv1n5"]
-[ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="5_rgxnf"]
+[ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/buried_items/buried_item.gd" id="1_2sksa"]
+[ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="2_8v5rv"]
+[ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="3_i1a3b"]
+[ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/buried_items/mineral_shape.tres" id="4_evfe0"]
+[ext_resource type="Material" uid="uid://yptw6h5cmsi1" path="res://common/buried_items/variants/rock/rock_material.tres" id="5_xetbx"]
+[ext_resource type="ArrayMesh" uid="uid://bohca1sq08w0w" path="res://common/buried_items/variants/rock/rock_mesh.res" id="6_vy0v4"]
 
-[node name="Rock" type="RigidBody3D" node_paths=PackedStringArray("mesh", "fall_detection_area")]
+[node name="Rock" type="RigidBody3D" unique_id=638720409 node_paths=PackedStringArray("mesh", "fall_detection_area")]
 collision_layer = 4
 collision_mask = 6
 can_sleep = false
-script = ExtResource("1_h27u1")
-buried_item_on_pickup_strategy = ExtResource("3_tea0x")
+script = ExtResource("1_2sksa")
+buried_item_on_pickup_strategy = ExtResource("2_8v5rv")
 mesh = NodePath("MeshInstance3D")
-interactable_highlight = ExtResource("5_rgxnf")
+interactable_highlight = ExtResource("3_i1a3b")
 fall_detection_area = NodePath("FallDetectionArea")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = ExtResource("2_xeb2j")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1105487944]
+shape = ExtResource("4_evfe0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2074432964]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.003033042, -1.1920929e-07, 0.0063878894)
-material_override = ExtResource("3_gv77b")
-mesh = ExtResource("4_gv1n5")
+material_override = ExtResource("5_xetbx")
+mesh = ExtResource("6_vy0v4")
 
-[node name="FallDetectionArea" type="Area3D" parent="."]
+[node name="FallDetectionArea" type="Area3D" parent="." unique_id=472066096]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea"]
-shape = ExtResource("2_xeb2j")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea" unique_id=698977706]
+shape = ExtResource("4_evfe0")

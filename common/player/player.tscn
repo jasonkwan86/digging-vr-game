@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
 [ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="5_6vwog"]
 [ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="6_w3sq2"]
-[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/crystal/crystal_on_pickup_strategy.tres" id="7_uslh8"]
+[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/coal/coal_on_pickup_strategy.tres" id="7_uslh8"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
 [ext_resource type="Script" uid="uid://u6uii8jv5bit" path="res://common/player/camera_and_movement_controller/player_camera_and_movement_controller.gd" id="9_w3sq2"]
 [ext_resource type="Script" uid="uid://dqse43cmmqby1" path="res://common/money_and_upgrades/tool_scripts/default_tool.gd" id="9_x7hfa"]

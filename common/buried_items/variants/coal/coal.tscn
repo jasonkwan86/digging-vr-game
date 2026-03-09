@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b0e318kwkxgo6"]
+
+[ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/buried_items/buried_item.gd" id="1_h27u1"]
+[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/coal/coal_on_pickup_strategy.tres" id="2_3ev76"]
+[ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/buried_items/mineral_shape.tres" id="2_xeb2j"]
+[ext_resource type="Material" uid="uid://ms1x71u64e0x" path="res://common/buried_items/variants/coal/coal_material.tres" id="3_gv77b"]
+[ext_resource type="ArrayMesh" uid="uid://cyhtrnvv5hf0t" path="res://common/buried_items/variants/coal/coal_mesh.res" id="5_qni0y"]
+[ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="5_rgxnf"]
+
+[node name="Coal" type="RigidBody3D" unique_id=855649369 node_paths=PackedStringArray("mesh", "fall_detection_area")]
+collision_layer = 4
+collision_mask = 6
+can_sleep = false
+script = ExtResource("1_h27u1")
+buried_item_on_pickup_strategy = ExtResource("2_3ev76")
+mesh = NodePath("MeshInstance3D")
+interactable_highlight = ExtResource("5_rgxnf")
+fall_detection_area = NodePath("FallDetectionArea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=219666047]
+shape = ExtResource("2_xeb2j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=436089236]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.003033042, -1.1920929e-07, 0.0063878894)
+mesh = ExtResource("5_qni0y")
+surface_material_override/0 = ExtResource("3_gv77b")
+
+[node name="FallDetectionArea" type="Area3D" parent="." unique_id=987390935]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea" unique_id=509276617]
+shape = ExtResource("2_xeb2j")

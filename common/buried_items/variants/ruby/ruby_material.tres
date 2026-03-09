@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cohlcmytyncw1"]
+
+[resource]
+cull_mode = 2
+albedo_color = Color(0.8784314, 0.06666667, 0.37254903, 0.74509805)
+roughness = 0.05
+emission_enabled = true
+emission = Color(0.7921569, 0.101960786, 0.13333334, 1)
+emission_energy_multiplier = 0.3
+rim_enabled = true
+rim = 0.4
+rim_tint = 0.3
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.2
+refraction_enabled = true

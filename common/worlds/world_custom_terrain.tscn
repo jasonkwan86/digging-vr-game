@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://f16gjq71jj15" path="res://common/aesthetic_items/fence/fence.fbx" id="3_b540t"]
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/bedrock/modifiable_ground_bedrock.tscn" id="4_fcoao"]
-[ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/crystal/crystal.tscn" id="5_fcoao"]
+[ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/coal/coal.tscn" id="5_fcoao"]
 [ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MineralOnPickupStrategy" format=3 uid="uid://b0tqjiggmbrej"]
+
+[ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="1_gkrd1"]
+
+[resource]
+script = ExtResource("1_gkrd1")
+mineral_name = "emerald"
+metadata/_custom_type_script = "uid://cld3um4o81xml"
