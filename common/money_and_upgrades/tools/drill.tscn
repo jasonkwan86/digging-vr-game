@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b4cd7faddib0x"]
+
+[ext_resource type="PackedScene" uid="uid://bgmhsbnkcq3yb" path="res://common/money_and_upgrades/tools/drill.glb" id="1_q3pva"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_si5vm"]
+
+[node name="Drill" type="Node3D" unique_id=2042608435]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=11434391]
+mesh = SubResource("BoxMesh_si5vm")
+
+[node name="drill" parent="." unique_id=468424435 instance=ExtResource("1_q3pva")]
+
+[node name="Circle" parent="drill" index="0" unique_id=703012379]
+transform = Transform3D(0.41416848, 0, 0, 0, -1.810388e-08, -0.41416848, 0, 0.41416848, -1.810388e-08, 0, 0, 3.5073395)
+
+[editable path="drill"]
