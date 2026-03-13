@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://deatxugpa14k7"]
+
+[ext_resource type="PackedScene" uid="uid://rcualpb6amp7" path="res://common/money_and_upgrades/consumables/bomb/bomb.glb" id="1_4cgk0"]
+
+[node name="Bomb" type="Node3D" unique_id=1568362783]
+
+[node name="bomb" parent="." unique_id=798953072 instance=ExtResource("1_4cgk0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

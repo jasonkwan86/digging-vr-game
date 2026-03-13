@@ -26,7 +26,7 @@
 [ext_resource type="Script" uid="uid://bmua64he8h1un" path="res://common/money_and_upgrades/upgrade/add_consumable.gd" id="21_erhvt"]
 [ext_resource type="Script" uid="uid://0n6wbb8x3vfk" path="res://common/money_and_upgrades/consumables/rope.gd" id="23_7xmuk"]
 [ext_resource type="Script" uid="uid://c0y1bhrtkxyfe" path="res://common/money_and_upgrades/consumables/rocket_consumable.gd" id="24_dvsd1"]
-[ext_resource type="Script" uid="uid://bkd4ag8uf7l38" path="res://common/money_and_upgrades/consumables/bomb.gd" id="25_llj0e"]
+[ext_resource type="Script" uid="uid://bkd4ag8uf7l38" path="res://common/money_and_upgrades/consumables/bomb/bomb.gd" id="25_llj0e"]
 [ext_resource type="Script" uid="uid://bf5a32thkapj" path="res://common/money_and_upgrades/consumables/haste.gd" id="26_l6hcq"]
 [ext_resource type="Script" uid="uid://ckfdmx073g73u" path="res://common/money_and_upgrades/consumables/greed.gd" id="27_qawn2"]
 
