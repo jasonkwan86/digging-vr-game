@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dwlv3hptgcxrw"
-path="res://.godot/imported/drill_bit.blend-17bfaf4b6035cc90da33f6427c7e5dcf.scn"
+path="res://.godot/imported/drill_bit.blend-956a25f14f653eba1b64e04deddede38.scn"
 
 [deps]
 
-source_file="res://common/money_and_upgrades/tools/drill_bit.blend"
-dest_files=["res://.godot/imported/drill_bit.blend-17bfaf4b6035cc90da33f6427c7e5dcf.scn"]
+source_file="res://common/money_and_upgrades/tools/drill/drill_bit.blend"
+dest_files=["res://.godot/imported/drill_bit.blend-956a25f14f653eba1b64e04deddede38.scn"]
 
 [params]
 

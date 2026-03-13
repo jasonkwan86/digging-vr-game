@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ddrcttan8h50e"
-path="res://.godot/imported/drill.blend-1c2ddd8bbf34e82a28333858762889d2.scn"
+uid="uid://c80m6y5nbs8ui"
+path="res://.godot/imported/pickaxe.blend-6a13e93f249e332688212155bb036eeb.scn"
 
 [deps]
 
-source_file="res://common/money_and_upgrades/tools/drill.blend"
-dest_files=["res://.godot/imported/drill.blend-1c2ddd8bbf34e82a28333858762889d2.scn"]
+source_file="res://common/money_and_upgrades/tools/pickaxe/pickaxe.blend"
+dest_files=["res://.godot/imported/pickaxe.blend-6a13e93f249e332688212155bb036eeb.scn"]
 
 [params]
 

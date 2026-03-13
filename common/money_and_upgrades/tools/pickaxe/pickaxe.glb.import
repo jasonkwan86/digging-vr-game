@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgmhsbnkcq3yb"
-path="res://.godot/imported/drill.glb-616058f5af62818014e534fd1f41feca.scn"
+uid="uid://bocvuy7ksvlvp"
+path="res://.godot/imported/pickaxe.glb-a9c3ce593a9970e293b8991f9f4369b6.scn"
 
 [deps]
 
-source_file="res://common/money_and_upgrades/tools/drill.glb"
-dest_files=["res://.godot/imported/drill.glb-616058f5af62818014e534fd1f41feca.scn"]
+source_file="res://common/money_and_upgrades/tools/pickaxe/pickaxe.glb"
+dest_files=["res://.godot/imported/pickaxe.glb-a9c3ce593a9970e293b8991f9f4369b6.scn"]
 
 [params]
 
