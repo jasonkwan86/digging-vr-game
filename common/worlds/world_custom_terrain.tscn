@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://g3xj6nxlwql4" path="res://common/modifiable_ground/variants/granite/modifiable_ground_granite.tscn" id="12_e8fyy"]
 [ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="15_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bcn0f3ogmw8cx" path="res://common/aesthetic_items/bush/scene.gltf" id="16_k1rsi"]
+[ext_resource type="PackedScene" uid="uid://7vlnu1hvcb3j" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket_launcher.tscn" id="18_katq7"]
 [ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="18_w7o82"]
+[ext_resource type="PackedScene" uid="uid://bscd8f35r8pul" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket.tscn" id="19_veg8t"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ycwdu"]
 panorama = ExtResource("1_qwd8j")
@@ -665,6 +667,12 @@ shape = SubResource("BoxShape3D_k1rsi")
 [node name="-xwall2" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=1597274134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.59444, 0.9565327, 2.9441013)
 shape = SubResource("BoxShape3D_2q5tt")
+
+[node name="RocketLauncher" parent="." unique_id=1014822643 instance=ExtResource("18_katq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1537676, 0, 0)
+
+[node name="Rocket" parent="." unique_id=255581422 instance=ExtResource("19_veg8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1682215, 0.011289239, -3.0768564)
 
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist"]

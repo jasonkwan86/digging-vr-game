@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://7vlnu1hvcb3j"]
+
+[ext_resource type="PackedScene" uid="uid://c4yho284sw174" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket_launcher.glb" id="1_nyxmk"]
+
+[node name="RocketLauncher" type="Node3D" unique_id=1014822643]
+
+[node name="rocket_launcher" parent="." unique_id=2022468209 instance=ExtResource("1_nyxmk")]

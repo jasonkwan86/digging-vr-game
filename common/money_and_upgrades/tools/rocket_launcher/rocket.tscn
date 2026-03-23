@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bscd8f35r8pul"]
+
+[ext_resource type="PackedScene" uid="uid://cfo4m4jf161dr" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket.blend" id="1_0elu0"]
+
+[node name="Rocket" type="Node3D" unique_id=255581422]
+
+[node name="rocket" parent="." unique_id=2095734961 instance=ExtResource("1_0elu0")]
