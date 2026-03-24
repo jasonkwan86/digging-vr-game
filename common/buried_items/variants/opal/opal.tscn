@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://cqd8niwajmmyg" path="res://common/buried_items/variants/opal/opal_on_pickup_strategy.tres" id="2_71jhu"]
 [ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/buried_items/mineral_shape.tres" id="2_owsgm"]
 [ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="3_ap4it"]
+[ext_resource type="Material" uid="uid://76v6i5i7xdfw" path="res://common/buried_items/greed_highlight.tres" id="4_ap4it"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k6pi"]
 
@@ -48,6 +49,7 @@ script = ExtResource("1_cgc6f")
 buried_item_on_pickup_strategy = ExtResource("2_71jhu")
 mesh = NodePath("Mesh")
 interactable_highlight = ExtResource("3_ap4it")
+greed_highlight = ExtResource("4_ap4it")
 fall_detection_area = NodePath("FallDetectionArea")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1657224346]

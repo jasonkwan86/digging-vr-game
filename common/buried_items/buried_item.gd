@@ -4,6 +4,7 @@ extends RigidBody3D
 @export var buried_item_on_pickup_strategy: BuriedItemOnPickupStrategy
 @export var mesh: MeshInstance3D
 @export var interactable_highlight: StandardMaterial3D
+@export var greed_highlight: StandardMaterial3D
 @export var fall_detection_area: Area3D
 
 var is_being_looked_at_this_frame: bool
@@ -17,7 +18,8 @@ func _process(_delta: float) -> void:
 		if mesh.material_overlay == null:
 			mesh.material_overlay = interactable_highlight
 	else:
-		mesh.material_overlay = null
+		if mesh.material_overlay != greed_highlight or freeze == false:
+			mesh.material_overlay = null
 	is_being_looked_at_this_frame = false
 
 func handle_mineral_exited_buried(_body: Node3D) -> void:

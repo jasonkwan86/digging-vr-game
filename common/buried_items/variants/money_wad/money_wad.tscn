@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c80hpgbwshdgs"]
+[gd_scene format=3 uid="uid://c80hpgbwshdgs"]
 
 [ext_resource type="ArrayMesh" uid="uid://ctmg53pufmdxt" path="res://common/buried_items/variants/money_wad/money_wad_mesh.res" id="1_jp31t"]
 [ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/buried_items/buried_item.gd" id="1_l37tm"]
 [ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="2_ku3hl"]
 [ext_resource type="Resource" uid="uid://2cinjs8anc6q" path="res://common/buried_items/variants/money_wad/money_wad_on_pickup_strategy.tres" id="2_mgdpr"]
+[ext_resource type="Material" uid="uid://76v6i5i7xdfw" path="res://common/buried_items/greed_highlight.tres" id="4_5258e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jp31t"]
 size = Vector3(0.5, 0.25, 0.063)
 
-[node name="MoneyWad" type="RigidBody3D" node_paths=PackedStringArray("mesh", "fall_detection_area")]
+[node name="MoneyWad" type="RigidBody3D" unique_id=920245955 node_paths=PackedStringArray("mesh", "fall_detection_area")]
 collision_layer = 4
 collision_mask = 6
 can_sleep = false
@@ -17,18 +18,19 @@ script = ExtResource("1_l37tm")
 buried_item_on_pickup_strategy = ExtResource("2_mgdpr")
 mesh = NodePath("RigidBody3D")
 interactable_highlight = ExtResource("2_ku3hl")
+greed_highlight = ExtResource("4_5258e")
 fall_detection_area = NodePath("FallDetectionArea")
 
-[node name="RigidBody3D" type="MeshInstance3D" parent="."]
+[node name="RigidBody3D" type="MeshInstance3D" parent="." unique_id=1422721824]
 transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0, 0, 0)
 mesh = ExtResource("1_jp31t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1745706950]
 shape = SubResource("BoxShape3D_jp31t")
 
-[node name="FallDetectionArea" type="Area3D" parent="."]
+[node name="FallDetectionArea" type="Area3D" parent="." unique_id=935933214]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallDetectionArea" unique_id=571440051]
 shape = SubResource("BoxShape3D_jp31t")

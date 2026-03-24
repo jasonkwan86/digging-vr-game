@@ -1,7 +1,7 @@
 class_name Pickaxe
 extends Tool
 
-func check_input() -> void:
+func check_input(_delta: float) -> void:
 	if Input.is_action_just_pressed("dig"):
 		use_tool()
 

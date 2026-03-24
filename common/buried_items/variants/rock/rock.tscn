@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dljk5dvp8t53c" path="res://common/buried_items/buried_item.gd" id="1_2sksa"]
 [ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="2_8v5rv"]
 [ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="3_i1a3b"]
+[ext_resource type="Material" uid="uid://76v6i5i7xdfw" path="res://common/buried_items/greed_highlight.tres" id="4_03eoy"]
 [ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/buried_items/mineral_shape.tres" id="4_evfe0"]
 [ext_resource type="Material" uid="uid://yptw6h5cmsi1" path="res://common/buried_items/variants/rock/rock_material.tres" id="5_xetbx"]
 [ext_resource type="ArrayMesh" uid="uid://bohca1sq08w0w" path="res://common/buried_items/variants/rock/rock_mesh.res" id="6_vy0v4"]
@@ -15,6 +16,7 @@ script = ExtResource("1_2sksa")
 buried_item_on_pickup_strategy = ExtResource("2_8v5rv")
 mesh = NodePath("MeshInstance3D")
 interactable_highlight = ExtResource("3_i1a3b")
+greed_highlight = ExtResource("4_03eoy")
 fall_detection_area = NodePath("FallDetectionArea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1105487944]

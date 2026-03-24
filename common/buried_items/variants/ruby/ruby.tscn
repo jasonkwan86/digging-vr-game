@@ -5,6 +5,7 @@
 [ext_resource type="Shape3D" uid="uid://ctf7ilnt6a2xq" path="res://common/buried_items/mineral_shape.tres" id="2_f7w1h"]
 [ext_resource type="Resource" uid="uid://bcbiu77ivg4n6" path="res://common/buried_items/variants/ruby/ruby_on_pickup_strategy.tres" id="2_p8wu5"]
 [ext_resource type="Material" uid="uid://b2xhafc56fbhn" path="res://common/buried_items/interactable_highlight.tres" id="3_hlolu"]
+[ext_resource type="Material" uid="uid://76v6i5i7xdfw" path="res://common/buried_items/greed_highlight.tres" id="4_1xh8j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dn1k"]
 
@@ -46,6 +47,7 @@ script = ExtResource("1_1xh8j")
 buried_item_on_pickup_strategy = ExtResource("2_p8wu5")
 mesh = NodePath("Mesh")
 interactable_highlight = ExtResource("3_hlolu")
+greed_highlight = ExtResource("4_1xh8j")
 fall_detection_area = NodePath("FallDetectionArea")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1402763213]

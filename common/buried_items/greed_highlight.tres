@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://76v6i5i7xdfw"]
+
+[resource]
+render_priority = 50
+transparency = 1
+no_depth_test = true
+emission_enabled = true
+emission = Color(1, 1, 0.54901963, 1)

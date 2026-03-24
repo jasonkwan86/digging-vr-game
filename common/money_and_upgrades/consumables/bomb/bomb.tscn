@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://deatxugpa14k7"]
 
 [ext_resource type="PackedScene" uid="uid://rcualpb6amp7" path="res://common/money_and_upgrades/consumables/bomb/bomb.glb" id="1_4cgk0"]
+[ext_resource type="Script" uid="uid://cywwdpg5ghx16" path="res://common/money_and_upgrades/consumables/bomb/bomb.gd" id="1_ar45o"]
 
-[node name="Bomb" type="Node3D" unique_id=1568362783]
+[sub_resource type="SphereShape3D" id="SphereShape3D_4cgk0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ar45o"]
+
+[node name="Bomb" type="RigidBody3D" unique_id=1289113895]
+collision_layer = 8
+collision_mask = 18
+script = ExtResource("1_ar45o")
 
 [node name="bomb" parent="." unique_id=798953072 instance=ExtResource("1_4cgk0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1767913513]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_4cgk0")
+
+[node name="DetonationArea" type="Area3D" parent="." unique_id=1008460017]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetonationArea" unique_id=190360082]
+shape = SubResource("SphereShape3D_ar45o")

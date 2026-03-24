@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://7xll1ohcqjld"]
+[gd_scene format=3 uid="uid://7xll1ohcqjld"]
 
 [ext_resource type="PackedScene" uid="uid://d31fr7y3dqch0" path="res://common/stations/merchant/shopitem.tscn" id="1_0o53v"]
 [ext_resource type="Script" uid="uid://dlex3wbxgpajm" path="res://common/stations/merchant/merchant_handler.gd" id="1_i2vmd"]
@@ -9,29 +9,27 @@ size = Vector3(2, 2, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_fcoao"]
 size = Vector3(2, 2, 2)
 
-[node name="Merchant" type="StaticBody3D"]
+[node name="Merchant" type="StaticBody3D" unique_id=779702338]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0)
 collision_layer = 15
 script = ExtResource("1_i2vmd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1427519532]
 shape = SubResource("BoxShape3D_fcoao")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1162986667]
 mesh = SubResource("BoxMesh_fcoao")
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=473277624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 pixel_size = 0.02
 text = "Merchant Name"
 
-[node name="ShopItem" parent="." instance=ExtResource("1_0o53v")]
+[node name="ShopItem" parent="." unique_id=619888384 instance=ExtResource("1_0o53v")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.6, 0, 1)
 
-[node name="ShopItem2" parent="." instance=ExtResource("1_0o53v")]
+[node name="ShopItem2" parent="." unique_id=615149355 instance=ExtResource("1_0o53v")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 1)
-slot_id = 1
 
-[node name="ShopItem3" parent="." instance=ExtResource("1_0o53v")]
+[node name="ShopItem3" parent="." unique_id=1346608155 instance=ExtResource("1_0o53v")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.6, 0, 1)
-slot_id = 2
