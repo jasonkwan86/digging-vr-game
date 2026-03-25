@@ -4,5 +4,4 @@ extends Upgrade
 @export var merchant_to_unlock: MerchantHandler
 
 func buy_upgrade() -> void:
-	#merchant_to_unlock.set_visibility(true)
-	merchant_to_unlock.set_opacity(1)
+	merchant_to_unlock.set_visibility(true)
