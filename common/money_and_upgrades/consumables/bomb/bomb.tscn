@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://rcualpb6amp7" path="res://common/money_and_upgrades/consumables/bomb/bomb.glb" id="1_4cgk0"]
 [ext_resource type="Script" uid="uid://cywwdpg5ghx16" path="res://common/money_and_upgrades/consumables/bomb/bomb.gd" id="1_ar45o"]
+[ext_resource type="Material" uid="uid://d2n5wtug8xs5m" path="res://common/money_and_upgrades/consumables/bomb/bomb_flashing.tres" id="3_6k1eh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4cgk0"]
 
@@ -11,9 +12,19 @@
 collision_layer = 8
 collision_mask = 18
 script = ExtResource("1_ar45o")
+bomb_flash = ExtResource("3_6k1eh")
 
 [node name="bomb" parent="." unique_id=798953072 instance=ExtResource("1_4cgk0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Sphere" parent="bomb" index="0" unique_id=647045460]
+material_overlay = ExtResource("3_6k1eh")
+
+[node name="BombTop" parent="bomb" index="1" unique_id=114700018]
+material_overlay = ExtResource("3_6k1eh")
+
+[node name="Rope" parent="bomb" index="2" unique_id=1116753862]
+material_overlay = ExtResource("3_6k1eh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1767913513]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -25,3 +36,5 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetonationArea" unique_id=190360082]
 shape = SubResource("SphereShape3D_ar45o")
+
+[editable path="bomb"]

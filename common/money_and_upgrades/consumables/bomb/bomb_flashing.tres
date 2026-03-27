@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d2n5wtug8xs5m"]
+
+[ext_resource type="Shader" uid="uid://csmh54cvenpmc" path="res://common/money_and_upgrades/consumables/bomb/bomb_flashing.gdshader" id="1_jnrew"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jnrew")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_alpha = 0.0
