@@ -1,8 +1,9 @@
 class_name Rocket
 extends RigidBody3D
 
-const ROCKET_SPEED: int = 8
 const ROCKET_RANGE_MOD: int = 4
+
+@export var ROCKET_SPEED: int = 8
 
 var dig_radius: float
 var dig_strength: float

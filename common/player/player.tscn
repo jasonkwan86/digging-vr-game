@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://8bm1xioelp5f" path="res://common/money_and_upgrades/tools/pickaxe/pickaxe.gd" id="10_rdawb"]
 [ext_resource type="Script" uid="uid://xxbh640van0b" path="res://common/money_and_upgrades/tools/drill/drill.gd" id="11_6wlmy"]
 [ext_resource type="Script" uid="uid://dx3scgijl6y7w" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket_launcher.gd" id="12_01kfu"]
-[ext_resource type="PackedScene" uid="uid://yol1qlem24k" path="res://common/money_and_upgrades/rocket.tscn" id="13_1c0ic"]
+[ext_resource type="PackedScene" uid="uid://yol1qlem24k" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket.tscn" id="13_1c0ic"]
 [ext_resource type="Script" uid="uid://cy8p02w5gnyqg" path="res://common/money_and_upgrades/upgrade/unlock_tool.gd" id="13_rdawb"]
 [ext_resource type="Script" uid="uid://bld5sjt0av87g" path="res://common/money_and_upgrades/upgrade/dig_size.gd" id="14_6wlmy"]
 [ext_resource type="Script" uid="uid://3e3cgf1w27dy" path="res://common/money_and_upgrades/upgrade/dig_reach.gd" id="15_01kfu"]

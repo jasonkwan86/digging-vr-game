@@ -4,7 +4,7 @@ extends Tool
 const ROCKET_COOLDOWN_MOD: int = 2
 
 @export var rocket_projectile: PackedScene
-@export var rocket_consumable: Node
+@export var rocket_consumable: RocketConsumable
 
 var dig_cooldown: float = 0
 
@@ -15,7 +15,6 @@ func check_input(delta: float) -> void:
 	
 	if dig_cooldown > 0:
 		dig_cooldown -= delta
-
 
 func use_tool() -> void:
 	if rocket_consumable.count <= 0:
