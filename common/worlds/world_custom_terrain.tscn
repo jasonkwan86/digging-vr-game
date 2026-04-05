@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/coal/coal.tscn" id="5_fcoao"]
 [ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
+[ext_resource type="PackedScene" uid="uid://d31fr7y3dqch0" path="res://common/stations/merchant/shopitem.tscn" id="7_6jyhs"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
 [ext_resource type="Material" uid="uid://7adp1ukqj5ul" path="res://common/aesthetic_items/house/Concrete010_1K-JPG.tres" id="10_umwxm"]
 [ext_resource type="PackedScene" uid="uid://cu3lqqj1jhjbv" path="res://common/modifiable_ground/variants/clay/modifiable_ground_clay.tscn" id="11_k1rsi"]
@@ -267,6 +268,10 @@ items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith
 [node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="5" unique_id=1346608155 node_paths=PackedStringArray("items")]
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_3_Rope/AddRope")]
 
+[node name="ShopItem4" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" unique_id=1036681858 node_paths=PackedStringArray("items") instance=ExtResource("7_6jyhs")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0.75, 1)
+items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_4_Light/UnlockLight")]
+
 [node name="Demolitionist" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.5, 1.5, -8.5)
 merchant_id = 1
@@ -291,7 +296,7 @@ merchant_id = 2
 text = "Wizard"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
-items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/Temp")]
+items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/SellValue3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/PotionDuration1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/HasteBoost1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/GreedSize1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/PotionDuration2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/HasteBoost2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/GreedSize2")]
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_2_Haste/AddHaste")]

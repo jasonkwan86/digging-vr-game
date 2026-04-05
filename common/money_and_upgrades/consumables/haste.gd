@@ -4,8 +4,8 @@ extends Consumable
 @export var controller: PlayerCameraAndMovementController
 @export var haste_label: Label
 
-var haste_speed_boost: float = 2
-var haste_jump_boost: float = 2
+var haste_speed_boost: float = 1
+var haste_jump_boost: float = 1
 
 var haste_time: float = 0
 
