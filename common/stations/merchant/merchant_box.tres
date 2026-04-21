@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bytreng7i6nj"]
+
+[ext_resource type="Texture2D" uid="uid://cko0yaxn12vi2" path="res://common/stations/merchant/wooden_garage_door_4k_wooden_garage_door_diff.jpg" id="1_uf0g2"]
+[ext_resource type="Texture2D" uid="uid://but5fb07dmles" path="res://common/stations/merchant/wooden_garage_door_4k_wooden_garage_door_rough.png" id="2_hiiog"]
+[ext_resource type="Texture2D" uid="uid://cppe38tax7aq4" path="res://common/stations/merchant/wooden_garage_door_4k_wooden_garage_door_nor_gl.png" id="3_hxi23"]
+
+[resource]
+resource_name = "wooden_garage_door"
+transparency = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("1_uf0g2")
+metallic_texture = ExtResource("2_hiiog")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_hiiog")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_hxi23")
+uv1_scale = Vector3(0.7, 0.3, 0.3)
+uv1_triplanar = true

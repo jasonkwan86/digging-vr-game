@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://hbnmo6g8no7j"]
+
+[ext_resource type="Texture2D" uid="uid://bmm0akyi0ykrg" path="res://common/aesthetic_items/house/concrete_slab_wall_02_4k_concrete_slab_wall_02_diff.jpg" id="1_jj5e6"]
+[ext_resource type="Texture2D" uid="uid://ev26r5rlp2y7" path="res://common/aesthetic_items/house/concrete_slab_wall_02_4k_concrete_slab_wall_02_rough.png" id="2_ciq0y"]
+[ext_resource type="Texture2D" uid="uid://cjp1g7ebioswc" path="res://common/aesthetic_items/house/concrete_slab_wall_02_4k_concrete_slab_wall_02_nor_gl.png" id="3_n8jyw"]
+
+[resource]
+resource_name = "concrete_slab_wall_02"
+cull_mode = 2
+albedo_texture = ExtResource("1_jj5e6")
+metallic_texture = ExtResource("2_ciq0y")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_ciq0y")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_n8jyw")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0.5, 0, 0)

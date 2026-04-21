@@ -10,6 +10,11 @@ func _ready() -> void:
 
 func set_visibility(vis: bool) -> void:
 	for child in get_children():
-		if child is CanvasItem or child is Node3D:
+		if child is ShopItem or child is Label3D:
 			child.visible = vis
-	self.process_mode = Node.PROCESS_MODE_INHERIT if vis else Node.PROCESS_MODE_DISABLED
+		if child is CollisionShape3D:
+			child.disabled = !vis
+	
+	var mat = $MeshInstance3D.get_surface_override_material(0).duplicate()
+	mat.albedo_color.a = 1.0 if vis else 0.5
+	$MeshInstance3D.set_surface_override_material(0,mat)

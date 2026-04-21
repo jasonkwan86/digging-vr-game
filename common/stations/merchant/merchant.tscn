@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://d31fr7y3dqch0" path="res://common/stations/merchant/shopitem.tscn" id="1_0o53v"]
 [ext_resource type="Script" uid="uid://dlex3wbxgpajm" path="res://common/stations/merchant/merchant_handler.gd" id="1_i2vmd"]
+[ext_resource type="Material" uid="uid://bytreng7i6nj" path="res://common/stations/merchant/merchant_box.tres" id="2_awgqe"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fcoao"]
-size = Vector3(2, 2, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_i2vmd"]
+size = Vector3(1, 0.35, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fcoao"]
 size = Vector3(2, 2, 2)
@@ -13,23 +14,29 @@ size = Vector3(2, 2, 2)
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0)
 collision_layer = 15
 script = ExtResource("1_i2vmd")
+mat = ExtResource("2_awgqe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1427519532]
-shape = SubResource("BoxShape3D_fcoao")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_i2vmd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1162986667]
+transform = Transform3D(1, 0, 0, 0, 0.35, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_fcoao")
+surface_material_override/0 = ExtResource("2_awgqe")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=473277624]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
 pixel_size = 0.02
 text = "Merchant Name"
+font_size = 24
+outline_size = 8
 
 [node name="ShopItem" parent="." unique_id=619888384 instance=ExtResource("1_0o53v")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.6, 0, 1)
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.6, 0.35, 0)
 
 [node name="ShopItem2" parent="." unique_id=615149355 instance=ExtResource("1_0o53v")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0.35, 0)
 
 [node name="ShopItem3" parent="." unique_id=1346608155 instance=ExtResource("1_0o53v")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.6, 0, 1)
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.6, 0.35, 0)

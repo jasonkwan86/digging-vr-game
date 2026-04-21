@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cff41fqond38i"]
+
+[ext_resource type="Texture2D" uid="uid://2e00dwrmn0q6" path="res://common/aesthetic_items/house/wood_planks_dirt_4k_wood_planks_dirt_diff.jpg" id="1_2qogm"]
+[ext_resource type="Texture2D" uid="uid://cwvc0ley7pkr5" path="res://common/aesthetic_items/house/wood_planks_dirt_4k_wood_planks_dirt_rough.png" id="2_vi4eq"]
+[ext_resource type="Texture2D" uid="uid://b8gqrln1b756a" path="res://common/aesthetic_items/house/wood_planks_dirt_4k_wood_planks_dirt_nor_gl.png" id="3_1cdb3"]
+
+[resource]
+resource_name = "wood_planks_dirt"
+cull_mode = 2
+albedo_texture = ExtResource("1_2qogm")
+metallic_texture = ExtResource("2_vi4eq")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_vi4eq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_1cdb3")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_offset = Vector3(0.5, 0, 0)
+uv1_triplanar = true

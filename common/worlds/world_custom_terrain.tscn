@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="15_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bcn0f3ogmw8cx" path="res://common/aesthetic_items/bush/scene.gltf" id="16_k1rsi"]
 [ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="18_w7o82"]
+[ext_resource type="Material" uid="uid://cff41fqond38i" path="res://common/aesthetic_items/house/wood_planks_dirt.tres" id="19_katq7"]
+[ext_resource type="Material" uid="uid://hbnmo6g8no7j" path="res://common/aesthetic_items/house/concrete_slab_wall_02.tres" id="20_veg8t"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ycwdu"]
 panorama = ExtResource("1_qwd8j")
@@ -29,6 +31,8 @@ sky_material = SubResource("PanoramaSkyMaterial_ycwdu")
 background_mode = 2
 sky = SubResource("Sky_qwd8j")
 tonemap_mode = 2
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
 glow_levels/2 = 1.0
 glow_levels/4 = 0.5
@@ -100,6 +104,19 @@ size = Vector3(7.54, 5, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1a078"]
 size = Vector3(7.54, 5, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3r5y"]
+size = Vector3(9.145, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lwlnf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3bqw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgqxm"]
+transparency = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnylg"]
 size = Vector3(34, 7.39, 1)
 
@@ -115,7 +132,7 @@ size = Vector3(1, 5, 7.98)
 environment = SubResource("Environment_yoapk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1075585349]
-transform = Transform3D(0.8526403, 0.42271027, -0.30711696, 0, 0.5877853, 0.8090171, 0.5224986, -0.68980044, 0.5011694, 0, 5.995867, 0)
+transform = Transform3D(0.8526403, 0.42271024, -0.307117, 0, 0.58778536, 0.80901706, 0.5224986, -0.6898004, 0.5011694, 0, 5.995867, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1578288810 instance=ExtResource("2_mhjqk")]
@@ -243,7 +260,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3174305, 0, 0.73747635)
 collision_layer = 16
 
 [node name="SellStation" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=58626733 instance=ExtResource("2_b8nul")]
-transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.309, 1.5, 1.337)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1999998, 1.5, 6)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=335299020]
 material_override = ExtResource("10_umwxm")
@@ -254,26 +271,29 @@ skeleton = NodePath("../../..")
 shape = SubResource("BoxShape3D_b540t")
 
 [node name="Blacksmith" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=657462227 instance=ExtResource("5_xnylg")]
-transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.7069998, 1.5, 6.649)
+transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.7, 0.8, 2)
 
 [node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="2" unique_id=473277624]
 text = "Blacksmith"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.75, 0.35, 0)
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockPickaxe"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigReach1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockDrill"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSpeed1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigReach2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSpeed2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockDemolitionist")]
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.25, 0.35, 0)
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/BagSize1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/Lightweight"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/BagSize2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/SellValue1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/BagSize3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/SellValue2")]
 
 [node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="5" unique_id=1346608155 node_paths=PackedStringArray("items")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.25, 0.35, 0)
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_3_Rope/AddRope")]
 
 [node name="ShopItem4" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" unique_id=1036681858 node_paths=PackedStringArray("items") instance=ExtResource("7_6jyhs")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0.75, 1)
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.75, 0.35, 0)
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_4_Light/UnlockLight")]
 
 [node name="Demolitionist" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.5, 1.5, -8.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -2)
 merchant_id = 1
 
 [node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="2" unique_id=473277624]
@@ -289,7 +309,7 @@ items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolition
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_3_Bombs/AddBomb")]
 
 [node name="Wizard" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1996559039 instance=ExtResource("5_xnylg")]
-transform = Transform3D(-7.351371e-08, 0, -1, 0, 1, 0, 1, 0, -7.351371e-08, 2.5, 1.5, -3)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -6)
 merchant_id = 2
 
 [node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="2" unique_id=473277624]
@@ -618,6 +638,7 @@ collision_layer = 16
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House" unique_id=1389133736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -5.7716475)
+material_override = ExtResource("19_katq7")
 mesh = SubResource("BoxMesh_b540t")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Backyard/House" unique_id=1821828579]
@@ -626,6 +647,7 @@ shape = SubResource("BoxShape3D_e8fyy")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Backyard/House" unique_id=2052423067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 1.4868469)
+material_override = ExtResource("19_katq7")
 mesh = SubResource("BoxMesh_1a078")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Backyard/House" unique_id=1309556582]
@@ -634,6 +656,7 @@ shape = SubResource("BoxShape3D_6jyhs")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Backyard/House" unique_id=1955497376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -9.858802)
+material_override = ExtResource("19_katq7")
 mesh = SubResource("BoxMesh_2q5tt")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Backyard/House" unique_id=3221241]
@@ -642,6 +665,7 @@ shape = SubResource("BoxShape3D_katq7")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Backyard/House" unique_id=802759109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, 3.962264)
+material_override = ExtResource("19_katq7")
 mesh = SubResource("BoxMesh_w7o82")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/House" unique_id=2057332360]
@@ -650,6 +674,7 @@ shape = SubResource("BoxShape3D_veg8t")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Backyard/House" unique_id=1655946339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, -14.96132)
+material_override = ExtResource("19_katq7")
 mesh = SubResource("BoxMesh_w7o82")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Backyard/House" unique_id=1930708563]
@@ -657,6 +682,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, -14.961
 shape = SubResource("BoxShape3D_1a078")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Backyard/House" unique_id=1037280599]
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Backyard/House" unique_id=1250702028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.683, 5, -5.663)
+shape = SubResource("BoxShape3D_v3r5y")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Backyard/House" unique_id=169621704]
+transform = Transform3D(9.145, 0, 0, 0, 1, 0, 0, 0, 20, 1.683, 5, -5.663)
+material_override = ExtResource("20_veg8t")
+mesh = SubResource("BoxMesh_lwlnf")
+
+[node name="HouseLight" type="OmniLight3D" parent="Backyard/House" unique_id=2102452931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.683, 4.1, -10.663)
+light_color = Color(1.8247963, 1.6501102, 1.1260523, 1)
+light_size = 1.0
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House/HouseLight" unique_id=2026493309]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.8000002, 0)
+gi_lightmap_texel_scale = 0.01
+mesh = SubResource("BoxMesh_p3bqw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sgqxm")
+
+[node name="HouseLight2" type="OmniLight3D" parent="Backyard/House" unique_id=1391038553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.683, 4.1, -0.663)
+light_color = Color(1.8247963, 1.6501102, 1.1260523, 1)
+light_size = 1.0
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House/HouseLight2" unique_id=1360348872]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.8000002, 0)
+gi_lightmap_texel_scale = 0.01
+mesh = SubResource("BoxMesh_p3bqw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sgqxm")
 
 [node name="Boundary" type="StaticBody3D" parent="Backyard" unique_id=877908155]
 
