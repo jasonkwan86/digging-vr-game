@@ -22,12 +22,12 @@
 [ext_resource type="Script" uid="uid://ddomt33gvq5p6" path="res://common/money_and_upgrades/upgrade/unlock_merchant.gd" id="17_4j6q8"]
 [ext_resource type="Script" uid="uid://b63tu77vuarve" path="res://common/money_and_upgrades/upgrade/bag_size.gd" id="18_6j2u6"]
 [ext_resource type="Script" uid="uid://cmksckr83uc2d" path="res://common/money_and_upgrades/upgrade/lightweight.gd" id="19_4k30a"]
-[ext_resource type="Script" uid="uid://dtbigxp433ai7" path="res://common/money_and_upgrades/upgrade/unlock_light.gd" id="19_l6hcq"]
-[ext_resource type="Script" uid="uid://bmocworniqpyd" path="res://common/money_and_upgrades/upgrade/potion_duration.gd" id="20_3hjmw"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/unlock_light.gd" id="19_l6hcq"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/potion_duration.gd" id="20_3hjmw"]
 [ext_resource type="Script" uid="uid://ba0r1v6f7lvv1" path="res://common/money_and_upgrades/upgrade/sell_value.gd" id="20_ow2f5"]
-[ext_resource type="Script" uid="uid://djccgrnov7jws" path="res://common/money_and_upgrades/upgrade/haste_boost.gd" id="20_qawn2"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/haste_boost.gd" id="20_qawn2"]
 [ext_resource type="Script" uid="uid://bmua64he8h1un" path="res://common/money_and_upgrades/upgrade/add_consumable.gd" id="21_erhvt"]
-[ext_resource type="Script" uid="uid://dl7ydyd4fst4l" path="res://common/money_and_upgrades/upgrade/greed_size.gd" id="22_3or88"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/greed_size.gd" id="22_3or88"]
 [ext_resource type="Script" uid="uid://0n6wbb8x3vfk" path="res://common/money_and_upgrades/consumables/rope.gd" id="23_7xmuk"]
 [ext_resource type="Script" uid="uid://c0y1bhrtkxyfe" path="res://common/money_and_upgrades/consumables/rocket_consumable.gd" id="24_dvsd1"]
 [ext_resource type="Script" uid="uid://bkd4ag8uf7l38" path="res://common/money_and_upgrades/consumables/bomb/bomb_consumable.gd" id="25_llj0e"]
@@ -547,13 +547,13 @@ metadata/_custom_type_script = "uid://bmua64he8h1un"
 [node name="DefaultTool" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=1761357894]
 script = ExtResource("9_x7hfa")
 tool_name = "Hands"
-strength = 0.75
 is_unlocked = true
 metadata/_custom_type_script = "uid://dqse43cmmqby1"
 
 [node name="Pickaxe" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=2056745547]
 script = ExtResource("10_rdawb")
 tool_name = "Pickaxe"
+dig_power = 2.0
 metadata/_custom_type_script = "uid://8bm1xioelp5f"
 
 [node name="Drill" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=2015625624]

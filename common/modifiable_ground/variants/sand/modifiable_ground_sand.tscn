@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cxkmi613l8vla"]
 
 [ext_resource type="Script" uid="uid://ko13rlm6d7je" path="res://common/modifiable_ground/modifiable_ground.gd" id="1_2qt66"]
+[ext_resource type="PackedScene" uid="uid://dlragatc5qr2g" path="res://common/mining_particles/mining_particles.tscn" id="2_dfelk"]
 [ext_resource type="Material" uid="uid://cus1txpelpplh" path="res://common/modifiable_ground/variants/sand/texture/Ground093C_1K-JPG.tres" id="2_kylns"]
 [ext_resource type="PackedScene" uid="uid://dndff3p2pqbeo" path="res://common/modifiable_ground/underground_reflection_probe/underground_reflection_probe.tscn" id="3_80ip2"]
 [ext_resource type="AudioStream" uid="uid://wvsuvs14shjo" path="res://common/modifiable_ground/variants/sand/dig-sand.wav" id="3_mmysp"]
@@ -35,9 +36,11 @@ frequency = 0.2037
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_2qt66")
+dig_resistance = 0
 buried_items_placer = NodePath("BuriedItemsPlacer")
 dig_sound_player = NodePath("DigSoundPlayer")
 underground_reflection_probe = NodePath("ReflectionProbe")
+dig_particles = ExtResource("2_dfelk")
 WIDTH = 16
 FLAT_SHADED = false
 MESH_INSTANCE = NodePath("MeshInstance3D")

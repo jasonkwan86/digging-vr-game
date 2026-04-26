@@ -289,9 +289,14 @@ const EDGES = [
 
 const DEFAULT_INSIDE_MESH = -1
 
+@export_group("Ground Mining Properties")
+@export var dig_resistance: int = 1
+
+@export_group("References")
 @export var buried_items_placer: BuriedItemsPlacer
 @export var dig_sound_player: AudioStreamPlayer
 @export var underground_reflection_probe: ReflectionProbe
+@export var dig_particles: PackedScene
 
 @export_group("Mesh Properties")
 @export var HEIGHT:int = 16
@@ -413,6 +418,15 @@ func get_triangulation(x:int, y:int, z:int):
 	idx |= int(voxel_grid.read(x+1, y+1, z+1) < ISO_LEVEL)<<6
 	idx |= int(voxel_grid.read(x+1, y+1, z) < ISO_LEVEL)<<7
 	return TRIANGULATIONS[idx]
+
+## Dig power is the hardness threshold. Dig strength is value to add to each scalar field.
+func try_remove_from(dig_power: int, global_center: Vector3, radius: float, dig_strength: float) -> void:
+	if dig_power > dig_resistance:
+		remove_from(global_center, radius, dig_strength)
+		if dig_particles:
+			var dig_particles_instance: Node3D = dig_particles.instantiate()
+			get_tree().root.add_child(dig_particles_instance)
+			dig_particles_instance.global_position = global_center
 
 func remove_from(global_center: Vector3, radius: float, dig_strength: float):
 	dig_sound_player.play()

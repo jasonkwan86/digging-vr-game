@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://5ashcspi3ruo"]
 
-[ext_resource type="Script" uid="uid://ko13rlm6d7je" path="res://common/modifiable_ground/modifiable_ground.gd" id="1_pfowh"]
-[ext_resource type="Material" uid="uid://ccwrmqykkhkse" path="res://common/modifiable_ground/variants/stone/texture/Rock022_1K-JPG.tres" id="2_x7hgm"]
-[ext_resource type="PackedScene" uid="uid://dndff3p2pqbeo" path="res://common/modifiable_ground/underground_reflection_probe/underground_reflection_probe.tscn" id="3_xnhmb"]
-[ext_resource type="Script" uid="uid://bf868w7ifc4b2" path="res://common/buried_items_placer/buried_items_placer.gd" id="4_qkh4o"]
-[ext_resource type="Resource" uid="uid://0qi00wvmyd2n" path="res://common/buried_items_placer/items_to_bury.tres" id="5_7xrpf"]
-[ext_resource type="AudioStream" uid="uid://c3kmapq78y1y5" path="res://common/modifiable_ground/variants/stone/dig-stone.wav" id="6_nkm80"]
+[ext_resource type="Script" uid="uid://ko13rlm6d7je" path="res://common/modifiable_ground/modifiable_ground.gd" id="1_hxc7y"]
+[ext_resource type="Material" uid="uid://ccwrmqykkhkse" path="res://common/modifiable_ground/variants/stone/texture/Rock022_1K-JPG.tres" id="2_oa7se"]
+[ext_resource type="PackedScene" uid="uid://dndff3p2pqbeo" path="res://common/modifiable_ground/underground_reflection_probe/underground_reflection_probe.tscn" id="3_ay0mr"]
+[ext_resource type="Script" uid="uid://bf868w7ifc4b2" path="res://common/buried_items_placer/buried_items_placer.gd" id="4_x0oe6"]
+[ext_resource type="Resource" uid="uid://0qi00wvmyd2n" path="res://common/buried_items_placer/items_to_bury.tres" id="5_oefj3"]
+[ext_resource type="AudioStream" uid="uid://c3kmapq78y1y5" path="res://common/modifiable_ground/variants/stone/dig-stone.wav" id="6_5ls15"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hxc7y"]
 _surfaces = [{
@@ -25,12 +25,13 @@ data = PackedVector3Array(0, 0.5, 1, 1, 0.5, 1, 0, 0.5, 0, 1, 0.5, 1, 1, 0.5, 0,
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g4uwb"]
 random_pitch = 1.5
 streams_count = 1
-stream_0/stream = ExtResource("6_nkm80")
+stream_0/stream = ExtResource("6_5ls15")
 
 [node name="ModifiableGroundStone" type="StaticBody3D" unique_id=274249371 node_paths=PackedStringArray("buried_items_placer", "dig_sound_player", "underground_reflection_probe", "MESH_INSTANCE", "COLLIDER")]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_pfowh")
+script = ExtResource("1_hxc7y")
+dig_resistance = 2
 buried_items_placer = NodePath("BuriedItemsPlacer")
 dig_sound_player = NodePath("DigSoundPlayer")
 underground_reflection_probe = NodePath("ReflectionProbe")
@@ -40,20 +41,20 @@ MESH_INSTANCE = NodePath("MeshInstance3D")
 COLLIDER = NodePath("CollisionShape3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=704441706]
-material_override = ExtResource("2_x7hgm")
+material_override = ExtResource("2_oa7se")
 mesh = SubResource("ArrayMesh_hxc7y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2113810693]
 shape = SubResource("ConcavePolygonShape3D_oa7se")
 
-[node name="ReflectionProbe" parent="." unique_id=1057517988 instance=ExtResource("3_xnhmb")]
+[node name="ReflectionProbe" parent="." unique_id=1057517988 instance=ExtResource("3_ay0mr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8, 8)
 size = Vector3(20, 16, 20)
 
 [node name="BuriedItemsPlacer" type="Node" parent="." unique_id=1465099811]
-script = ExtResource("4_qkh4o")
+script = ExtResource("4_x0oe6")
 number_of_items_to_bury = 300
-set_of_items_to_bury = ExtResource("5_7xrpf")
+set_of_items_to_bury = ExtResource("5_oefj3")
 metadata/_custom_type_script = "uid://bf868w7ifc4b2"
 
 [node name="DigSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=2102872999]

@@ -7,7 +7,6 @@ extends CharacterBody3D
 @export_group("Voxel Interactions")
 @export var dig_reach: float = 3
 @export var dig_radius: float = 1
-@export var dig_strength: float = 1
 @export var dig_speed: float = 1
 @export var bag_size: int = 5
 @export var potion_duration: int = 30
