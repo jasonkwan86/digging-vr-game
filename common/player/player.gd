@@ -56,4 +56,6 @@ func _process(_delta: float) -> void:
 	var looking_at_object = looking_at_ray.get_collider()
 	if looking_at_object is BuriedItem:
 		(looking_at_object as BuriedItem).mineral_being_looked_at()
-	interact_icon.visible = (looking_at_object is BuriedItem or looking_at_object is SellStation or looking_at_object is ShopItem)
+	interact_icon.visible = (looking_at_object is BuriedItem or 
+							looking_at_object is SellStation or 
+							(looking_at_object is ShopItem and looking_at_object.visible))

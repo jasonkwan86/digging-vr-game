@@ -27,4 +27,4 @@ func use_tool() -> void:
 	
 	var rocket: Node3D = rocket_projectile.instantiate()
 	get_tree().root.add_child(rocket)
-	rocket.configure(player.dig_radius, player.dig_strength, player.dig_reach, direction, player.global_position)
+	rocket.configure(dig_power, player.dig_radius, dig_strength, player.dig_reach, direction, player.global_position)

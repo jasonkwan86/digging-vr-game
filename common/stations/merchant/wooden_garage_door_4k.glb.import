@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "wooden_garage_door": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://common/stations/merchant/merchant_box_unlocked.tres",
+"use_external/fallback_path": "res://common/stations/merchant/merchant_box.tres",
 "use_external/path": "uid://bytreng7i6nj"
 }
 }

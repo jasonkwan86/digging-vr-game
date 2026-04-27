@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://iie66ymjem2i"]
+
+[ext_resource type="Texture2D" uid="uid://c0jwv6dmoq3ft" path="res://common/stations/sell_station/rusted_shutter_4k_rusted_shutter_diff.jpg" id="1_7mila"]
+[ext_resource type="Texture2D" uid="uid://bj3pqn5eyqgsy" path="res://common/stations/sell_station/rusted_shutter_4k_rusted_shutter_rough.png" id="2_f4usl"]
+[ext_resource type="Texture2D" uid="uid://br4o84la4ufoe" path="res://common/stations/sell_station/rusted_shutter_4k_rusted_shutter_nor_gl.png" id="3_7ehaf"]
+
+[resource]
+resource_name = "rusted_shutter"
+cull_mode = 2
+albedo_texture = ExtResource("1_7mila")
+metallic_texture = ExtResource("2_f4usl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_f4usl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_7ehaf")
+uv1_scale = Vector3(0.78, 0.78, 0.78)

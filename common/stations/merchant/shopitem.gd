@@ -10,6 +10,9 @@ func _ready() -> void:
 
 
 func interact(player: Player) -> void:
+	if !self.visible:
+		return
+	
 	if player.money_and_upgrades.money >= items[current_item].cost:
 		AudioManager.play_mineral_sell_sound()
 		player.money_and_upgrades.add_money(-1*items[current_item].cost)

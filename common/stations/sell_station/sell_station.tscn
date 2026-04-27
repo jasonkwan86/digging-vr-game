@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://n6504e8nvkgq"]
 
 [ext_resource type="Script" uid="uid://v8skiq4kcxdw" path="res://common/stations/sell_station/sell_station.gd" id="1_t5m01"]
+[ext_resource type="Material" uid="uid://iie66ymjem2i" path="res://common/stations/sell_station/rusted_shutter.tres" id="2_5uisn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fcoao"]
 size = Vector3(2, 2, 2)
@@ -17,10 +18,17 @@ script = ExtResource("1_t5m01")
 shape = SubResource("BoxShape3D_fcoao")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=888744119]
+material_override = ExtResource("2_5uisn")
 mesh = SubResource("BoxMesh_fcoao")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=993697830]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
 pixel_size = 0.02
 text = "Sell Station
 (Press [E] to sell)"
+
+[node name="SellCount" type="Label3D" parent="." unique_id=1578777642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.9, 1.01)
+text = "Sell Count:"
+horizontal_alignment = 0
+vertical_alignment = 0

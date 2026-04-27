@@ -5,12 +5,14 @@ const ROCKET_RANGE_MOD: int = 4
 
 @export var ROCKET_SPEED: int = 8
 
+var dig_power: int
 var dig_radius: float
 var dig_strength: float
 var move_range: float
 var direction: Vector3
 
-func configure(radius: float, strength: float, m_range: float, dir: Vector3, pos: Vector3) -> void:
+func configure(power: int, radius: float, strength: float, m_range: float, dir: Vector3, pos: Vector3) -> void:
+	dig_power = power
 	dig_radius = radius
 	dig_strength = strength
 	move_range = m_range * ROCKET_RANGE_MOD
@@ -31,5 +33,5 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body is ModifiableGround:
-		body.remove_from(global_position, dig_radius, dig_strength)
+		body.try_remove_from(dig_power, global_position, dig_radius, dig_strength)
 	queue_free()

@@ -11,9 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
 [ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
 [ext_resource type="PackedScene" uid="uid://d31fr7y3dqch0" path="res://common/stations/merchant/shopitem.tscn" id="7_6jyhs"]
+[ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="8_p3bqw"]
+[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/coal/coal_on_pickup_strategy.tres" id="9_sgqxm"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
+[ext_resource type="Resource" uid="uid://b0tqjiggmbrej" path="res://common/buried_items/variants/emerald/emerald_on_pickup_strategy.tres" id="10_solpo"]
 [ext_resource type="Material" uid="uid://7adp1ukqj5ul" path="res://common/aesthetic_items/house/Concrete010_1K-JPG.tres" id="10_umwxm"]
 [ext_resource type="PackedScene" uid="uid://cu3lqqj1jhjbv" path="res://common/modifiable_ground/variants/clay/modifiable_ground_clay.tscn" id="11_k1rsi"]
+[ext_resource type="Resource" uid="uid://bcbiu77ivg4n6" path="res://common/buried_items/variants/ruby/ruby_on_pickup_strategy.tres" id="11_sgqxm"]
 [ext_resource type="PackedScene" uid="uid://5ashcspi3ruo" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="12_1a078"]
 [ext_resource type="PackedScene" uid="uid://g3xj6nxlwql4" path="res://common/modifiable_ground/variants/granite/modifiable_ground_granite.tscn" id="12_e8fyy"]
 [ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="15_xnylg"]
@@ -260,8 +264,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.903862, 0, 16.618671)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3174305, 0, 0.73747635)
 collision_layer = 16
 
-[node name="SellStation" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=58626733 instance=ExtResource("2_b8nul")]
+[node name="SellStation" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=58626733 node_paths=PackedStringArray("demolitionist", "wizard") instance=ExtResource("2_b8nul")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1999998, 1.5, 6)
+demolitionist = NodePath("../Demolitionist")
+wizard = NodePath("../Wizard")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=335299020]
 material_override = ExtResource("10_umwxm")
@@ -279,7 +285,7 @@ text = "Blacksmith"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.75, 0.35, 0)
-items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockPickaxe"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigReach1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockDrill"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSpeed1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigReach2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSpeed2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockDemolitionist")]
+items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockPickaxe"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigReach1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/UnlockDrill"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSpeed1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigReach2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSize3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool/DigSpeed2")]
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.25, 0.35, 0)
@@ -296,12 +302,16 @@ items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith
 [node name="Demolitionist" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -2)
 merchant_id = 1
+unlockCost = Dictionary[ExtResource("8_p3bqw"), int]({
+ExtResource("9_sgqxm"): 10,
+ExtResource("10_solpo"): 5
+})
 
 [node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="2" unique_id=473277624]
 text = "Demolitionist"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
-items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/ToolSpeed3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigSize4"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigReach3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/ToolSpeed4"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/UnlockRocket"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigSize5"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/ToolSpeed5"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigSize6"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/UnlockWizard")]
+items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/ToolSpeed3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigSize4"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigReach3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/ToolSpeed4"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/UnlockRocket"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigSize5"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/ToolSpeed5"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool/DigSize6")]
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_2_Rockets/AddRocket")]
@@ -312,6 +322,10 @@ items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolition
 [node name="Wizard" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1996559039 instance=ExtResource("5_xnylg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -6)
 merchant_id = 2
+unlockCost = Dictionary[ExtResource("8_p3bqw"), int]({
+ExtResource("10_solpo"): 10,
+ExtResource("11_sgqxm"): 5
+})
 
 [node name="Label3D" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="2" unique_id=473277624]
 text = "Wizard"

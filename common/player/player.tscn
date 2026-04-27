@@ -5,9 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
 [ext_resource type="PackedScene" uid="uid://faxal6cfbiyx" path="res://common/player/headlamp/headlamp.tscn" id="3_dvsd1"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
-[ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="5_6vwog"]
-[ext_resource type="Resource" uid="uid://bosg0ogjiah7b" path="res://common/buried_items/variants/rock/rock_on_pickup_strategy.tres" id="6_w3sq2"]
-[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/coal/coal_on_pickup_strategy.tres" id="7_uslh8"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
 [ext_resource type="Script" uid="uid://u6uii8jv5bit" path="res://common/player/camera_and_movement_controller/player_camera_and_movement_controller.gd" id="9_w3sq2"]
 [ext_resource type="Script" uid="uid://dqse43cmmqby1" path="res://common/money_and_upgrades/tools/default_tool.gd" id="9_x7hfa"]
@@ -22,12 +19,12 @@
 [ext_resource type="Script" uid="uid://ddomt33gvq5p6" path="res://common/money_and_upgrades/upgrade/unlock_merchant.gd" id="17_4j6q8"]
 [ext_resource type="Script" uid="uid://b63tu77vuarve" path="res://common/money_and_upgrades/upgrade/bag_size.gd" id="18_6j2u6"]
 [ext_resource type="Script" uid="uid://cmksckr83uc2d" path="res://common/money_and_upgrades/upgrade/lightweight.gd" id="19_4k30a"]
-[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/unlock_light.gd" id="19_l6hcq"]
-[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/potion_duration.gd" id="20_3hjmw"]
+[ext_resource type="Script" uid="uid://dtbigxp433ai7" path="res://common/money_and_upgrades/upgrade/unlock_light.gd" id="19_l6hcq"]
+[ext_resource type="Script" uid="uid://bmocworniqpyd" path="res://common/money_and_upgrades/upgrade/potion_duration.gd" id="20_3hjmw"]
 [ext_resource type="Script" uid="uid://ba0r1v6f7lvv1" path="res://common/money_and_upgrades/upgrade/sell_value.gd" id="20_ow2f5"]
-[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/haste_boost.gd" id="20_qawn2"]
+[ext_resource type="Script" uid="uid://djccgrnov7jws" path="res://common/money_and_upgrades/upgrade/haste_boost.gd" id="20_qawn2"]
 [ext_resource type="Script" uid="uid://bmua64he8h1un" path="res://common/money_and_upgrades/upgrade/add_consumable.gd" id="21_erhvt"]
-[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/greed_size.gd" id="22_3or88"]
+[ext_resource type="Script" uid="uid://dl7ydyd4fst4l" path="res://common/money_and_upgrades/upgrade/greed_size.gd" id="22_3or88"]
 [ext_resource type="Script" uid="uid://0n6wbb8x3vfk" path="res://common/money_and_upgrades/consumables/rope.gd" id="23_7xmuk"]
 [ext_resource type="Script" uid="uid://c0y1bhrtkxyfe" path="res://common/money_and_upgrades/consumables/rocket_consumable.gd" id="24_dvsd1"]
 [ext_resource type="Script" uid="uid://bkd4ag8uf7l38" path="res://common/money_and_upgrades/consumables/bomb/bomb_consumable.gd" id="25_llj0e"]
@@ -232,10 +229,6 @@ expand_mode = 1
 
 [node name="MineralInventory" type="Node" parent="." unique_id=1201255063 node_paths=PackedStringArray("mineral_title", "mineral_ui")]
 script = ExtResource("3_f6svf")
-_mineral_count_in_inventory = Dictionary[ExtResource("5_6vwog"), int]({
-ExtResource("6_w3sq2"): 0,
-ExtResource("7_uslh8"): 0
-})
 mineral_title = NodePath("../UI/MineralCount/MineralCountTitle")
 mineral_ui = NodePath("../UI/MineralCount/MineralCount")
 metadata/_custom_type_script = "uid://csn0nbyl186f1"

@@ -11,8 +11,10 @@ var base_jump_velocity = 4.5
 var speed: float = base_speed
 var jump_velocity: float = base_jump_velocity
 
+var can_move: bool = true
+
 func _input(event):
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and can_move:
 		player.rotate_y(-event.relative.x * mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(90), deg_to_rad(90))
@@ -38,4 +40,5 @@ func _physics_process(delta: float) -> void:
 		player.velocity.x = move_toward(player.velocity.x, 0, speed)
 		player.velocity.z = move_toward(player.velocity.z, 0, speed)
 
-	player.move_and_slide()
+	if can_move:
+		player.move_and_slide()

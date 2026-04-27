@@ -17,6 +17,7 @@ Resources Used:
 - Wooden plank [material](https://ambientcg.com/view?id=Wood049)
 - Bush [mesh](https://www.fab.com/listings/9cf84839-03f6-48e7-a239-f998998f3784)
 - Merchant Box [material](https://polyhaven.com/a/wooden_garage_door)
+- Sell Station [material](https://polyhaven.com/a/rusted_shutter)
 - House Walls [material](https://polyhaven.com/a/wood_planks_dirt)
 - House Roof [material](https://polyhaven.com/a/concrete_slab_wall_02)
 
