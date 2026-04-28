@@ -7,13 +7,15 @@ const BOMB_SIZE_MOD = 2
 
 @export var bomb_flash: ShaderMaterial
 
+var dig_power: int
 var dig_radius: float
 var dig_strength: float
 var direction: Vector3
 var detonation_area: Area3D
 var time_active: float = 0
 
-func configure(radius: float, strength: float, dir: Vector3, pos: Vector3) -> void:
+func configure(power: int, radius: float, strength: float, dir: Vector3, pos: Vector3) -> void:
+	dig_power = power
 	dig_radius = radius * BOMB_SIZE_MOD
 	dig_strength = strength
 	direction = dir
@@ -30,5 +32,5 @@ func _process(delta: float) -> void:
 		var colliding = detonation_area.get_overlapping_bodies()
 		for body in colliding:
 			if body is ModifiableGround:
-				body.remove_from(global_position, dig_radius, dig_strength)
+				body.try_remove_from(dig_power, global_position, dig_radius, dig_strength)
 		queue_free()

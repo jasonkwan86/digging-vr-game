@@ -552,6 +552,7 @@ metadata/_custom_type_script = "uid://8bm1xioelp5f"
 [node name="Drill" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=2015625624]
 script = ExtResource("11_6wlmy")
 tool_name = "Drill"
+dig_power = 3.0
 metadata/_custom_type_script = "uid://xxbh640van0b"
 
 [node name="RocketLauncher" type="Node" parent="MoneyAndUpgrades/Tools" unique_id=1082734808 node_paths=PackedStringArray("rocket_consumable")]
@@ -559,6 +560,7 @@ script = ExtResource("12_01kfu")
 rocket_projectile = ExtResource("13_1c0ic")
 rocket_consumable = NodePath("../../Consumables/RocketConsumable")
 tool_name = "Rocket Launcher"
+dig_power = 4.0
 metadata/_custom_type_script = "uid://dx3scgijl6y7w"
 
 [node name="Consumables" type="Node" parent="MoneyAndUpgrades" unique_id=2134184705]
@@ -570,6 +572,8 @@ metadata/_custom_type_script = "uid://0n6wbb8x3vfk"
 [node name="Bomb" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=679838175]
 script = ExtResource("25_llj0e")
 bomb_projectile = ExtResource("26_llj0e")
+dig_strength = 1.0
+dig_power = 4.0
 metadata/_custom_type_script = "uid://bkd4ag8uf7l38"
 
 [node name="Haste" type="Node" parent="MoneyAndUpgrades/Consumables" unique_id=1868597210 node_paths=PackedStringArray("controller", "haste_label")]
