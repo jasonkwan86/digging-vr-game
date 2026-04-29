@@ -15,7 +15,10 @@ var mineral_count: int:
 func add_mineral_to_inventory(mineral_on_pickup_strategy: MineralOnPickupStrategy) -> void:
 	_mineral_count_in_inventory[mineral_on_pickup_strategy] = _mineral_count_in_inventory.get(mineral_on_pickup_strategy, 0) + 1
 	mineral_ui.text = str(sum_mineral_counts())
-	
+
+func has_minerals() -> bool:
+	return sum_mineral_counts() != 0
+
 func sum_mineral_counts() -> int:
 	if _mineral_count_in_inventory.keys().size() == 0:
 		return 0

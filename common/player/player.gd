@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export_group("Player Controls")
 @export var interact_icon: Control
+@export var cant_interact_icon: CantInteractIcon
 
 @export_group("Voxel Interactions")
 @export var dig_reach: float = 3
@@ -17,6 +18,8 @@ extends CharacterBody3D
 @export_group("Inventory and Upgrades")
 @export var mineral_inventory: MineralInventory
 @export var money_and_upgrades: MoneyAndUpgrades
+
+var saw_interactable_last_frame: bool = false
 
 func _ready() -> void:
 	create_look_ray()
@@ -35,9 +38,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("interact"):
 		# Could be buried item, sell/upgrade station or other
-		var looking_at_object = looking_at_ray.get_collider()
-		if looking_at_object != null and looking_at_object.has_method("interact"):
-			looking_at_object.interact(self)
+		var obj = looking_at_ray.get_collider()
+		if obj != null and obj.has_method("interact"):
+			obj.interact(self)
+			saw_interactable_last_frame = false
 	
 	if Input.is_action_just_pressed("cycle_tool_left"):
 		money_and_upgrades.next_tool(-1)
@@ -53,9 +57,23 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(_delta: float) -> void:
-	var looking_at_object = looking_at_ray.get_collider()
-	if looking_at_object is BuriedItem:
-		(looking_at_object as BuriedItem).mineral_being_looked_at()
-	interact_icon.visible = (looking_at_object is BuriedItem or 
-							looking_at_object is SellStation or 
-							(looking_at_object is ShopItem and looking_at_object.visible))
+	var obj = looking_at_ray.get_collider()
+	var saw_interactable_this_frame = (obj is BuriedItem or
+										obj is SellStation or
+										obj is ShopItem)
+	if saw_interactable_last_frame:
+		if !saw_interactable_this_frame:
+			saw_interactable_last_frame = false
+			cant_interact_icon.hide_cant_interact_icon()
+		return
+	saw_interactable_last_frame = saw_interactable_this_frame
+	if obj is SellStation:
+		if !mineral_inventory.has_minerals():
+			cant_interact_icon.show_cant_interact_icon("No minerals to sell!")
+	if obj is ShopItem:
+		var res: String = (obj as ShopItem).on_hover_description(self)
+		if res != "":
+			cant_interact_icon.show_cant_interact_icon(res)
+	if obj is BuriedItem:
+		(obj as BuriedItem).mineral_being_looked_at()
+	interact_icon.visible = saw_interactable_this_frame

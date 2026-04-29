@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
 [ext_resource type="PackedScene" uid="uid://faxal6cfbiyx" path="res://common/player/headlamp/headlamp.tscn" id="3_dvsd1"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
+[ext_resource type="Script" uid="uid://bog7c5n834p40" path="res://common/cant_interact_icon/cant_interact_icon.gd" id="5_qawn2"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
 [ext_resource type="Script" uid="uid://u6uii8jv5bit" path="res://common/player/camera_and_movement_controller/player_camera_and_movement_controller.gd" id="9_w3sq2"]
 [ext_resource type="Script" uid="uid://dqse43cmmqby1" path="res://common/money_and_upgrades/tools/default_tool.gd" id="9_x7hfa"]
@@ -41,10 +42,11 @@ radius = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dvsd1"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
+[node name="Player" type="CharacterBody3D" unique_id=1673630820 node_paths=PackedStringArray("interact_icon", "cant_interact_icon", "looking_at_ray", "looking_at_shapecast", "mineral_inventory", "money_and_upgrades")]
 collision_mask = 19
 script = ExtResource("1_dsdjy")
 interact_icon = NodePath("UI/InteractIcon")
+cant_interact_icon = NodePath("UI/CantInteractIcon")
 looking_at_ray = NodePath("Camera3D/RayCast3D")
 looking_at_shapecast = NodePath("Camera3D/ShapeCast3D")
 mining_particles = ExtResource("2_6vwog")
@@ -226,6 +228,41 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_i15vv")
 expand_mode = 1
+
+[node name="CantInteractIcon" type="TextureRect" parent="UI" unique_id=1189164837 node_paths=PackedStringArray("description")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i15vv")
+expand_mode = 1
+script = ExtResource("5_qawn2")
+description = NodePath("CantInteractDescription")
+line_color = Color(0.9607921, 0.112506576, 0.40547395, 1)
+line_thickness = 2.0
+
+[node name="CantInteractDescription" type="Label" parent="UI/CantInteractIcon" unique_id=1813699747]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = 6.0
+offset_right = 23.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "hello there hello there"
 
 [node name="MineralInventory" type="Node" parent="." unique_id=1201255063 node_paths=PackedStringArray("mineral_title", "mineral_ui")]
 script = ExtResource("3_f6svf")
