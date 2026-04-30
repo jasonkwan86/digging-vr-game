@@ -102,39 +102,6 @@ size = Vector3(24, 1, 24)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lwlnf"]
 size = Vector3(24, 1, 24)
 
-[sub_resource type="BoxMesh" id="BoxMesh_k1rsi"]
-size = Vector3(7.87, 4.425, 0.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sgqxm"]
-size = Vector3(7.87, 4.425, 0.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_solpo"]
-size = Vector3(7.87, 4.425, 0.2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_katq7"]
-size = Vector3(9.665, 4.425, 0.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_t4aas"]
-size = Vector3(9.665, 4.425, 0.2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_e8fyy"]
-size = Vector3(3.03, 4.425, 0.25)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5rtvx"]
-size = Vector3(3.03, 4.425, 0.25)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w7o82"]
-size = Vector3(3.03, 4.425, 0.25)
-
-[sub_resource type="BoxMesh" id="BoxMesh_6jyhs"]
-size = Vector3(8, 1, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_p3bqw"]
-size = Vector3(8, 1, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_veg8t"]
-size = Vector3(6.835, 6.77, 0.25)
-
 [sub_resource type="BoxMesh" id="BoxMesh_b540t"]
 size = Vector3(1, 5.07, 18.99)
 
@@ -212,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="-z_fences" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=1327443299]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.80682087, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.80682087, 5.197302)
 
 [node name="fence2" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=679320704 instance=ExtResource("3_b540t")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
@@ -246,9 +213,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.1
 
 [node name="fence9" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1608186017 instance=ExtResource("3_b540t")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.373528, 0.5, 2.901146)
-
-[node name="fence10" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=221783857 instance=ExtResource("3_b540t")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 18.749344, 0.5, 2.901146)
 
 [node name="z_fences" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=823836025]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.2325478, -0.7901468, 33.231644)
@@ -284,10 +248,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.3
 transform = Transform3D(1.1924882e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924882e-08, 16.678959, 0.5, 4.8224545)
 
 [node name="+x_fences2" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=168012228]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.232548, -0.8332319, 15.231644)
-
-[node name="fence" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=560218693 instance=ExtResource("3_b540t")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.864014, 0.5, 2.901146)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.232548, -0.8332319, 17.31942)
 
 [node name="fence2" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1904317645 instance=ExtResource("3_b540t")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
@@ -596,9 +557,9 @@ use_collision = true
 collision_layer = 16
 
 [node name="GrassCSG" type="CSGBox3D" parent="Backyard/Grasses/CSGCombiner3D" unique_id=1300703755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86883736, 0, 1.1342773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.654007, 0, 3.3012695)
 material_override = ExtResource("18_w7o82")
-size = Vector3(38.73772, 1, 39.288086)
+size = Vector3(43.78341, 1, 34.9541)
 material = ExtResource("18_w7o82")
 
 [node name="NegativeCSG" type="CSGBox3D" parent="Backyard/Grasses/CSGCombiner3D" unique_id=1686554168]
@@ -638,32 +599,26 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.3
 [node name="Sketchfab_Scene10" parent="Backyard/Grasses/Hedges" unique_id=392542198 instance=ExtResource("15_xnylg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, -5.8719034)
 
-[node name="Sketchfab_Scene11" parent="Backyard/Grasses/Hedges" unique_id=1256888611 instance=ExtResource("15_xnylg")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, -12.680082)
-
-[node name="Sketchfab_Scene12" parent="Backyard/Grasses/Hedges" unique_id=459633457 instance=ExtResource("15_xnylg")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.43541, 0.54599905, -17.420862)
-
 [node name="Sketchfab_Scene13" parent="Backyard/Grasses/Hedges" unique_id=78911868 instance=ExtResource("15_xnylg")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.299854, 0.54599905, -17.420862)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.835018, 0.54599905, -8.455385)
 
 [node name="Sketchfab_Scene14" parent="Backyard/Grasses/Hedges" unique_id=2019862687 instance=ExtResource("15_xnylg")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2846737, 0.54599905, -17.420862)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.8198376, 0.54599905, -8.455385)
 
 [node name="Sketchfab_Scene15" parent="Backyard/Grasses/Hedges" unique_id=237072895 instance=ExtResource("15_xnylg")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.850878, 0.54599905, -17.420862)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.31571388, 0.54599905, -8.455385)
 
 [node name="Sketchfab_Scene16" parent="Backyard/Grasses/Hedges" unique_id=11209834 instance=ExtResource("15_xnylg")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.659056, 0.54599905, -17.420862)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.123892, 0.54599905, -8.455385)
 
 [node name="Sketchfab_Scene17" parent="Backyard/Grasses/Hedges" unique_id=1279414041 instance=ExtResource("15_xnylg")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18.332056, 0.54599905, -17.420862)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.796892, 0.54599905, -8.455385)
 
 [node name="Sketchfab_Scene18" parent="Backyard/Grasses/Hedges" unique_id=1177473659 instance=ExtResource("15_xnylg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.996342, 0.54599905, -10.803063)
 
 [node name="Bushes" type="Node3D" parent="Backyard" unique_id=631626185]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15465927, -0.47, 11.302901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15465927, -0.47, 19.640839)
 
 [node name="Bush" parent="Backyard/Bushes" unique_id=1511715018 instance=ExtResource("16_k1rsi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.424402, -0.7152364, -9.90894)
@@ -688,66 +643,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5572624, -0.7152364, -9.90
 
 [node name="Bush8" parent="Backyard/Bushes" unique_id=1884397254 instance=ExtResource("16_k1rsi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.523487, -0.7152364, -9.90894)
-
-[node name="Shed" type="StaticBody3D" parent="Backyard" unique_id=52082890]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.491814, 0, 4.8236637)
-collision_layer = 16
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/Shed" unique_id=483164249]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82902145, 1.4390545, 1.0482893)
-mesh = SubResource("BoxMesh_k1rsi")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Backyard/Shed" unique_id=1215797549]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82902145, 1.4390545, 1.0482893)
-shape = SubResource("BoxShape3D_sgqxm")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Backyard/Shed" unique_id=385003679]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8290229, 1.4390545, -8.938349)
-mesh = SubResource("BoxMesh_k1rsi")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Backyard/Shed" unique_id=1753075266]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8290229, 1.4390545, -8.938349)
-shape = SubResource("BoxShape3D_solpo")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Backyard/Shed" unique_id=1697264077]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5663576, 1.6183829, -3.8886993)
-mesh = SubResource("BoxMesh_katq7")
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Backyard/Shed" unique_id=379739325]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5663576, 1.6183829, -3.8886993)
-shape = SubResource("BoxShape3D_t4aas")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Backyard/Shed" unique_id=605394062]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0288877, 1.4390545, -0.5442643)
-mesh = SubResource("BoxMesh_e8fyy")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Backyard/Shed" unique_id=706810449]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0288877, 1.4390545, -0.5442643)
-shape = SubResource("BoxShape3D_5rtvx")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Backyard/Shed" unique_id=2074728960]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0164762, 1.4390545, -7.3489466)
-mesh = SubResource("BoxMesh_e8fyy")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Backyard/Shed" unique_id=784522595]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0164762, 1.4390545, -7.3489466)
-shape = SubResource("BoxShape3D_w7o82")
-
-[node name="Floor" type="MeshInstance3D" parent="Backyard/Shed" unique_id=1401992421]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80579853, -1.1230748, -3.9968777)
-mesh = SubResource("BoxMesh_6jyhs")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/Shed" unique_id=1936019405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80579853, -1.1230748, -3.9968777)
-shape = SubResource("BoxShape3D_p3bqw")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Backyard/Shed" unique_id=2059296491]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.88719654, 5.992709, -6.498837)
-mesh = SubResource("BoxMesh_veg8t")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Backyard/Shed" unique_id=1364413160]
-transform = Transform3D(-1, -6.181723e-08, -6.181723e-08, 0, 0.7071067, -0.7071067, 8.742278e-08, -0.7071067, -0.7071067, -0.88719654, 5.9400787, -1.4129233)
-mesh = SubResource("BoxMesh_veg8t")
 
 [node name="House" type="StaticBody3D" parent="Backyard" unique_id=1794156845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 23)
@@ -842,7 +737,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sgqxm")
 [node name="Boundary" type="StaticBody3D" parent="Backyard" unique_id=877908155]
 
 [node name="-zwall" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=1609652210]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2179565, 0, -1.1355553)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2179565, 0, 5.115535)
 shape = SubResource("BoxShape3D_xnylg")
 
 [node name="zwall" type="CollisionShape3D" parent="Backyard/Boundary" unique_id=632157993]
