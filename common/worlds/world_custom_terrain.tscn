@@ -15,10 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://bgmhsbnkcq3yb" path="res://common/money_and_upgrades/tools/drill/drill.glb" id="8_lwlnf"]
 [ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="8_p3bqw"]
 [ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/coal/coal_on_pickup_strategy.tres" id="9_sgqxm"]
+[ext_resource type="PackedScene" uid="uid://bbwvfa0q1wlu5" path="res://common/stations/merchant/coins.tscn" id="9_wpnl1"]
 [ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
 [ext_resource type="Resource" uid="uid://b0tqjiggmbrej" path="res://common/buried_items/variants/emerald/emerald_on_pickup_strategy.tres" id="10_solpo"]
 [ext_resource type="Material" uid="uid://7adp1ukqj5ul" path="res://common/aesthetic_items/house/Concrete010_1K-JPG.tres" id="10_umwxm"]
 [ext_resource type="PackedScene" uid="uid://cu3lqqj1jhjbv" path="res://common/modifiable_ground/variants/clay/modifiable_ground_clay.tscn" id="11_k1rsi"]
+[ext_resource type="PackedScene" uid="uid://b4ikkiegdvhrl" path="res://common/stations/merchant/flashlight.tscn" id="11_pkv54"]
 [ext_resource type="PackedScene" uid="uid://c4yho284sw174" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket_launcher.glb" id="11_t4aas"]
 [ext_resource type="PackedScene" uid="uid://5ashcspi3ruo" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="12_1a078"]
 [ext_resource type="PackedScene" uid="uid://rcualpb6amp7" path="res://common/money_and_upgrades/consumables/bomb/bomb.glb" id="12_5rtvx"]
@@ -314,6 +316,13 @@ visible = false
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.25, 0.35, 0)
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/BagSize1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/Lightweight"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/BagSize2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/SellValue1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/BagSize3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_2_Bag/SellValue2")]
 
+[node name="Coins" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem2" index="0" unique_id=397885708 instance=ExtResource("9_wpnl1")]
+transform = Transform3D(-0.10000002, 0, -0.17320508, 0, 0.2, 0, 0.17320508, 0, -0.10000002, 0, 0, -0.06)
+
+[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem2" index="2" unique_id=826997202]
+visible = false
+mesh = null
+
 [node name="ShopItem3" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="5" unique_id=1346608155 node_paths=PackedStringArray("items")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.25, 0.35, 0)
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_3_Rope/AddRope")]
@@ -321,6 +330,12 @@ items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith
 [node name="ShopItem4" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" unique_id=1036681858 node_paths=PackedStringArray("items") instance=ExtResource("7_6jyhs")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.75, 0.35, 0)
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_4_Light/UnlockLight")]
+
+[node name="Flashlight" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem4" unique_id=57351306 instance=ExtResource("11_pkv54")]
+transform = Transform3D(0.01583129, -0.12893553, 0.074999996, 0.14888193, 0.0182804, 0, -0.0091402, 0.07444096, 0.1299038, 0.05, 0.06, -0.02)
+
+[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem4" index="2" unique_id=826997202]
+visible = false
 
 [node name="Demolitionist" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -2)
@@ -373,6 +388,13 @@ text = "Wizard"
 
 [node name="ShopItem" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/SellValue3"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/PotionDuration1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/HasteBoost1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/GreedSize1"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/PotionDuration2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/HasteBoost2"), NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_1_PotionBoost/GreedSize2")]
+
+[node name="Coins" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard/ShopItem" index="0" unique_id=1118384490 instance=ExtResource("9_wpnl1")]
+transform = Transform3D(-0.10000002, 0, -0.17320508, 0, 0.2, 0, 0.17320508, 0, -0.10000002, 0, 0, -0.059999943)
+
+[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard/ShopItem" index="2" unique_id=826997202]
+visible = false
+mesh = null
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Wizard/Slot_2_Haste/AddHaste")]
@@ -644,6 +666,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5572624, -0.7152364, -9.90
 [node name="Bush8" parent="Backyard/Bushes" unique_id=1884397254 instance=ExtResource("16_k1rsi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.523487, -0.7152364, -9.90894)
 
+[node name="Bush9" parent="Backyard/Bushes" unique_id=879666646 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.515736, -0.7152364, -9.90894)
+
+[node name="Bush10" parent="Backyard/Bushes" unique_id=1812092907 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3892145, -0.7152364, -9.90894)
+
+[node name="Bush11" parent="Backyard/Bushes" unique_id=1605850575 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.415599, -0.7152364, -9.90894)
+
+[node name="Bush12" parent="Backyard/Bushes" unique_id=410105196 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.483548, -0.7152364, -9.90894)
+
+[node name="Bush13" parent="Backyard/Bushes" unique_id=625251029 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.69298, -0.7152364, -9.90894)
+
+[node name="Bush14" parent="Backyard/Bushes" unique_id=1196465898 instance=ExtResource("16_k1rsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.902832, -0.7152364, -9.90894)
+
 [node name="House" type="StaticBody3D" parent="Backyard" unique_id=1794156845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 23)
 collision_layer = 16
@@ -759,8 +799,11 @@ shape = SubResource("BoxShape3D_2q5tt")
 [editable path="Player"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem2"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem4"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem2"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem3"]
 [editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard/ShopItem"]
