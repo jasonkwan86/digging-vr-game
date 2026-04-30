@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dxd4y7spimewx"]
+
+[ext_resource type="PackedScene" uid="uid://dmbeuo58undll" path="res://common/player/vr_player/vr_player.tscn" id="1_f60rn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6wycs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f60rn"]
+sky_material = SubResource("ProceduralSkyMaterial_6wycs")
+
+[sub_resource type="Environment" id="Environment_d1p8e"]
+background_mode = 2
+sky = SubResource("Sky_f60rn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_f60rn"]
+size = Vector3(10, 1, 10)
+
+[node name="VrWorld" type="Node3D" unique_id=1707851969]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1976872147]
+environment = SubResource("Environment_d1p8e")
+
+[node name="VrPlayer" parent="." unique_id=1163162612 instance=ExtResource("1_f60rn")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1404134418]
+transform = Transform3D(1, 0, 0, 0, 0.9304176, 0.3665012, 0, -0.3665012, 0.9304176, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=639688749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_f60rn")

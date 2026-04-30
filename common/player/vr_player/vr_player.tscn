@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dmbeuo58undll"]
+
+[ext_resource type="PackedScene" uid="uid://bpdj5njb8nhot" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_hand.tscn" id="1_2bcb0"]
+[ext_resource type="Script" uid="uid://dbpb2x8uaky6y" path="res://common/player/vr_player/vr_player.gd" id="1_od8r6"]
+[ext_resource type="PackedScene" uid="uid://d1tl07geqm5xq" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_fullglove_hand.tscn" id="2_od8r6"]
+
+[node name="VrPlayer" type="XROrigin3D" unique_id=1163162612]
+script = ExtResource("1_od8r6")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=84150360]
+
+[node name="LeftHandController" type="XRController3D" parent="." unique_id=1172822560]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHandController" unique_id=2102790667 instance=ExtResource("1_2bcb0")]
+
+[node name="RightHandController" type="XRController3D" parent="." unique_id=1978285361]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHandController" unique_id=965959063 instance=ExtResource("2_od8r6")]
