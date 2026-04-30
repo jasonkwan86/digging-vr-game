@@ -29,6 +29,8 @@
 [ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="18_w7o82"]
 [ext_resource type="Material" uid="uid://cff41fqond38i" path="res://common/aesthetic_items/house/wood_planks_dirt.tres" id="19_katq7"]
 [ext_resource type="Material" uid="uid://hbnmo6g8no7j" path="res://common/aesthetic_items/house/concrete_slab_wall_02.tres" id="20_veg8t"]
+[ext_resource type="PackedScene" uid="uid://dndff3p2pqbeo" path="res://common/modifiable_ground/underground_reflection_probe/underground_reflection_probe.tscn" id="23_lwlnf"]
+[ext_resource type="PackedScene" uid="uid://douqh0bm1k2ei" path="res://common/final_treasure/final_treasure.tscn" id="31_451c7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ycwdu"]
 panorama = ExtResource("1_qwd8j")
@@ -93,6 +95,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v3r5y")
+
+[sub_resource type="BoxMesh" id="BoxMesh_yoqt3"]
+size = Vector3(24, 1, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwlnf"]
+size = Vector3(24, 1, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_k1rsi"]
 size = Vector3(7.87, 4.425, 0.2)
@@ -338,7 +346,7 @@ transform = Transform3D(3.2783545e-09, 0.07500001, -0.12990381, 0.15, -6.5567085
 [node name="drill" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="1" unique_id=1740960767 instance=ExtResource("8_lwlnf")]
 transform = Transform3D(0.029048225, 0.004641978, -0.06351889, -0.003903527, 0.0698123, 0.0033167622, 0.06356851, 0.0021657392, 0.029229205, 0.16206288, 0.07139161, -0.24874067)
 
-[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="3"]
+[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="3" unique_id=826997202]
 visible = false
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
@@ -370,14 +378,14 @@ items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolition
 [node name="rocket_launcher" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="1" unique_id=1653985857 instance=ExtResource("11_t4aas")]
 transform = Transform3D(-0.06813026, 0.12392848, -0.14142136, 0.17526133, 0.096350744, 0, 0.06813026, -0.12392848, -0.14142136, 0, 0.045, 0)
 
-[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="2"]
+[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="2" unique_id=826997202]
 visible = false
 mesh = null
 
 [node name="ShopItem2" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
 items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_2_Rockets/AddRocket")]
 
-[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem2" index="1"]
+[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem2" index="1" unique_id=826997202]
 transform = Transform3D(-3.090862e-09, -0.07071068, -0.07071068, 0.1, -4.371139e-09, 0, -3.090862e-09, -0.07071068, 0.07071068, 0.07, 0.05, 0.07)
 mesh = SubResource("ArrayMesh_lwlnf")
 
@@ -387,7 +395,7 @@ items = [NodePath("../../../../../../Player/MoneyAndUpgrades/Upgrades/Demolition
 [node name="bomb" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="0" unique_id=836837154 instance=ExtResource("12_5rtvx")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.09, 0)
 
-[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="2"]
+[node name="ShopItemMesh" parent="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="2" unique_id=826997202]
 visible = false
 mesh = null
 
@@ -538,14 +546,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36, 0)
 use_collision = true
 collision_layer = 16
 
-[node name="SandboxCSG" type="CSGBox3D" parent="Backyard/Sandbox/SandboxOrigin/SandboxCSGCombiner" unique_id=1443705298]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
-size = Vector3(17, 58.55, 17)
+[node name="SandboxWallsCSG" type="CSGBox3D" parent="Backyard/Sandbox/SandboxOrigin/SandboxCSGCombiner" unique_id=1443705298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -10.217934, 8)
+size = Vector3(17, 80, 17)
 
 [node name="NegativeSandboxCSG" type="CSGBox3D" parent="Backyard/Sandbox/SandboxOrigin/SandboxCSGCombiner" unique_id=1495469956]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -10, 8)
 operation = 2
-size = Vector3(16, 58.55, 16)
+size = Vector3(16, 80, 16)
+
+[node name="FinalTreasureFloor" type="StaticBody3D" parent="Backyard/Sandbox/SandboxOrigin" unique_id=968654271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -50.59211, 9)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=187632948]
+mesh = SubResource("BoxMesh_yoqt3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=1457531625]
+shape = SubResource("BoxShape3D_lwlnf")
+
+[node name="ReflectionProbe" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=1991230468 instance=ExtResource("23_lwlnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -1)
+size = Vector3(20, 18.78, 20)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=1675683098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.7950516, 0)
+light_color = Color(0.12941177, 0.64705884, 0.14901961, 1)
+light_energy = 6.993
+omni_range = 22.388
+
+[node name="FinalTreasure" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=104134868 instance=ExtResource("31_451c7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76677704, -8.940806)
 
 [node name="BuriedItems" type="Node3D" parent="Backyard/Sandbox" unique_id=92606792]
 

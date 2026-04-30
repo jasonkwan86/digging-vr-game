@@ -20,6 +20,7 @@ Resources Used:
 - Sell Station [material](https://polyhaven.com/a/rusted_shutter)
 - House Walls [material](https://polyhaven.com/a/wood_planks_dirt)
 - House Roof [material](https://polyhaven.com/a/concrete_slab_wall_02)
+- Final treasure chest [mesh](https://sketchfab.com/3d-models/treasure-chest-8e95e24a076d4cb39519defe71d3b18b)
 
 Digging
 - [Stone](https://freesound.org/people/InspectorJ/sounds/420878/)
