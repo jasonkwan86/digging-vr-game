@@ -10,11 +10,11 @@ var total_minerals_sold: Dictionary[MineralOnPickupStrategy, int]
 var mineral_count: int:
 	set(value):
 		mineral_count = value
-		mineral_ui.text = str(value)
+		set_mineral_text(str(value))
 
 func add_mineral_to_inventory(mineral_on_pickup_strategy: MineralOnPickupStrategy) -> void:
 	_mineral_count_in_inventory[mineral_on_pickup_strategy] = _mineral_count_in_inventory.get(mineral_on_pickup_strategy, 0) + 1
-	mineral_ui.text = str(sum_mineral_counts())
+	set_mineral_text(str(sum_mineral_counts()))
 
 func has_minerals() -> bool:
 	return sum_mineral_counts() != 0
@@ -38,8 +38,12 @@ func sell_all_minerals() -> void:
 		else:
 			total_minerals_sold[mineral] = _mineral_count_in_inventory[mineral]
 		_mineral_count_in_inventory[mineral] = 0
-	mineral_ui.text = str(sum_mineral_counts())
+	set_mineral_text(str(sum_mineral_counts()))
 
 func change_label_colour(colour: Color):
 	mineral_title.set("theme_override_colors/font_color", colour)
 	mineral_ui.set("theme_override_colors/font_color", colour)
+
+
+func set_mineral_text(text: String) -> void:
+	mineral_ui.text = "Mineral Count: " + text
