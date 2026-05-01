@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ccmg7fra786ij" path="res://common/final_treasure/final_treasure.gd" id="1_2wb26"]
 [ext_resource type="PackedScene" uid="uid://05r7hmbcm2by" path="res://common/final_treasure/scene.gltf" id="1_g4qbk"]
-[ext_resource type="Script" uid="uid://eyy7us2drm44" path="res://common/player/game_over_menu.gd" id="3_36a0d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4qbk"]
 size = Vector3(2.22, 1.5, 1.42)
@@ -10,7 +9,7 @@ size = Vector3(2.22, 1.5, 1.42)
 [node name="FinalTreasure" type="StaticBody3D" unique_id=968654271 node_paths=PackedStringArray("game_over_menu")]
 collision_layer = 16
 script = ExtResource("1_2wb26")
-game_over_menu = NodePath("GameOverMenu")
+game_over_menu = NodePath("")
 
 [node name="Sketchfab_Scene" parent="." unique_id=17696660 instance=ExtResource("1_g4qbk")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
@@ -18,52 +17,3 @@ transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=804828013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6387882, 1.1558605)
 shape = SubResource("BoxShape3D_g4qbk")
-
-[node name="GameOverMenu" type="Control" parent="." unique_id=1440390710]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_36a0d")
-
-[node name="Label" type="Label" parent="GameOverMenu" unique_id=179085419]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 44
-text = "Thanks for playing!"
-
-[node name="Button" type="Button" parent="GameOverMenu" unique_id=1218003769]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = 32.0
-offset_right = 82.0
-offset_bottom = 101.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 44
-text = "Restart"
-
-[connection signal="button_down" from="GameOverMenu/Button" to="GameOverMenu" method="_on_button_button_down"]
