@@ -12,14 +12,13 @@ var seconds_after_last_mine: float = 0
 func _process(delta: float) -> void:
 	seconds_after_last_mine += delta
 	
-	velocity = (transform.origin - last_position) / delta
-	last_position = transform.origin
+	velocity = (global_transform.origin - last_position) / delta
+	last_position = global_transform.origin
 	
 	if velocity.length() < required_velocity_to_mine:
 		return
 	if seconds_after_last_mine < pick_cooldown:
 		return
-	
 	var ray_col = pick_raycast.get_collider()
 	if ray_col is ModifiableGround:
 		ray_col.try_remove_from(99, pick_raycast.get_collision_point(), 2, 2)

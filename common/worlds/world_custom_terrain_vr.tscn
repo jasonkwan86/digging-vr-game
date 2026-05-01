@@ -149,7 +149,7 @@ size = Vector3(1, 5, 4.715)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2q5tt"]
 size = Vector3(1, 5, 7.98)
 
-[node name="World" type="Node3D" unique_id=1504092021]
+[node name="VrWorld" type="Node3D" unique_id=1504092021]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=136828878]
 environment = SubResource("Environment_yoapk")
@@ -159,7 +159,7 @@ transform = Transform3D(0.8526403, 0.42271024, -0.307117, 0, 0.58778536, 0.80901
 shadow_enabled = true
 
 [node name="VrPlayer" parent="." unique_id=1163162612 instance=ExtResource("2_e5vfj")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 1, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.910133, 1, 1.288494)
 
 [node name="Backyard" type="Node3D" parent="." unique_id=288610247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.656197, 0, -19.284483)
