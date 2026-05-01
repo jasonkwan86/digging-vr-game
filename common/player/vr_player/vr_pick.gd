@@ -25,5 +25,5 @@ func _process(delta: float) -> void:
 		ray_col.try_remove_from(99, pick_raycast.get_collision_point(), 2, 2)
 		seconds_after_last_mine = 0
 	if ray_col is FinalTreasure:
-		(ray_col as FinalTreasure).open_treasure()
-		print("Opening Final treasure!")
+		#(ray_col as FinalTreasure).open_treasure()
+		get_tree().reload_current_scene()
