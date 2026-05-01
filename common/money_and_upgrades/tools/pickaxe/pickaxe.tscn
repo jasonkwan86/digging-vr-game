@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bocvuy7ksvlvp" path="res://common/money_and_upgrades/tools/pickaxe/pickaxe.glb" id="1_bx7wg"]
 
-[node name="Pickaxe" type="Node3D" unique_id=624473162]
+[node name="Pickaxe" type="Node3D" unique_id=416057580]
 
 [node name="pickaxe" parent="." unique_id=1807340743 instance=ExtResource("1_bx7wg")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

@@ -1,41 +1,37 @@
-[gd_scene format=4 uid="uid://biu2ihc7v8hh6"]
+[gd_scene format=4 uid="uid://dd1bfv4qjm1wb"]
 
-[ext_resource type="Texture2D" uid="uid://w7uw2q60ljih" path="res://common/aesthetic_items/sky/autumn_field_puresky_4k.exr" id="1_qwd8j"]
-[ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
-[ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
-[ext_resource type="PackedScene" uid="uid://dmbeuo58undll" path="res://common/player/vr_player/vr_player.tscn" id="2_pkv54"]
-[ext_resource type="PackedScene" uid="uid://f16gjq71jj15" path="res://common/aesthetic_items/fence/fence.fbx" id="3_b540t"]
-[ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
-[ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/bedrock/modifiable_ground_bedrock.tscn" id="4_fcoao"]
-[ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/coal/coal.tscn" id="5_fcoao"]
-[ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="5_xnylg"]
-[ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_ycwdu"]
-[ext_resource type="PackedScene" uid="uid://d31fr7y3dqch0" path="res://common/stations/merchant/shopitem.tscn" id="7_6jyhs"]
-[ext_resource type="PackedScene" uid="uid://bocvuy7ksvlvp" path="res://common/money_and_upgrades/tools/pickaxe/pickaxe.glb" id="7_v3r5y"]
-[ext_resource type="PackedScene" uid="uid://bgmhsbnkcq3yb" path="res://common/money_and_upgrades/tools/drill/drill.glb" id="8_lwlnf"]
-[ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="8_p3bqw"]
-[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/coal/coal_on_pickup_strategy.tres" id="9_sgqxm"]
-[ext_resource type="PackedScene" uid="uid://bbwvfa0q1wlu5" path="res://common/stations/merchant/coins.tscn" id="9_wpnl1"]
-[ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="9_xnylg"]
-[ext_resource type="Resource" uid="uid://b0tqjiggmbrej" path="res://common/buried_items/variants/emerald/emerald_on_pickup_strategy.tres" id="10_solpo"]
-[ext_resource type="Material" uid="uid://7adp1ukqj5ul" path="res://common/aesthetic_items/house/Concrete010_1K-JPG.tres" id="10_umwxm"]
-[ext_resource type="PackedScene" uid="uid://cu3lqqj1jhjbv" path="res://common/modifiable_ground/variants/clay/modifiable_ground_clay.tscn" id="11_k1rsi"]
-[ext_resource type="PackedScene" uid="uid://b4ikkiegdvhrl" path="res://common/stations/merchant/flashlight.tscn" id="11_pkv54"]
-[ext_resource type="PackedScene" uid="uid://c4yho284sw174" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket_launcher.glb" id="11_t4aas"]
-[ext_resource type="PackedScene" uid="uid://5ashcspi3ruo" path="res://common/modifiable_ground/variants/stone/modifiable_ground_stone.tscn" id="12_1a078"]
-[ext_resource type="PackedScene" uid="uid://rcualpb6amp7" path="res://common/money_and_upgrades/consumables/bomb/bomb.glb" id="12_5rtvx"]
-[ext_resource type="PackedScene" uid="uid://g3xj6nxlwql4" path="res://common/modifiable_ground/variants/granite/modifiable_ground_granite.tscn" id="12_e8fyy"]
-[ext_resource type="Resource" uid="uid://cqd8niwajmmyg" path="res://common/buried_items/variants/opal/opal_on_pickup_strategy.tres" id="13_t4aas"]
-[ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="15_xnylg"]
-[ext_resource type="PackedScene" uid="uid://bcn0f3ogmw8cx" path="res://common/aesthetic_items/bush/scene.gltf" id="16_k1rsi"]
-[ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="18_w7o82"]
-[ext_resource type="Material" uid="uid://cff41fqond38i" path="res://common/aesthetic_items/house/wood_planks_dirt.tres" id="19_katq7"]
-[ext_resource type="Material" uid="uid://hbnmo6g8no7j" path="res://common/aesthetic_items/house/concrete_slab_wall_02.tres" id="20_veg8t"]
-[ext_resource type="PackedScene" uid="uid://dndff3p2pqbeo" path="res://common/modifiable_ground/underground_reflection_probe/underground_reflection_probe.tscn" id="23_lwlnf"]
-[ext_resource type="PackedScene" uid="uid://douqh0bm1k2ei" path="res://common/final_treasure/final_treasure.tscn" id="31_451c7"]
+[ext_resource type="Texture2D" uid="uid://w7uw2q60ljih" path="res://common/aesthetic_items/sky/autumn_field_puresky_4k.exr" id="1_cb01t"]
+[ext_resource type="PackedScene" uid="uid://dmbeuo58undll" path="res://common/player/vr_player/vr_player.tscn" id="2_e5vfj"]
+[ext_resource type="PackedScene" uid="uid://f16gjq71jj15" path="res://common/aesthetic_items/fence/fence.fbx" id="3_4b376"]
+[ext_resource type="PackedScene" uid="uid://da7k0yn0qbxo7" path="res://common/aesthetic_items/wood_planks/wood_plank.tscn" id="4_uvvfo"]
+[ext_resource type="PackedScene" uid="uid://bnhfm72f5dcqw" path="res://common/aesthetic_items/logs/wood-log.tscn" id="5_1vsxv"]
+[ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="6_hd738"]
+[ext_resource type="PackedScene" uid="uid://dndff3p2pqbeo" path="res://common/modifiable_ground/underground_reflection_probe/underground_reflection_probe.tscn" id="11_f1q0w"]
+[ext_resource type="PackedScene" uid="uid://douqh0bm1k2ei" path="res://common/final_treasure/final_treasure.tscn" id="12_b8mcs"]
+[ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="13_y8e7b"]
+[ext_resource type="PackedScene" uid="uid://b0e318kwkxgo6" path="res://common/buried_items/variants/coal/coal.tscn" id="14_uoos5"]
+[ext_resource type="Material" uid="uid://d0s3yp8dy7aqb" path="res://common/aesthetic_items/grass/Grass005_1K-JPG.tres" id="15_041tv"]
+[ext_resource type="PackedScene" uid="uid://d0aohaag0fi8t" path="res://common/aesthetic_items/hedge/scene.gltf" id="16_glvsp"]
+[ext_resource type="PackedScene" uid="uid://bcn0f3ogmw8cx" path="res://common/aesthetic_items/bush/scene.gltf" id="17_he7fo"]
+[ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="18_xxuv8"]
+[ext_resource type="Material" uid="uid://7adp1ukqj5ul" path="res://common/aesthetic_items/house/Concrete010_1K-JPG.tres" id="19_tpyj3"]
+[ext_resource type="PackedScene" uid="uid://7xll1ohcqjld" path="res://common/stations/merchant/merchant.tscn" id="20_ytr0t"]
+[ext_resource type="PackedScene" uid="uid://bocvuy7ksvlvp" path="res://common/money_and_upgrades/tools/pickaxe/pickaxe.glb" id="21_x7l75"]
+[ext_resource type="PackedScene" uid="uid://bgmhsbnkcq3yb" path="res://common/money_and_upgrades/tools/drill/drill.glb" id="22_xjbkf"]
+[ext_resource type="PackedScene" uid="uid://bbwvfa0q1wlu5" path="res://common/stations/merchant/coins.tscn" id="23_ai41p"]
+[ext_resource type="PackedScene" uid="uid://d31fr7y3dqch0" path="res://common/stations/merchant/shopitem.tscn" id="24_74tlw"]
+[ext_resource type="PackedScene" uid="uid://b4ikkiegdvhrl" path="res://common/stations/merchant/flashlight.tscn" id="25_mgqo8"]
+[ext_resource type="Script" uid="uid://cld3um4o81xml" path="res://common/buried_items/mineral_on_pickup_strategy.gd" id="26_7t76l"]
+[ext_resource type="Resource" uid="uid://cbh4wwrnp6tjd" path="res://common/buried_items/variants/coal/coal_on_pickup_strategy.tres" id="27_2k0bt"]
+[ext_resource type="Resource" uid="uid://b0tqjiggmbrej" path="res://common/buried_items/variants/emerald/emerald_on_pickup_strategy.tres" id="28_ii5od"]
+[ext_resource type="PackedScene" uid="uid://c4yho284sw174" path="res://common/money_and_upgrades/tools/rocket_launcher/rocket_launcher.glb" id="29_6qttg"]
+[ext_resource type="PackedScene" uid="uid://rcualpb6amp7" path="res://common/money_and_upgrades/consumables/bomb/bomb.glb" id="30_0qeb0"]
+[ext_resource type="Resource" uid="uid://cqd8niwajmmyg" path="res://common/buried_items/variants/opal/opal_on_pickup_strategy.tres" id="31_0ep8w"]
+[ext_resource type="Material" uid="uid://cff41fqond38i" path="res://common/aesthetic_items/house/wood_planks_dirt.tres" id="32_akpua"]
+[ext_resource type="Material" uid="uid://hbnmo6g8no7j" path="res://common/aesthetic_items/house/concrete_slab_wall_02.tres" id="33_hu8i1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ycwdu"]
-panorama = ExtResource("1_qwd8j")
+panorama = ExtResource("1_cb01t")
 
 [sub_resource type="Sky" id="Sky_qwd8j"]
 sky_material = SubResource("PanoramaSkyMaterial_ycwdu")
@@ -162,8 +158,8 @@ environment = SubResource("Environment_yoapk")
 transform = Transform3D(0.8526403, 0.42271024, -0.307117, 0, 0.58778536, 0.80901706, 0.5224986, -0.6898004, 0.5011694, 0, 5.995867, 0)
 shadow_enabled = true
 
-[node name="VrPlayer" parent="." unique_id=1163162612 instance=ExtResource("2_pkv54")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2, 1, 0)
+[node name="VrPlayer" parent="." unique_id=1163162612 instance=ExtResource("2_e5vfj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 1, 0)
 
 [node name="Backyard" type="Node3D" parent="." unique_id=288610247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.656197, 0, -19.284483)
@@ -177,94 +173,94 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 [node name="-z_fences" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=1327443299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.80682087, 5.197302)
 
-[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=679320704 instance=ExtResource("3_b540t")]
+[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=679320704 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
 
-[node name="fence11" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=669603409 instance=ExtResource("3_b540t")]
+[node name="fence11" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=669603409 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.723143, 0.5, 2.901146)
 
-[node name="fence12" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=841092473 instance=ExtResource("3_b540t")]
+[node name="fence12" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=841092473 instance=ExtResource("3_4b376")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.416186, 0.5, 6.06394)
 
-[node name="fence13" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1143015450 instance=ExtResource("3_b540t")]
+[node name="fence13" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1143015450 instance=ExtResource("3_4b376")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.416186, 0.5, 9.44612)
 
-[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=611825873 instance=ExtResource("3_b540t")]
+[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=611825873 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.301016, 0.5, 2.901146)
 
-[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=2100935734 instance=ExtResource("3_b540t")]
+[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=2100935734 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1053581, 0.5, 2.901146)
 
-[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1381918963 instance=ExtResource("3_b540t")]
+[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1381918963 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2704563, 0.5, 2.901146)
 
-[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=303334596 instance=ExtResource("3_b540t")]
+[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=303334596 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.614872, 0.5, 2.901146)
 
-[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=499134796 instance=ExtResource("3_b540t")]
+[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=499134796 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.920374, 0.5, 2.901146)
 
-[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1363920793 instance=ExtResource("3_b540t")]
+[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1363920793 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.177872, 0.5, 2.901146)
 
-[node name="fence9" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1608186017 instance=ExtResource("3_b540t")]
+[node name="fence9" parent="Backyard/SandboxSurrounding/Fences/-z_fences" unique_id=1608186017 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.373528, 0.5, 2.901146)
 
 [node name="z_fences" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=823836025]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.2325478, -0.7901468, 33.231644)
 
-[node name="fence" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=475666062 instance=ExtResource("3_b540t")]
+[node name="fence" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=475666062 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.864014, 0.5, 2.901146)
 
-[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=741643309 instance=ExtResource("3_b540t")]
+[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=741643309 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
 
-[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=328411719 instance=ExtResource("3_b540t")]
+[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=328411719 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.301016, 0.5, 2.901146)
 
-[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=939187519 instance=ExtResource("3_b540t")]
+[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=939187519 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1053581, 0.5, 2.901146)
 
-[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1377480255 instance=ExtResource("3_b540t")]
+[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1377480255 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2704563, 0.5, 2.901146)
 
-[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1868197683 instance=ExtResource("3_b540t")]
+[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1868197683 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.614872, 0.5, 2.901146)
 
-[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=955046273 instance=ExtResource("3_b540t")]
+[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=955046273 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.920374, 0.5, 2.901146)
 
-[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=232368797 instance=ExtResource("3_b540t")]
+[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=232368797 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.177872, 0.5, 2.901146)
 
-[node name="fence9" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1362384718 instance=ExtResource("3_b540t")]
+[node name="fence9" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=1362384718 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.369268, 0.5, 2.901147)
 
-[node name="fence10" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=312661431 instance=ExtResource("3_b540t")]
+[node name="fence10" parent="Backyard/SandboxSurrounding/Fences/z_fences" unique_id=312661431 instance=ExtResource("3_4b376")]
 transform = Transform3D(1.1924882e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924882e-08, 16.678959, 0.5, 4.8224545)
 
 [node name="+x_fences2" type="Node3D" parent="Backyard/SandboxSurrounding/Fences" unique_id=168012228]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.232548, -0.8332319, 17.31942)
 
-[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1904317645 instance=ExtResource("3_b540t")]
+[node name="fence2" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1904317645 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.5585117, 0.5, 2.901146)
 
-[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=263995308 instance=ExtResource("3_b540t")]
+[node name="fence3" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=263995308 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.301016, 0.5, 2.901146)
 
-[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1707205067 instance=ExtResource("3_b540t")]
+[node name="fence4" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1707205067 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1053581, 0.5, 2.901146)
 
-[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=429979948 instance=ExtResource("3_b540t")]
+[node name="fence5" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=429979948 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2704563, 0.5, 2.901146)
 
-[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=679165139 instance=ExtResource("3_b540t")]
+[node name="fence6" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=679165139 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.614872, 0.5, 2.901146)
 
-[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1497066457 instance=ExtResource("3_b540t")]
+[node name="fence7" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1497066457 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.920374, 0.5, 2.901146)
 
-[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1669262874 instance=ExtResource("3_b540t")]
+[node name="fence8" parent="Backyard/SandboxSurrounding/Fences/+x_fences2" unique_id=1669262874 instance=ExtResource("3_4b376")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12.177872, 0.5, 2.901146)
 
 [node name="Sandbox" type="Node3D" parent="Backyard" unique_id=1652470722]
@@ -272,123 +268,111 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.656197, 0, 19.284483)
 
 [node name="SandboxBarriers" type="Node3D" parent="Backyard/Sandbox" unique_id=177156476]
 
-[node name="WoodPlank" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1925335567 instance=ExtResource("9_xnylg")]
+[node name="WoodPlank" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1925335567 instance=ExtResource("4_uvvfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.875, -0.7832593, 0.46396518)
 
-[node name="WoodPlank4" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1583962180 instance=ExtResource("9_xnylg")]
+[node name="WoodPlank4" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1583962180 instance=ExtResource("4_uvvfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.125, -0.69095093, 0.49047112)
 
-[node name="WoodPlank2" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1478965466 instance=ExtResource("9_xnylg")]
+[node name="WoodPlank2" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1478965466 instance=ExtResource("4_uvvfo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.560682, -0.65918314, 7.921159)
 
-[node name="WoodPlank3" parent="Backyard/Sandbox/SandboxBarriers" unique_id=825069742 instance=ExtResource("9_xnylg")]
+[node name="WoodPlank3" parent="Backyard/Sandbox/SandboxBarriers" unique_id=825069742 instance=ExtResource("4_uvvfo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.467562, -0.659, -7)
 
 [node name="-ZWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=21783402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -7.461055)
 visible = false
 
-[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1691237038 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1691237038 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1425799993 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1425799993 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=494812025 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=494812025 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=31539474 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=31539474 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1303425329 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=1303425329 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=517081293 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/-ZWoodLogs" unique_id=517081293 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
 [node name="+ZWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1196017519]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16.571232)
 visible = false
 
-[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1395936852 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1395936852 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1964564758 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1964564758 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=217694986 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=217694986 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1332392450 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=1332392450 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=231384343 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=231384343 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=2029729584 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/+ZWoodLogs" unique_id=2029729584 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
 [node name="+XWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=401088641]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 37.321724, 1.9073486e-06, 13.791449)
 visible = false
 
-[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1947593768 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1947593768 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=2090190792 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=2090190792 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1538592244 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1538592244 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1175536040 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=1175536040 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=2131559746 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=2131559746 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=522042316 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/+XWoodLogs" unique_id=522042316 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
 [node name="-XWoodLogs" type="Node3D" parent="Backyard/Sandbox/SandboxBarriers" unique_id=679539986]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.47929, 1.9073486e-06, 13.651323)
 visible = false
 
-[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1274466368 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1274466368 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(0.9996198, 0, 0.027572708, 0, 1, 0, -0.027572708, 0, 0.9996198, 0, 0, 0)
 
-[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1970152626 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog2" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1970152626 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7866993, 0, 0)
 
-[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=579419968 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog3" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=579419968 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.696783, 0, 0)
 
-[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1965457750 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog4" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1965457750 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.561167, 0, 0)
 
-[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=755765939 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog5" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=755765939 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.411083, 0, 0)
 
-[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1875714039 instance=ExtResource("5_ycwdu")]
+[node name="WoodLog6" parent="Backyard/Sandbox/SandboxBarriers/-XWoodLogs" unique_id=1875714039 instance=ExtResource("5_1vsxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.284492, 0, 0)
 
 [node name="SandboxOrigin" type="Node3D" parent="Backyard/Sandbox" unique_id=1581829387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -31, -7)
 
-[node name="ModifiableGroundSand" parent="Backyard/Sandbox/SandboxOrigin" unique_id=769958387 instance=ExtResource("2_lopip")]
+[node name="ModifiableGroundSand" parent="Backyard/Sandbox/SandboxOrigin" unique_id=769958387 instance=ExtResource("6_hd738")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
-
-[node name="ModifiableGroundClay" parent="Backyard/Sandbox/SandboxOrigin" unique_id=2096102443 instance=ExtResource("11_k1rsi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-
-[node name="ModifiableGroundStone" parent="Backyard/Sandbox/SandboxOrigin" unique_id=274249371 instance=ExtResource("12_1a078")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
-
-[node name="ModifiableGroundGranite" parent="Backyard/Sandbox/SandboxOrigin" unique_id=1347970113 instance=ExtResource("12_e8fyy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23, 0)
-
-[node name="ModifiableGroundBedrock" parent="Backyard/Sandbox/SandboxOrigin" unique_id=569039121 instance=ExtResource("4_fcoao")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36, 0)
 
 [node name="SandboxCSGCombiner" type="CSGCombiner3D" parent="Backyard/Sandbox/SandboxOrigin" unique_id=1901143490]
 use_collision = true
@@ -404,7 +388,7 @@ operation = 2
 size = Vector3(16, 80, 16)
 
 [node name="FinalTreasureFloor" type="StaticBody3D" parent="Backyard/Sandbox/SandboxOrigin" unique_id=968654271]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -50.59211, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7.4281235, 9)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=187632948]
 mesh = SubResource("BoxMesh_yoqt3")
@@ -412,7 +396,7 @@ mesh = SubResource("BoxMesh_yoqt3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=1457531625]
 shape = SubResource("BoxShape3D_lwlnf")
 
-[node name="ReflectionProbe" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=1991230468 instance=ExtResource("23_lwlnf")]
+[node name="ReflectionProbe" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=1991230468 instance=ExtResource("11_f1q0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -1)
 size = Vector3(20, 18.78, 20)
 
@@ -422,18 +406,18 @@ light_color = Color(0.12941177, 0.64705884, 0.14901961, 1)
 light_energy = 6.993
 omni_range = 22.388
 
-[node name="FinalTreasure" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=104134868 instance=ExtResource("31_451c7")]
+[node name="FinalTreasure" parent="Backyard/Sandbox/SandboxOrigin/FinalTreasureFloor" unique_id=104134868 instance=ExtResource("12_b8mcs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76677704, -8.940806)
 
 [node name="BuriedItems" type="Node3D" parent="Backyard/Sandbox" unique_id=92606792]
 
-[node name="Rock3" parent="Backyard/Sandbox/BuriedItems" unique_id=352425305 instance=ExtResource("4_c5o21")]
+[node name="Rock3" parent="Backyard/Sandbox/BuriedItems" unique_id=352425305 instance=ExtResource("13_y8e7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 1)
 
-[node name="Rock2" parent="Backyard/Sandbox/BuriedItems" unique_id=350133347 instance=ExtResource("4_c5o21")]
+[node name="Rock2" parent="Backyard/Sandbox/BuriedItems" unique_id=350133347 instance=ExtResource("13_y8e7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -1, 0)
 
-[node name="Crystal2" parent="Backyard/Sandbox/BuriedItems" unique_id=1079390233 instance=ExtResource("5_fcoao")]
+[node name="Crystal2" parent="Backyard/Sandbox/BuriedItems" unique_id=1079390233 instance=ExtResource("14_uoos5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.976433, -0.88079625, -0.3148049)
 
 [node name="Grasses" type="Node3D" parent="Backyard" unique_id=682807131]
@@ -445,9 +429,9 @@ collision_layer = 16
 
 [node name="GrassCSG" type="CSGBox3D" parent="Backyard/Grasses/CSGCombiner3D" unique_id=1300703755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.654007, 0, 3.3012695)
-material_override = ExtResource("18_w7o82")
+material_override = ExtResource("15_041tv")
 size = Vector3(43.78341, 1, 34.9541)
-material = ExtResource("18_w7o82")
+material = ExtResource("15_041tv")
 
 [node name="NegativeCSG" type="CSGBox3D" parent="Backyard/Grasses/CSGCombiner3D" unique_id=1686554168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56731224, 0, 5.335332)
@@ -456,97 +440,97 @@ size = Vector3(15.41, 1.76, 15.16)
 
 [node name="Hedges" type="Node3D" parent="Backyard/Grasses" unique_id=576985757]
 
-[node name="Sketchfab_Scene" parent="Backyard/Grasses/Hedges" unique_id=142555675 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene" parent="Backyard/Grasses/Hedges" unique_id=142555675 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.906706, 0.54599905, 16.642944)
 
-[node name="Sketchfab_Scene2" parent="Backyard/Grasses/Hedges" unique_id=1598253104 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene2" parent="Backyard/Grasses/Hedges" unique_id=1598253104 instance=ExtResource("16_glvsp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0261135, 0.54599905, 17.887756)
 
-[node name="Sketchfab_Scene3" parent="Backyard/Grasses/Hedges" unique_id=2102062532 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene3" parent="Backyard/Grasses/Hedges" unique_id=2102062532 instance=ExtResource("16_glvsp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89056, 0.54599905, 17.887756)
 
-[node name="Sketchfab_Scene4" parent="Backyard/Grasses/Hedges" unique_id=1035645516 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene4" parent="Backyard/Grasses/Hedges" unique_id=1035645516 instance=ExtResource("16_glvsp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12461662, 0.54599905, 17.887756)
 
-[node name="Sketchfab_Scene5" parent="Backyard/Grasses/Hedges" unique_id=1419666426 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene5" parent="Backyard/Grasses/Hedges" unique_id=1419666426 instance=ExtResource("16_glvsp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26017, 0.54599905, 17.887756)
 
-[node name="Sketchfab_Scene6" parent="Backyard/Grasses/Hedges" unique_id=1699882207 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene6" parent="Backyard/Grasses/Hedges" unique_id=1699882207 instance=ExtResource("16_glvsp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.068348, 0.54599905, 17.887756)
 
-[node name="Sketchfab_Scene7" parent="Backyard/Grasses/Hedges" unique_id=9446324 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene7" parent="Backyard/Grasses/Hedges" unique_id=9446324 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, 15.414383)
 
-[node name="Sketchfab_Scene8" parent="Backyard/Grasses/Hedges" unique_id=430847996 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene8" parent="Backyard/Grasses/Hedges" unique_id=430847996 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, 8.278828)
 
-[node name="Sketchfab_Scene9" parent="Backyard/Grasses/Hedges" unique_id=1288752789 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene9" parent="Backyard/Grasses/Hedges" unique_id=1288752789 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, 1.263648)
 
-[node name="Sketchfab_Scene10" parent="Backyard/Grasses/Hedges" unique_id=392542198 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene10" parent="Backyard/Grasses/Hedges" unique_id=392542198 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.354843, 0.54599905, -5.8719034)
 
-[node name="Sketchfab_Scene13" parent="Backyard/Grasses/Hedges" unique_id=78911868 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene13" parent="Backyard/Grasses/Hedges" unique_id=78911868 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.835018, 0.54599905, -8.455385)
 
-[node name="Sketchfab_Scene14" parent="Backyard/Grasses/Hedges" unique_id=2019862687 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene14" parent="Backyard/Grasses/Hedges" unique_id=2019862687 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.8198376, 0.54599905, -8.455385)
 
-[node name="Sketchfab_Scene15" parent="Backyard/Grasses/Hedges" unique_id=237072895 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene15" parent="Backyard/Grasses/Hedges" unique_id=237072895 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.31571388, 0.54599905, -8.455385)
 
-[node name="Sketchfab_Scene16" parent="Backyard/Grasses/Hedges" unique_id=11209834 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene16" parent="Backyard/Grasses/Hedges" unique_id=11209834 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.123892, 0.54599905, -8.455385)
 
-[node name="Sketchfab_Scene17" parent="Backyard/Grasses/Hedges" unique_id=1279414041 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene17" parent="Backyard/Grasses/Hedges" unique_id=1279414041 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.796892, 0.54599905, -8.455385)
 
-[node name="Sketchfab_Scene18" parent="Backyard/Grasses/Hedges" unique_id=1177473659 instance=ExtResource("15_xnylg")]
+[node name="Sketchfab_Scene18" parent="Backyard/Grasses/Hedges" unique_id=1177473659 instance=ExtResource("16_glvsp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.996342, 0.54599905, -10.803063)
 
 [node name="Bushes" type="Node3D" parent="Backyard" unique_id=631626185]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15465927, -0.47, 19.640839)
 
-[node name="Bush" parent="Backyard/Bushes" unique_id=1511715018 instance=ExtResource("16_k1rsi")]
+[node name="Bush" parent="Backyard/Bushes" unique_id=1511715018 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.424402, -0.7152364, -9.90894)
 
-[node name="Bush2" parent="Backyard/Bushes" unique_id=230785225 instance=ExtResource("16_k1rsi")]
+[node name="Bush2" parent="Backyard/Bushes" unique_id=230785225 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6011524, -0.7152364, -9.90894)
 
-[node name="Bush3" parent="Backyard/Bushes" unique_id=1505563123 instance=ExtResource("16_k1rsi")]
+[node name="Bush3" parent="Backyard/Bushes" unique_id=1505563123 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.412714, -0.7152364, -9.90894)
 
-[node name="Bush4" parent="Backyard/Bushes" unique_id=1123481994 instance=ExtResource("16_k1rsi")]
+[node name="Bush4" parent="Backyard/Bushes" unique_id=1123481994 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3693523, -0.7152364, -9.90894)
 
-[node name="Bush5" parent="Backyard/Bushes" unique_id=984558822 instance=ExtResource("16_k1rsi")]
+[node name="Bush5" parent="Backyard/Bushes" unique_id=984558822 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18785667, -0.7152364, -9.90894)
 
-[node name="Bush6" parent="Backyard/Bushes" unique_id=369099065 instance=ExtResource("16_k1rsi")]
+[node name="Bush6" parent="Backyard/Bushes" unique_id=369099065 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3437138, -0.7152364, -9.90894)
 
-[node name="Bush7" parent="Backyard/Bushes" unique_id=1105761099 instance=ExtResource("16_k1rsi")]
+[node name="Bush7" parent="Backyard/Bushes" unique_id=1105761099 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5572624, -0.7152364, -9.90894)
 
-[node name="Bush8" parent="Backyard/Bushes" unique_id=1884397254 instance=ExtResource("16_k1rsi")]
+[node name="Bush8" parent="Backyard/Bushes" unique_id=1884397254 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.523487, -0.7152364, -9.90894)
 
-[node name="Bush9" parent="Backyard/Bushes" unique_id=879666646 instance=ExtResource("16_k1rsi")]
+[node name="Bush9" parent="Backyard/Bushes" unique_id=879666646 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.515736, -0.7152364, -9.90894)
 
-[node name="Bush10" parent="Backyard/Bushes" unique_id=1812092907 instance=ExtResource("16_k1rsi")]
+[node name="Bush10" parent="Backyard/Bushes" unique_id=1812092907 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3892145, -0.7152364, -9.90894)
 
-[node name="Bush11" parent="Backyard/Bushes" unique_id=1605850575 instance=ExtResource("16_k1rsi")]
+[node name="Bush11" parent="Backyard/Bushes" unique_id=1605850575 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.415599, -0.7152364, -9.90894)
 
-[node name="Bush12" parent="Backyard/Bushes" unique_id=410105196 instance=ExtResource("16_k1rsi")]
+[node name="Bush12" parent="Backyard/Bushes" unique_id=410105196 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.483548, -0.7152364, -9.90894)
 
-[node name="Bush13" parent="Backyard/Bushes" unique_id=625251029 instance=ExtResource("16_k1rsi")]
+[node name="Bush13" parent="Backyard/Bushes" unique_id=625251029 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.69298, -0.7152364, -9.90894)
 
-[node name="Bush14" parent="Backyard/Bushes" unique_id=1196465898 instance=ExtResource("16_k1rsi")]
+[node name="Bush14" parent="Backyard/Bushes" unique_id=1196465898 instance=ExtResource("17_he7fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.902832, -0.7152364, -9.90894)
 
 [node name="House" type="StaticBody3D" parent="Backyard" unique_id=1794156845]
@@ -560,20 +544,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.096138, -0.75, -6.3813286)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3174305, 0, 0.73747635)
 collision_layer = 16
 
-[node name="SellStation" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=58626733 node_paths=PackedStringArray("demolitionist", "wizard") instance=ExtResource("2_b8nul")]
+[node name="SellStation" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=58626733 node_paths=PackedStringArray("demolitionist", "wizard") instance=ExtResource("18_xxuv8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1999998, 1.5, 6)
 demolitionist = NodePath("../Demolitionist")
 wizard = NodePath("../Wizard")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=335299020]
-material_override = ExtResource("10_umwxm")
+material_override = ExtResource("19_tpyj3")
 mesh = SubResource("BoxMesh_xnylg")
 skeleton = NodePath("../../../../SandboxSurrounding")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1948797726]
 shape = SubResource("BoxShape3D_b540t")
 
-[node name="Blacksmith" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=657462227 instance=ExtResource("5_xnylg")]
+[node name="Blacksmith" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=657462227 instance=ExtResource("20_ytr0t")]
 transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.7, 0.8, 2)
 
 [node name="Label3D" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" index="2" unique_id=473277624]
@@ -583,10 +567,10 @@ text = "Blacksmith"
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.75, 0.35, 0)
 items = [null, null, null, null, null, null, null, null, null]
 
-[node name="pickaxe" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="0" unique_id=1889160202 instance=ExtResource("7_v3r5y")]
+[node name="pickaxe" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="0" unique_id=1889160202 instance=ExtResource("21_x7l75")]
 transform = Transform3D(3.2783545e-09, 0.07500001, -0.12990381, 0.15, -6.5567085e-09, 0, -5.678276e-09, -0.12990381, -0.07500001, -0.030646265, 0, 0.040395737)
 
-[node name="drill" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="1" unique_id=1740960767 instance=ExtResource("8_lwlnf")]
+[node name="drill" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="1" unique_id=1740960767 instance=ExtResource("22_xjbkf")]
 transform = Transform3D(0.029048225, 0.004641978, -0.06351889, -0.003903527, 0.0698123, 0.0033167622, 0.06356851, 0.0021657392, 0.029229205, 0.16206288, 0.07139161, -0.24874067)
 
 [node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="3" unique_id=826997202]
@@ -596,7 +580,7 @@ visible = false
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.25, 0.35, 0)
 items = [null, null, null, null, null, null]
 
-[node name="Coins" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem2" index="0" unique_id=397885708 instance=ExtResource("9_wpnl1")]
+[node name="Coins" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem2" index="0" unique_id=397885708 instance=ExtResource("23_ai41p")]
 transform = Transform3D(-0.10000002, 0, -0.17320508, 0, 0.2, 0, 0.17320508, 0, -0.10000002, 0, 0, -0.06)
 
 [node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem2" index="2" unique_id=826997202]
@@ -607,22 +591,22 @@ mesh = null
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.25, 0.35, 0)
 items = [null]
 
-[node name="ShopItem4" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" unique_id=1036681858 node_paths=PackedStringArray("items") instance=ExtResource("7_6jyhs")]
+[node name="ShopItem4" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" unique_id=1036681858 node_paths=PackedStringArray("items") instance=ExtResource("24_74tlw")]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.75, 0.35, 0)
 items = [null]
 
 [node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem4" index="1" unique_id=826997202]
 visible = false
 
-[node name="Flashlight" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem4" unique_id=57351306 instance=ExtResource("11_pkv54")]
+[node name="Flashlight" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem4" unique_id=57351306 instance=ExtResource("25_mgqo8")]
 transform = Transform3D(0.01583129, -0.12893553, 0.074999996, 0.14888193, 0.0182804, 0, -0.0091402, 0.07444096, 0.1299038, 0.05, 0.06, -0.02)
 
-[node name="Demolitionist" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
+[node name="Demolitionist" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("20_ytr0t")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -2)
 merchant_id = 1
-unlockCost = Dictionary[ExtResource("8_p3bqw"), int]({
-ExtResource("9_sgqxm"): 10,
-ExtResource("10_solpo"): 5
+unlockCost = Dictionary[ExtResource("26_7t76l"), int]({
+ExtResource("27_2k0bt"): 10,
+ExtResource("28_ii5od"): 5
 })
 
 [node name="Label3D" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist" index="2" unique_id=473277624]
@@ -631,7 +615,7 @@ text = "Demolitionist"
 [node name="ShopItem" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
 items = [null, null, null, null, null, null, null, null]
 
-[node name="rocket_launcher" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="1" unique_id=1653985857 instance=ExtResource("11_t4aas")]
+[node name="rocket_launcher" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="1" unique_id=1653985857 instance=ExtResource("29_6qttg")]
 transform = Transform3D(-0.06813026, 0.12392848, -0.14142136, 0.17526133, 0.096350744, 0, 0.06813026, -0.12392848, -0.14142136, 0, 0.045, 0)
 
 [node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="2" unique_id=826997202]
@@ -648,19 +632,19 @@ mesh = SubResource("ArrayMesh_lwlnf")
 [node name="ShopItem3" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist" index="5" unique_id=1346608155 node_paths=PackedStringArray("items")]
 items = [null]
 
-[node name="bomb" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="0" unique_id=836837154 instance=ExtResource("12_5rtvx")]
+[node name="bomb" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="0" unique_id=836837154 instance=ExtResource("30_0qeb0")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.09, 0)
 
 [node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="2" unique_id=826997202]
 visible = false
 mesh = null
 
-[node name="Wizard" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1996559039 instance=ExtResource("5_xnylg")]
+[node name="Wizard" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1996559039 instance=ExtResource("20_ytr0t")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -6)
 merchant_id = 2
-unlockCost = Dictionary[ExtResource("8_p3bqw"), int]({
-ExtResource("10_solpo"): 10,
-ExtResource("13_t4aas"): 5
+unlockCost = Dictionary[ExtResource("26_7t76l"), int]({
+ExtResource("28_ii5od"): 10,
+ExtResource("31_0ep8w"): 5
 })
 
 [node name="Label3D" parent="Backyard/House/ConcreteOwner/Concrete/Wizard" index="2" unique_id=473277624]
@@ -669,7 +653,7 @@ text = "Wizard"
 [node name="ShopItem" parent="Backyard/House/ConcreteOwner/Concrete/Wizard" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
 items = [null, null, null, null, null, null, null]
 
-[node name="Coins" parent="Backyard/House/ConcreteOwner/Concrete/Wizard/ShopItem" index="0" unique_id=1118384490 instance=ExtResource("9_wpnl1")]
+[node name="Coins" parent="Backyard/House/ConcreteOwner/Concrete/Wizard/ShopItem" index="0" unique_id=1118384490 instance=ExtResource("23_ai41p")]
 transform = Transform3D(-0.10000002, 0, -0.17320508, 0, 0.2, 0, 0.17320508, 0, -0.10000002, 0, 0, -0.059999943)
 
 [node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Wizard/ShopItem" index="2" unique_id=826997202]
@@ -684,7 +668,7 @@ items = [null]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House" unique_id=1389133736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -5.7716475)
-material_override = ExtResource("19_katq7")
+material_override = ExtResource("32_akpua")
 mesh = SubResource("BoxMesh_b540t")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Backyard/House" unique_id=1821828579]
@@ -693,7 +677,7 @@ shape = SubResource("BoxShape3D_e8fyy")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Backyard/House" unique_id=2052423067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 1.4868469)
-material_override = ExtResource("19_katq7")
+material_override = ExtResource("32_akpua")
 mesh = SubResource("BoxMesh_1a078")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Backyard/House" unique_id=1309556582]
@@ -702,7 +686,7 @@ shape = SubResource("BoxShape3D_6jyhs")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Backyard/House" unique_id=1955497376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -9.858802)
-material_override = ExtResource("19_katq7")
+material_override = ExtResource("32_akpua")
 mesh = SubResource("BoxMesh_2q5tt")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Backyard/House" unique_id=3221241]
@@ -711,7 +695,7 @@ shape = SubResource("BoxShape3D_katq7")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Backyard/House" unique_id=802759109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, 3.962264)
-material_override = ExtResource("19_katq7")
+material_override = ExtResource("32_akpua")
 mesh = SubResource("BoxMesh_w7o82")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/House" unique_id=2057332360]
@@ -720,7 +704,7 @@ shape = SubResource("BoxShape3D_veg8t")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Backyard/House" unique_id=1655946339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8511539, 2.1782541, -14.96132)
-material_override = ExtResource("19_katq7")
+material_override = ExtResource("32_akpua")
 mesh = SubResource("BoxMesh_w7o82")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Backyard/House" unique_id=1930708563]
@@ -735,7 +719,7 @@ shape = SubResource("BoxShape3D_v3r5y")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Backyard/House" unique_id=169621704]
 transform = Transform3D(9.145, 0, 0, 0, 1, 0, 0, 0, 20, 1.683, 5, -5.663)
-material_override = ExtResource("20_veg8t")
+material_override = ExtResource("33_hu8i1")
 mesh = SubResource("BoxMesh_lwlnf")
 
 [node name="HouseLight" type="OmniLight3D" parent="Backyard/House" unique_id=2102452931]
