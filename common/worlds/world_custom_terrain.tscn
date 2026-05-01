@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://w7uw2q60ljih" path="res://common/aesthetic_items/sky/autumn_field_puresky_4k.exr" id="1_qwd8j"]
 [ext_resource type="PackedScene" uid="uid://n6504e8nvkgq" path="res://common/stations/sell_station/sell_station.tscn" id="2_b8nul"]
 [ext_resource type="PackedScene" uid="uid://cxkmi613l8vla" path="res://common/modifiable_ground/variants/sand/modifiable_ground_sand.tscn" id="2_lopip"]
-[ext_resource type="PackedScene" uid="uid://dmbeuo58undll" path="res://common/player/vr_player/vr_player.tscn" id="2_pkv54"]
+[ext_resource type="PackedScene" uid="uid://dj8jggnky2vi3" path="res://common/player/player.tscn" id="2_mhjqk"]
 [ext_resource type="PackedScene" uid="uid://f16gjq71jj15" path="res://common/aesthetic_items/fence/fence.fbx" id="3_b540t"]
 [ext_resource type="PackedScene" uid="uid://b5y7gyaqb66j8" path="res://common/buried_items/variants/rock/rock.tscn" id="4_c5o21"]
 [ext_resource type="PackedScene" uid="uid://vt1idgq5nph3" path="res://common/modifiable_ground/variants/bedrock/modifiable_ground_bedrock.tscn" id="4_fcoao"]
@@ -51,12 +51,6 @@ glow_levels/2 = 1.0
 glow_levels/4 = 0.5
 glow_levels/5 = 0.2
 
-[sub_resource type="BoxMesh" id="BoxMesh_yoqt3"]
-size = Vector3(24, 1, 24)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lwlnf"]
-size = Vector3(24, 1, 24)
-
 [sub_resource type="BoxMesh" id="BoxMesh_xnylg"]
 size = Vector3(9.145, 1, 20)
 
@@ -103,6 +97,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v3r5y")
+
+[sub_resource type="BoxMesh" id="BoxMesh_yoqt3"]
+size = Vector3(24, 1, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwlnf"]
+size = Vector3(24, 1, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b540t"]
 size = Vector3(1, 5.07, 18.99)
@@ -162,8 +162,14 @@ environment = SubResource("Environment_yoapk")
 transform = Transform3D(0.8526403, 0.42271024, -0.307117, 0, 0.58778536, 0.80901706, 0.5224986, -0.6898004, 0.5011694, 0, 5.995867, 0)
 shadow_enabled = true
 
-[node name="VrPlayer" parent="." unique_id=1163162612 instance=ExtResource("2_pkv54")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2, 1, 0)
+[node name="Player" parent="." unique_id=1578288810 instance=ExtResource("2_mhjqk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.434904, 0.25, 0.07166481)
+
+[node name="UnlockDemolitionist" parent="Player/MoneyAndUpgrades/Upgrades/Blacksmith/Slot_1_Tool" parent_id_path=PackedInt32Array(1578288810, 1119986838) index="9" unique_id=1470608683 node_paths=PackedStringArray("merchant_to_unlock")]
+merchant_to_unlock = NodePath("../../../../../../Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist")
+
+[node name="UnlockWizard" parent="Player/MoneyAndUpgrades/Upgrades/Demolitionist/Slot_1_Tool" parent_id_path=PackedInt32Array(1578288810, 1087277006) index="8" unique_id=1447098434 node_paths=PackedStringArray("merchant_to_unlock")]
+merchant_to_unlock = NodePath("../../../../../../Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard")
 
 [node name="Backyard" type="Node3D" parent="." unique_id=288610247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.656197, 0, -19.284483)
@@ -402,7 +408,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.656197, 0, 19.284483)
 [node name="SandboxBarriers" type="Node3D" parent="Backyard/Sandbox" unique_id=177156476]
 
 [node name="WoodPlank" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1925335567 instance=ExtResource("9_xnylg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.875, -0.7832593, 0.46396518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.875, -0.6860929, 0.46396518)
 
 [node name="WoodPlank4" parent="Backyard/Sandbox/SandboxBarriers" unique_id=1583962180 instance=ExtResource("9_xnylg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.125, -0.69095093, 0.49047112)
@@ -679,137 +685,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.69298, -0.7152364, -9.908
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.902832, -0.7152364, -9.90894)
 
 [node name="House" type="StaticBody3D" parent="Backyard" unique_id=1794156845]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -0.6174245, 23)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 23)
 collision_layer = 16
-
-[node name="ConcreteOwner" type="Node3D" parent="Backyard/House" unique_id=879005732]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.096138, -0.75, -6.3813286)
-
-[node name="Concrete" type="StaticBody3D" parent="Backyard/House/ConcreteOwner" unique_id=1916486857]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3174305, 0, 0.73747635)
-collision_layer = 16
-
-[node name="SellStation" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=58626733 node_paths=PackedStringArray("demolitionist", "wizard") instance=ExtResource("2_b8nul")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1999998, 1.5, 6)
-demolitionist = NodePath("../Demolitionist")
-wizard = NodePath("../Wizard")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=335299020]
-material_override = ExtResource("10_umwxm")
-mesh = SubResource("BoxMesh_xnylg")
-skeleton = NodePath("../../../../SandboxSurrounding")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1948797726]
-shape = SubResource("BoxShape3D_b540t")
-
-[node name="Blacksmith" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=657462227 instance=ExtResource("5_xnylg")]
-transform = Transform3D(-1.3909066e-08, 0, 1, 0, 1, 0, -1, 0, -1.3909066e-08, -2.7, 0.8, 2)
-
-[node name="Label3D" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" index="2" unique_id=473277624]
-text = "Blacksmith"
-
-[node name="ShopItem" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.75, 0.35, 0)
-items = [null, null, null, null, null, null, null, null, null]
-
-[node name="pickaxe" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="0" unique_id=1889160202 instance=ExtResource("7_v3r5y")]
-transform = Transform3D(3.2783545e-09, 0.07500001, -0.12990381, 0.15, -6.5567085e-09, 0, -5.678276e-09, -0.12990381, -0.07500001, -0.030646265, 0, 0.040395737)
-
-[node name="drill" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="1" unique_id=1740960767 instance=ExtResource("8_lwlnf")]
-transform = Transform3D(0.029048225, 0.004641978, -0.06351889, -0.003903527, 0.0698123, 0.0033167622, 0.06356851, 0.0021657392, 0.029229205, 0.16206288, 0.07139161, -0.24874067)
-
-[node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem" index="3" unique_id=826997202]
-visible = false
-
-[node name="ShopItem2" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.25, 0.35, 0)
-items = [null, null, null, null, null, null]
-
-[node name="Coins" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem2" index="0" unique_id=397885708 instance=ExtResource("9_wpnl1")]
-transform = Transform3D(-0.10000002, 0, -0.17320508, 0, 0.2, 0, 0.17320508, 0, -0.10000002, 0, 0, -0.06)
-
-[node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem2" index="2" unique_id=826997202]
-visible = false
-mesh = null
-
-[node name="ShopItem3" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" index="5" unique_id=1346608155 node_paths=PackedStringArray("items")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.25, 0.35, 0)
-items = [null]
-
-[node name="ShopItem4" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith" unique_id=1036681858 node_paths=PackedStringArray("items") instance=ExtResource("7_6jyhs")]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.75, 0.35, 0)
-items = [null]
-
-[node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem4" index="1" unique_id=826997202]
-visible = false
-
-[node name="Flashlight" parent="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem4" unique_id=57351306 instance=ExtResource("11_pkv54")]
-transform = Transform3D(0.01583129, -0.12893553, 0.074999996, 0.14888193, 0.0182804, 0, -0.0091402, 0.07444096, 0.1299038, 0.05, 0.06, -0.02)
-
-[node name="Demolitionist" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1086280062 instance=ExtResource("5_xnylg")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -2)
-merchant_id = 1
-unlockCost = Dictionary[ExtResource("8_p3bqw"), int]({
-ExtResource("9_sgqxm"): 10,
-ExtResource("10_solpo"): 5
-})
-
-[node name="Label3D" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist" index="2" unique_id=473277624]
-text = "Demolitionist"
-
-[node name="ShopItem" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
-items = [null, null, null, null, null, null, null, null]
-
-[node name="rocket_launcher" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="1" unique_id=1653985857 instance=ExtResource("11_t4aas")]
-transform = Transform3D(-0.06813026, 0.12392848, -0.14142136, 0.17526133, 0.096350744, 0, 0.06813026, -0.12392848, -0.14142136, 0, 0.045, 0)
-
-[node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem" index="2" unique_id=826997202]
-visible = false
-mesh = null
-
-[node name="ShopItem2" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
-items = [null]
-
-[node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem2" index="1" unique_id=826997202]
-transform = Transform3D(-3.090862e-09, -0.07071068, -0.07071068, 0.1, -4.371139e-09, 0, -3.090862e-09, -0.07071068, 0.07071068, 0.07, 0.05, 0.07)
-mesh = SubResource("ArrayMesh_lwlnf")
-
-[node name="ShopItem3" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist" index="5" unique_id=1346608155 node_paths=PackedStringArray("items")]
-items = [null]
-
-[node name="bomb" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="0" unique_id=836837154 instance=ExtResource("12_5rtvx")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.09, 0)
-
-[node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem3" index="2" unique_id=826997202]
-visible = false
-mesh = null
-
-[node name="Wizard" parent="Backyard/House/ConcreteOwner/Concrete" unique_id=1996559039 instance=ExtResource("5_xnylg")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7, 0.8, -6)
-merchant_id = 2
-unlockCost = Dictionary[ExtResource("8_p3bqw"), int]({
-ExtResource("10_solpo"): 10,
-ExtResource("13_t4aas"): 5
-})
-
-[node name="Label3D" parent="Backyard/House/ConcreteOwner/Concrete/Wizard" index="2" unique_id=473277624]
-text = "Wizard"
-
-[node name="ShopItem" parent="Backyard/House/ConcreteOwner/Concrete/Wizard" index="3" unique_id=619888384 node_paths=PackedStringArray("items")]
-items = [null, null, null, null, null, null, null]
-
-[node name="Coins" parent="Backyard/House/ConcreteOwner/Concrete/Wizard/ShopItem" index="0" unique_id=1118384490 instance=ExtResource("9_wpnl1")]
-transform = Transform3D(-0.10000002, 0, -0.17320508, 0, 0.2, 0, 0.17320508, 0, -0.10000002, 0, 0, -0.059999943)
-
-[node name="ShopItemMesh" parent="Backyard/House/ConcreteOwner/Concrete/Wizard/ShopItem" index="2" unique_id=826997202]
-visible = false
-mesh = null
-
-[node name="ShopItem2" parent="Backyard/House/ConcreteOwner/Concrete/Wizard" index="4" unique_id=615149355 node_paths=PackedStringArray("items")]
-items = [null]
-
-[node name="ShopItem3" parent="Backyard/House/ConcreteOwner/Concrete/Wizard" index="5" unique_id=1346608155 node_paths=PackedStringArray("items")]
-items = [null]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Backyard/House" unique_id=1389133736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -5.7716475)
@@ -919,13 +796,14 @@ shape = SubResource("BoxShape3D_k1rsi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.59444, 0.9565327, 2.9441013)
 shape = SubResource("BoxShape3D_2q5tt")
 
-[editable path="Backyard/House/ConcreteOwner/Concrete/Blacksmith"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem2"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Blacksmith/ShopItem4"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Demolitionist"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem2"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Demolitionist/ShopItem3"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Wizard"]
-[editable path="Backyard/House/ConcreteOwner/Concrete/Wizard/ShopItem"]
+[editable path="Player"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem2"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Blacksmith/ShopItem4"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem2"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Demolitionist/ShopItem3"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard"]
+[editable path="Backyard/SandboxSurrounding/ConcreteOwner/Concrete/Wizard/ShopItem"]

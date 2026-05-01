@@ -33,7 +33,6 @@ func interact(player: Player) -> void:
 
 
 func update_label() -> void:
-	if items[current_item] == null: return
 	$ShopItemLabel.text = items[current_item].upgrade_name + " ($" + str(items[current_item].cost) + ")"
 
 
