@@ -403,7 +403,7 @@ func request_jump(skip_jump_velocity := false):
 
 	# Skip if jump disabled on this ground
 	var jump_velocity := XRToolsGroundPhysicsSettings.get_jump_velocity(
-			ground_physics, default_physics)
+			ground_physics, default_physics) * 1.5
 	if jump_velocity == 0.0:
 		return
 

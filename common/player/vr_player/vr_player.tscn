@@ -3,18 +3,45 @@
 [ext_resource type="PackedScene" uid="uid://bpdj5njb8nhot" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_hand.tscn" id="1_2bcb0"]
 [ext_resource type="Script" uid="uid://dbpb2x8uaky6y" path="res://common/player/vr_player/vr_player.gd" id="1_od8r6"]
 [ext_resource type="PackedScene" uid="uid://d1tl07geqm5xq" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_fullglove_hand.tscn" id="2_od8r6"]
+[ext_resource type="PackedScene" uid="uid://faxal6cfbiyx" path="res://common/player/headlamp/headlamp.tscn" id="2_p4e1j"]
+[ext_resource type="Script" uid="uid://dur4rs2uhr6cp" path="res://addons/godot-xr-tools/functions/movement_jump.gd" id="3_661n0"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_bi1jh"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_661n0"]
+[ext_resource type="PackedScene" uid="uid://daxaa2umam3tn" path="res://common/money_and_upgrades/tools/pickaxe/pickaxe.tscn" id="6_661n0"]
+[ext_resource type="Script" uid="uid://bjle11bmdbf3y" path="res://common/player/vr_player/vr_pick.gd" id="7_6gqn0"]
 
 [node name="VrPlayer" type="XROrigin3D" unique_id=1163162612]
 script = ExtResource("1_od8r6")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=84150360]
 
+[node name="Headlamp" parent="XRCamera3D" unique_id=1557774912 node_paths=PackedStringArray("camera") instance=ExtResource("2_p4e1j")]
+camera = NodePath("..")
+
 [node name="LeftHandController" type="XRController3D" parent="." unique_id=1172822560]
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHandController" unique_id=2102790667 instance=ExtResource("1_2bcb0")]
 
+[node name="XRToolsMovementJump" type="Node3D" parent="LeftHandController/LeftHand" unique_id=1833752132 groups=["movement_providers"]]
+script = ExtResource("3_661n0")
+metadata/_custom_type_script = "uid://dur4rs2uhr6cp"
+
+[node name="MovementDirect" parent="LeftHandController/LeftHand" unique_id=821285199 instance=ExtResource("3_bi1jh")]
+strafe = true
+
 [node name="RightHandController" type="XRController3D" parent="." unique_id=1978285361]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHandController" unique_id=965959063 instance=ExtResource("2_od8r6")]
+
+[node name="Pickaxe" parent="RightHandController" unique_id=624473162 node_paths=PackedStringArray("pick_raycast") instance=ExtResource("6_661n0")]
+transform = Transform3D(0.235, 0, 0, 0, 0.235, 0, 0, 0, 0.235, 0, 0, 0)
+script = ExtResource("7_6gqn0")
+pick_raycast = NodePath("RayCast3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="RightHandController/Pickaxe" unique_id=678631693]
+target_position = Vector3(0, -2.515, -10)
+collision_mask = 22
+
+[node name="PlayerBody" parent="." unique_id=1590353933 instance=ExtResource("5_661n0")]

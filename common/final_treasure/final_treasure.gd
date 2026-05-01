@@ -6,3 +6,7 @@ extends Node3D
 func interact(_player: Player) -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	game_over_menu.show()
+
+func open_treasure() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	game_over_menu.show()

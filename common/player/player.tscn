@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dnphi6rbyyh5" path="res://common/player/player.gd" id="1_dsdjy"]
 [ext_resource type="PackedScene" uid="uid://dlragatc5qr2g" path="res://common/mining_particles/mining_particles.tscn" id="2_6vwog"]
 [ext_resource type="Texture2D" uid="uid://cxofe8rvf6atl" path="res://common/player/tap.png" id="2_i15vv"]
-[ext_resource type="PackedScene" uid="uid://faxal6cfbiyx" path="res://common/player/headlamp/headlamp.tscn" id="3_dvsd1"]
+[ext_resource type="PackedScene" uid="uid://dmbeuo58undll" path="res://common/player/vr_player/vr_player.tscn" id="3_3hjmw"]
 [ext_resource type="Script" uid="uid://csn0nbyl186f1" path="res://common/mineral_inventory/mineral_inventory.gd" id="3_f6svf"]
 [ext_resource type="Script" uid="uid://bog7c5n834p40" path="res://common/cant_interact_icon/cant_interact_icon.gd" id="5_qawn2"]
 [ext_resource type="Script" uid="uid://b0b2fbddqdt1e" path="res://common/money_and_upgrades/money_and_upgrades.gd" id="8_6vwog"]
@@ -20,12 +20,12 @@
 [ext_resource type="Script" uid="uid://ddomt33gvq5p6" path="res://common/money_and_upgrades/upgrade/unlock_merchant.gd" id="17_4j6q8"]
 [ext_resource type="Script" uid="uid://b63tu77vuarve" path="res://common/money_and_upgrades/upgrade/bag_size.gd" id="18_6j2u6"]
 [ext_resource type="Script" uid="uid://cmksckr83uc2d" path="res://common/money_and_upgrades/upgrade/lightweight.gd" id="19_4k30a"]
-[ext_resource type="Script" uid="uid://dtbigxp433ai7" path="res://common/money_and_upgrades/upgrade/unlock_light.gd" id="19_l6hcq"]
-[ext_resource type="Script" uid="uid://bmocworniqpyd" path="res://common/money_and_upgrades/upgrade/potion_duration.gd" id="20_3hjmw"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/unlock_light.gd" id="19_l6hcq"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/potion_duration.gd" id="20_3hjmw"]
 [ext_resource type="Script" uid="uid://ba0r1v6f7lvv1" path="res://common/money_and_upgrades/upgrade/sell_value.gd" id="20_ow2f5"]
-[ext_resource type="Script" uid="uid://djccgrnov7jws" path="res://common/money_and_upgrades/upgrade/haste_boost.gd" id="20_qawn2"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/haste_boost.gd" id="20_qawn2"]
 [ext_resource type="Script" uid="uid://bmua64he8h1un" path="res://common/money_and_upgrades/upgrade/add_consumable.gd" id="21_erhvt"]
-[ext_resource type="Script" uid="uid://dl7ydyd4fst4l" path="res://common/money_and_upgrades/upgrade/greed_size.gd" id="22_3or88"]
+[ext_resource type="Script" path="res://common/money_and_upgrades/upgrade/greed_size.gd" id="22_3or88"]
 [ext_resource type="Script" uid="uid://0n6wbb8x3vfk" path="res://common/money_and_upgrades/consumables/rope.gd" id="23_7xmuk"]
 [ext_resource type="Script" uid="uid://c0y1bhrtkxyfe" path="res://common/money_and_upgrades/consumables/rocket_consumable.gd" id="24_dvsd1"]
 [ext_resource type="Script" uid="uid://bkd4ag8uf7l38" path="res://common/money_and_upgrades/consumables/bomb/bomb_consumable.gd" id="25_llj0e"]
@@ -60,6 +60,8 @@ shape = SubResource("CapsuleShape3D_d4thd")
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_dsdjy")
 
+[node name="VrPlayer" parent="." unique_id=1163162612 instance=ExtResource("3_3hjmw")]
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1829805524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45847714, 0)
 
@@ -72,8 +74,8 @@ shape = SubResource("SphereShape3D_dsdjy")
 target_position = Vector3(0, 0, -5)
 collision_mask = 4
 
-[node name="Headlamp" parent="Camera3D" unique_id=1557774912 node_paths=PackedStringArray("camera") instance=ExtResource("3_dvsd1")]
-camera = NodePath("..")
+[node name="Node3D" type="OmniLight3D" parent="Camera3D" unique_id=1290770347]
+light_size = 2.0
 
 [node name="UI" type="Control" parent="." unique_id=224900956]
 layout_mode = 3
@@ -418,7 +420,7 @@ metadata/_custom_type_script = "uid://bmua64he8h1un"
 
 [node name="UnlockLight" type="Node" parent="MoneyAndUpgrades/Upgrades/Blacksmith/Slot_4_Light" unique_id=504401468 node_paths=PackedStringArray("headlamp")]
 script = ExtResource("19_l6hcq")
-headlamp = NodePath("../../../../../Camera3D/Headlamp")
+headlamp = NodePath("")
 upgrade_name = "Headlamp"
 cost = 1
 
