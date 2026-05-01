@@ -1,5 +1,7 @@
 # Capstone project for CS 4480 Game Development Project
 
+Game with all features is in main branch. VR implementation is in VR branch.
+
 Resources Used:
 - Sand [texture](https://ambientcg.com/view?id=Ground093C)
 - Stone [texture](https://ambientcg.com/view?id=Rock022)
