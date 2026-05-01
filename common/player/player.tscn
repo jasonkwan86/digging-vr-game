@@ -603,7 +603,7 @@ script = ExtResource("12_01kfu")
 rocket_projectile = ExtResource("13_1c0ic")
 rocket_consumable = NodePath("../../Consumables/RocketConsumable")
 tool_name = "Rocket Launcher"
-dig_power = 4.0
+dig_power = 5.0
 metadata/_custom_type_script = "uid://dx3scgijl6y7w"
 
 [node name="Consumables" type="Node" parent="MoneyAndUpgrades" unique_id=2134184705]
